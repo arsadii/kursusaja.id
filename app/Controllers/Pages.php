@@ -77,22 +77,6 @@ class Pages extends BaseController
         echo view('pages/daftar');
         echo view('layout/footer');
     }
-    public function detail_kursus()
-    {
-        $data = [
-            'title' => 'Detail Kursus - Kursusaja.id'
-        ];
-        echo view('pages/detail_kursus', $data);
-        echo view('layout/user_footer');
-    }
-    public function detail_event()
-    {
-        $data = [
-            'title' => 'Detail Event - Kursusaja.id'
-        ];
-        echo view('pages/detail_event', $data);
-        echo view('layout/user_footer');
-    }
     public function detailkursus($id)
     {
         $data = [

@@ -94,7 +94,7 @@ pre code{font-size:inherit;color:inherit;word-break:normal}
 .container{width:100%;padding-right:.75rem;padding-left:.75rem;margin-right:auto;margin-left:auto}
 @media (max-width: 420px) {
 .col-8{flex: 0 0 100%!important;max-width:100%!important}
-.nav-fixed #layoutSidenav #layoutSidenav_content{padding-left:22rem!important;}
+.nav-fixed #layoutSidenav #layoutSidenav_content{padding-left:18rem!important;}
 }
 @media (min-width: 576px) {
 .container{max-width:540px}
