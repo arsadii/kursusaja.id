@@ -22,10 +22,10 @@
         </button>
         <ul class="navbar-nav align-items-center ml-auto">
             <!-- <li class="nav-item dropdown no-caret mr-3 dropdown-user">
-                <a class="btn btn-icon btn-transparent-light dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="/assets/img/ceo.jpg"></a>
+                <a class="btn btn-icon btn-transparent-light dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="../assets/img/ceo.jpg"></a>
                 <div class="dropdown-menu dropdown-menu-right border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
                     <h6 class="dropdown-header d-flex align-items-center">
-                        <img class="dropdown-user-img" src="/assets/img/ceo.jpg">
+                        <img class="dropdown-user-img" src="../assets/img/ceo.jpg">
                         <div class="dropdown-user-details">
                             <div class="dropdown-user-details-name">Kurusaja.id</div>
                             <div class="dropdown-user-details-email">kursusaja.id@gmail.com</div>
@@ -77,7 +77,7 @@
                     <div class="container col-md-12">
                         <div class="page-header-content">
                             <h2 class="page-header-title text-center" style="display:block!important;color:rgb(255, 103, 2)">
-                                <span>Judul Kursus</span>
+                                <span><?= $kursus['judul']; ?></span>
                             </h2>
                         </div>
                     </div>
@@ -86,20 +86,17 @@
                     <div class="card mb-5">
                         <div class="card-body">
                             <img class="card-img" src="/assets/img/bg.jpg" alt="...">
-                            <h1 class="text-center"><br>Harga</h1>
+                            <h1 class="text-center"><br>Rp. <?= $kursus['harga']; ?></h1>
                         </div>
                         <div class="row">
                             <div class="col-md-6 card-footer text-center medium">
-                                Kursus Desain Menggunakan Aplikasi Inkscape Yang Akan Buat Kamu Makin Kedepan Dalam Dunia Desain Grafis
+                                <?= $kursus['deskripsi']; ?>
                             </div>
-                            <div class="col-md-2 card-footer text-center medium">
-                                Rp. 100.000
+                            <div class="col-md-3 card-footer text-center medium">
+                                <?= $kursus['tgl_mulai']; ?>
                             </div>
-                            <div class="col-md-2 card-footer text-center medium">
-                                28 Agustus 2020
-                            </div>
-                            <div class="col-md-2 card-footer text-center medium">
-                                30 Hari
+                            <div class="col-md-3 card-footer text-center medium">
+                                <?= $kursus['lama_kursus']; ?>
                             </div>
                         </div>
                     </div>

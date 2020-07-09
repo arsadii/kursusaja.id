@@ -16,7 +16,7 @@
 
 <body class="nav-fixed">
     <nav class="topnav navbar navbar-expand shadow navbar-light bg-dark" id="sidenavAccordion">
-        <a class="navbar-brand" href="<?= base_url('/'); ?>"><img src="/assets/img/Logo Panjang.png" width="150px" alt=""></a><button class="btn btn-icon btn-transparent-light order-1 order-lg-1 ml-2" id="sidebarToggle" href="#">
+        <a class="navbar-brand" href="#"><img src="/assets/img/Logo Panjang.png" width="150px" alt=""></a><button class="btn btn-icon btn-transparent-light order-1 order-lg-1 ml-2" id="sidebarToggle" href="#">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
                 <line x1="3" y1="12" x2="21" y2="12"></line>
                 <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -115,9 +115,9 @@
                     </div>
                     <br>
                     <div class="sidenav-menu-heading text-center">
-                        <a class="nav-link <?= $status1 ?>" href="/pages/profil_mitra">Profil</a>
-                        <a class="nav-link <?= $status2 ?>" href="/pages/layanan">Layanan</a>
-                        <a class="nav-link <?= $status3 ?>" href="/pages/promosi">Promosi</a><br>
+                        <a class="nav-link <?= $status1 ?>" href="<?= base_url('/mitra/profil_mitra'); ?>">Profil</a>
+                        <a class="nav-link <?= $status2 ?>" href="<?= base_url('/mitra/layanan'); ?>">Layanan</a>
+                        <a class="nav-link <?= $status3 ?>" href="<?= base_url('/mitra/promosi'); ?>">Promosi</a><br>
                         <a class="nav-link" data-toggle="modal" data-target="#keluar">Keluar</a>
                     </div>
                 </div>

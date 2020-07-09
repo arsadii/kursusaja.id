@@ -4,70 +4,24 @@
     </div>
     <div class="cards">
         <div class="row">
-            <div class="col-md-3">
-                <div class="card card-profile">
-                    <div class="card-image">
-                        <a href="/">
-                            <img class="img" src="/assets/img/examples/card-project2.jpg" />
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <h4 class="judul">Inkscape Basic to Expert</h4>
-                        <h5>Rp. 75.000</h5>
-                        <div class="footer">
-                            <a href="/" class="btn btn-danger">Bergabung</a>
+            <?php foreach ($event as $e) :; ?>
+                <div class="col-md-3">
+                    <div class="card card-profile">
+                        <div class="card-image">
+                            <a href="/">
+                                <img class="img" src="/assets/img/examples/<?= $e['gambar']; ?>" />
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="judul"><?= $e['judul']; ?></h4>
+                            <h5>Rp. <?= $e['harga']; ?></h5>
+                            <div class="footer">
+                                <a href="/pages/detailevent/<?= $e['id']; ?>" class="btn btn-danger">Detail</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card card-profile">
-                    <div class="card-image">
-                        <a href="/">
-                            <img class="img" src="/assets/img/Levi.jpg" />
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <h4 class="judul">Inkscape Basic to Expert</h4>
-                        <h5>Rp. 100.000</h5>
-                        <div class="footer">
-                            <a href="/" class="btn btn-danger">Bergabung</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card card-profile">
-                    <div class="card-image">
-                        <a href="/">
-                            <img class="img" src="/assets/img/Nome.png" />
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <h4 class="judul">Inkscape Basic to Expert</h4>
-                        <h5>Rp. 100.000</h5>
-                        <div class="footer">
-                            <a href="/" class="btn btn-danger">Bergabung</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card card-profile">
-                    <div class="card-image">
-                        <a href="/">
-                            <img class="img" src="/assets/img/placeholder.jpg" />
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <h4 class="judul">Inkscape Basic to Expert</h4>
-                        <h5>Rp. 75.000</h5>
-                        <div class="footer">
-                            <a href="/" class="btn btn-danger">Bergabung</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>
