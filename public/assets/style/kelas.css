@@ -1,0 +1,148 @@
+.judul {
+    padding-top: 70px;
+    padding-bottom: 10px;
+    display: flex;
+}
+
+.judul h1{
+    text-align: center;
+    width: 200px;
+    margin: 0 auto;
+    border-bottom: 2px solid rgb(255, 103, 2);
+}
+
+.container-servis{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.kategori{
+    padding: 20px 0;
+    width: 20%;
+}
+
+.kategori h4{
+    width: max-content;
+    font-size: 1.5em;
+    color: white;
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgb(255, 103, 2);
+}
+
+.kategori ul{
+    margin: 20px 0;
+}
+
+.kategori ul li{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.kategori ul li a{
+    color: white;
+    width: max-content;
+    margin: 2px 0;
+    text-decoration: none;
+}
+
+.kategori ul li a:hover{
+    border-bottom: 1px solid rgb(255, 103, 2)
+}
+
+.container-servis .konten{
+    width: 80%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.konten .card{
+    background-color: rgba(20, 20, 20, 0.644);
+    width: 40%;
+    height: 500px;
+    margin: 0 10px;
+    padding: 25px;
+    box-shadow: 0 0 15px 2px black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.konten .card .gambar{
+    height: 250px;
+    min-height: 250px;
+    width: 100%;
+    display: flex;
+}
+
+.gambar img{
+    width: 200px;
+}
+
+.konten .card .info {
+    height: 100%;
+    padding: 0;
+    color: white;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: #eee; */
+}
+
+.konten .card .info .head-kelas{
+    margin: 10px 0;
+}
+
+.konten .card .info .head-kelas .nama-kursus{
+    line-height: .9em;
+    margin-bottom: 5px;
+}
+
+.konten .card .info .deskripsi{
+    font-size: 14px;
+}
+
+@media screen and (max-width: 576px) {
+    .container-servis {
+        flex-direction: column;
+    }
+
+    .container-servis .kategori{
+        width: 100%;
+        font-size: 14px;
+        margin-top: 10px;
+        padding: 10px 0;
+        /* border-top: 2px solid rgb(255, 103, 2); */
+        border-bottom: 2px solid rgb(255, 103, 2);
+        margin-bottom: 20px;
+    }
+
+    .kategori h4{
+        color: rgb(255, 103, 2);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 1.4em;
+        border-bottom: none;
+    }
+
+    .kategori ul{
+        margin: 5px 0;
+    }
+
+    .container-servis .konten{
+        width: 100%;
+    }
+
+    .container-servis .konten .card {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+}

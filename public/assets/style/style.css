@@ -1,0 +1,709 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    position: relative;
+}
+
+body {
+    background-image: url("../img/bground.png");
+    background-size: 2000px;
+    background-position-x: -200px;
+    background-color: rgb(20, 20, 20);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.bground {
+    z-index: -1;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 20, 20, 0.788);
+    display: block;
+    position: absolute;
+}
+
+.span {
+    position: relative;
+    /* background-color: #fff; */
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* Navbar */
+
+.logo img{
+    width: 150px;
+}
+
+.besar img{
+    width: 250px;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    background-color: rgb(27, 26, 26);
+    justify-content: space-around;
+    box-sizing: border-box;
+    height: 60px;
+    position: fixed;
+    align-items: center;
+    z-index: 2;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    width: 35%;
+    justify-content: space-between;
+}
+
+nav ul li {
+    padding: 4px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(27, 26, 26);
+}
+
+.active {
+    border-bottom: 1px solid rgb(255, 103, 2);
+}
+
+
+nav ul li:hover {
+    transition: 1s;
+    border-bottom: 1px solid rgb(255, 103, 2);
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.cta {
+    transition: 0.5s;
+    padding: 8px;
+    border-radius: 10px;
+    border : 2px solid rgb(255, 103, 2);
+    font-weight: 600;
+}
+
+.cta:hover {
+    background-color: rgb(255, 103, 2);
+    color: white;
+}
+
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -5px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 0;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    transform: rotate(45deg) translate(-1px, -2px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0)
+}
+
+/* Akhir Navbar */
+
+/* Content */
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+/* Jumbotron */
+
+.container .jumbotron {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;  
+    color: rgb(255, 103, 2);
+}
+
+.container .jumbotron img{
+    width: 500px;
+    padding: 80px;
+    box-sizing: border-box;
+}
+
+.info {
+    padding: 20px;
+}
+
+h1{
+    font-weight: 700;
+    color: white;
+}
+
+.info .tombol {
+    margin-top: 20px;
+    background-color: rgb(255, 103, 2);
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.info .tombol a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+    align-items: center;
+}
+
+.info .tombol:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 2px rgb(255, 103, 2);
+}
+/* Akhir jumbotron */
+
+/* Sekat */
+.sekat {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.sekat .judul{
+    display: flex;
+    color: white;
+    font-size: 1.3em;
+    font-weight: 500;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    border-bottom: 3px solid rgb(255, 103, 2);
+}
+
+/* Akhir Sekat */
+
+/* Kelas */
+.kelas {
+    width: 80%;
+    padding: 10px;
+}
+
+.kelas .card{
+    margin: 10px 0;
+    background-color: rgba(20, 20, 20, 0.76);
+    display: flex;
+    justify-content: start;
+    border-radius: 20px;
+    justify-content: space-between;
+    height: 300px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+/* .kelas .card:hover{
+    transform: scale(1.01);
+    box-shadow: 0 0 15px 2px rgb(8, 8, 8);
+} */
+
+.card .gambar{
+    width: 50%;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.gambar img{
+    width: 600px;
+}
+
+.info-kelas{
+    box-sizing: border-box;
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+.inverse {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.info-kelas .tombol {
+    margin-top: 20px;
+    border: 3px solid rgb(255, 103, 2);
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.info-kelas .tombol:hover {
+    border: 3px solid rgb(255, 255, 255);
+    background-color: #fff;
+    box-shadow: 0 0 5px 1px rgb(255, 255, 255);
+}
+
+.info-kelas .tombol a{
+    text-decoration: none;
+    color: rgb(255, 103, 2);
+    font-size: 16px;
+    font-weight: 800;
+    align-items: center;
+}
+
+.head-kelas {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.harga {
+    color: rgb(255, 103, 2);
+}
+
+.nama-kursus {
+    font-size: 30px;
+    font-weight: 600;
+}
+/* Akhir Kelas */
+
+.more {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.more a{
+    color: rgb(255, 103, 2);
+    text-decoration: none;
+    transition: 0.5s;
+    border-bottom: 1px solid rgb(20, 20, 20);
+}
+
+.more a:hover {
+    border-bottom: 1px solid rgb(255, 103, 2);
+}
+
+/* Event */
+
+.event {
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.event .card {
+    /* background-color: #fff; */
+    margin: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 25%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.event .card:hover{
+    transform: scale(1.01);
+    box-shadow: 0 0 15px 2px rgb(8, 8, 8);
+}
+
+.event .card .gambar {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+    margin: 10px;
+    
+}
+
+.event .card .tanggal {
+    color: rgb(255, 103, 2);
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.event .card .text{
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+.event .card .tombol {
+    border: 2px solid rgb(255, 103, 2);
+    /* background-color: #fff; */
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer; 
+    transition: 0.5s;
+}
+
+.event .card .tombol:hover{
+    border: 3px solid rgb(255, 255, 255);
+    background-color: #fff;
+    box-shadow: 0 0 5px 1px rgb(255, 255, 255);
+}
+
+.event .card .tombol a{
+    text-decoration: none;
+    color: rgb(255, 103, 2);
+    font-weight: 800;
+}
+/* Akhir Event */
+
+/* Tentang */
+.tentang {
+    width: 80%;
+    display: flex;
+}
+
+.profil {
+    width: 50%;
+    margin: 0 10px;
+    color: white;
+}
+
+.profil .logo img{
+    width: 80%;
+}
+
+.ceo{
+    width: 50%;
+    margin: 0 10px;
+}
+
+.ceo .card{
+    color: white;
+    background-color: rgb(21, 21, 21);
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 15px 2px rgb(12, 12, 12);
+}
+
+.ceo .card .foto {
+    margin: 10px 0;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .foto img{
+    height: 150%;
+}
+
+.ceo .card .bio {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card .bio .judul {
+    font-size: 0.7em;
+    margin-top: 10px;
+}
+
+.card .bio .data {
+    font-weight: 700;
+}
+
+.fa {
+    margin: 10px 2px;
+    padding: 5px;
+    font-size: 2em;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 100%;
+    /* background: #ffffff; */
+    color: rgb(255, 103, 2);
+}
+
+.fnote {
+    color: white;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+/* Akhir Tentang */
+
+/* Akhir Konten */
+
+/* Foot Note */
+
+.foot-note {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: 80%;
+    display: flex;
+    color: white;
+    border-top:1px solid rgb(255, 103, 2);
+    justify-content: space-around;
+}
+
+.note {
+    width: 30%;
+}
+
+.note .flex {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.note p{
+    margin: 3px 0;
+}
+.kecil {
+    font-size: 0.8em;
+}
+/* Akhir Foot Note */
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    color: white;
+    margin-top: 20px;
+    height: 40px;
+    background-color: rgb(255, 103, 2);
+}
+.footer p{
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    text-align: center;
+}
+/* Responsive */
+
+/* Tablet */
+@media screen and (max-width: 768px){
+    nav ul {
+        width: 50%;
+    }
+
+    .container .jumbotron{
+        flex-wrap: wrap;
+    }
+
+    .container .jumbotron img{
+        padding-bottom: 10px;
+    }
+
+    .jumbotron .info {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 0.8em;
+        align-items: center;
+    }
+
+    .kelas .card{
+        flex-direction: column;
+        height: 600px;
+    }
+
+    .kelas .gambar{
+        width: 100%;
+    }
+
+    .kelas .info-kelas {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .event {
+        flex-direction: column;
+    }
+
+    .event .card {
+        width: 100%;
+    }
+
+    .tentang{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profil {
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .ceo {
+        width: 100%;
+    }
+
+}
+
+/* Smartphone */
+@media screen and (max-width: 576px){
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgb(27, 26, 26);
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    nav ul.slide {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .container .jumbotron{
+        flex-wrap: wrap;
+    }
+
+    .container .jumbotron img{
+        padding-bottom: 10px;
+    }
+
+    .jumbotron .info {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 0.8em;
+        align-items: center;
+    }
+
+    .kelas .card{
+        flex-direction: column;
+        height: 600px;
+    }
+
+    .kelas .gambar{
+        width: 100%;
+    }
+
+    .kelas .info-kelas {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .event {
+        flex-direction: column;
+    }
+
+    .event .card {
+        width: 100%;
+    }
+
+    .tentang{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profil {
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .ceo {
+        width: 100%;
+    }
+
+}
