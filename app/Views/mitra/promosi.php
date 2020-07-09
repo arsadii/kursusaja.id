@@ -12,7 +12,7 @@
                 <div class="container col-md-10">
                     <div class="row">
                         <div class="col text-right">
-                            <button data-toggle="modal" data-target="#tambahkursus" class="btn btn-primary btn-raised btn-fab btn-fab-mini"><i class="material-icons">add</i>
+                            <button data-toggle="modal" data-target="#tambahpromosi" class="btn btn-primary btn-raised btn-fab btn-fab-mini"><i class="material-icons">add</i>
                             </button>
                         </div>
                     </div>

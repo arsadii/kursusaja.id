@@ -16,7 +16,7 @@
 </div>
 <div class="main main-raised">
     <div class="section">
-        <div class="container">
+        <div class="container text-center">
             <div class="col-md text-center">
                 <h2 class="title" style="color: rgb(255, 103, 2)!important;">Kursus</h2>
             </div>
@@ -87,11 +87,12 @@
                         </div>
                     </div>
                 </div>
+                <a href="/Pages/Katalog" class="btn btn-danger">Tampil Lebih Banyak</a>
             </div>
         </div>
     </div>
     <div class="section">
-        <div class="container">
+        <div class="container text-center">
             <div class="col-md text-center">
                 <h2 class="title" style="color: rgb(255, 103, 2)!important;">Event</h2>
             </div>
@@ -162,6 +163,7 @@
                         </div>
                     </div>
                 </div>
+                <a href="/Pages/Event" class="btn btn-danger">Tampil Lebih Banyak</a>
             </div>
         </div>
     </div>

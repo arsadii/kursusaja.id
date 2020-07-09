@@ -9,8 +9,13 @@
                 </div>
             </div>
         </div>
-        <div class="container mb-5 col-md-10 text-center">
-            <img class="img-fluid" style="width: 300px;height: 300px;border-radius:100%" src="../assets/img/ceo.jpg">
+        <div class="container mb-4 col-md-10 text-center">
+            <img class="img-fluid" style="width: 250px;height: 250px;border-radius:100%" src="../assets/img/ceo.jpg">
+        </div>
+        <div class="mb-4 text-center">
+            <span class="btn btn-primary btn-raised btn-fab btn-fab-mini">
+                <input type="hidden"><input type="file" name="...">
+            </span>
         </div>
         <div class="container mb-4 col-md-10">
             <form class="card card-body">
@@ -98,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer"><button class="btn btn-danger" type="button" data-toggle="modal" data-target="#ubah">Ubah</button></div>
+                <div class="modal-footer"><button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="button" data-toggle="modal" data-target="#ubah">Ubah</button></div>
             </form>
         </div>
         <div class="modal fade" id="ubah" tabindex="-1" role="dialog" aria-hidden="true">

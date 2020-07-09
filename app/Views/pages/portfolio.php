@@ -1,69 +1,128 @@
-<div class="container text-center">
-    <div class="col-md-12" style="margin-top: 70px!important;">
-        <h2 class="title" style="color: rgb(255, 103, 2)!important;">Event</h2>
+<div class="container" style="width: 80%">
+    <div class="col-md-12 text-center" style="margin-top: 90px!important;">
+        <h2 class="title" style="color: rgb(255, 103, 2)!important;">Portfolio</h2>
     </div>
     <div class="cards">
         <div class="row">
-            <div class="col-md-3">
-                <div class="card card-profile">
-                    <div class="card-image">
-                        <a href="/">
-                            <img class="img" src="/assets/img/examples/card-project2.jpg" />
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <h4 class="judul">Inkscape Basic to Expert</h4>
-                        <h5>Rp. 75.000</h5>
-                        <div class="footer">
-                            <a href="/" class="btn btn-danger">Bergabung</a>
+            <div class="col-md-4">
+                <div class="rotating-card-container manual-flip">
+                    <div class="card card-rotate">
+                        <div class="front front-background" style="background-image: url('/assets/img/ceo.jpg');">
+                            <div class="card-content">
+                                <h6 class="category text-info">Judul Disini</h6>
+                                <div class="footer text-center">
+                                    <button type="button" name="button" class="btn btn-danger btn-fill btn-round btn-rotate">
+                                        <i class="material-icons">refresh</i> Lihat Detail
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="back back-background">
+                            <div class="card-content">
+                                <h5 class="card-title">
+                                    Manage Post
+                                </h5>
+                                <p class="card-description">As an Admin, you have shortcuts to edit, view or delete the posts.</p>
+                                <div class="footer text-center">
+                                    <a href="#pablo" class="btn btn-info btn-just-icon btn-fill btn-round">
+                                        <i class="material-icons">subject</i>
+                                    </a>
+                                    <a href="#pablo" class="btn btn-success btn-just-icon btn-fill btn-round btn-wd">
+                                        <i class="material-icons">mode_edit</i>
+                                    </a>
+                                    <a href="#pablo" class="btn btn-danger btn-just-icon btn-fill btn-round">
+                                        <i class="material-icons">delete</i>
+                                    </a>
+                                </div>
+                                <br>
+                                <div class="footer text-center">
+                                    <button type="button" name="button" class="btn btn-success btn-fill btn-round btn-rotate">
+                                        <i class="material-icons">refresh</i> Back...
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card card-profile">
-                    <div class="card-image">
-                        <a href="/">
-                            <img class="img" src="/assets/img/Levi.jpg" />
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <h4 class="judul">Inkscape Basic to Expert</h4>
-                        <h5>Rp. 100.000</h5>
-                        <div class="footer">
-                            <a href="/" class="btn btn-danger">Bergabung</a>
+            <div class="col-md-4">
+                <div class="rotating-card-container manual-flip">
+                    <div class="card card-rotate">
+                        <div class="front front-background" style="background-image: url('/assets/img/ceo.jpg');">
+                            <div class="card-content">
+                                <h6 class="category text-info">Judul Disini</h6>
+                                <div class="footer text-center">
+                                    <button type="button" name="button" class="btn btn-danger btn-fill btn-round btn-rotate">
+                                        <i class="material-icons">refresh</i> Lihat Detail
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="back back-background">
+                            <div class="card-content">
+                                <h5 class="card-title">
+                                    Manage Post
+                                </h5>
+                                <p class="card-description">As an Admin, you have shortcuts to edit, view or delete the posts.</p>
+                                <div class="footer text-center">
+                                    <a href="#pablo" class="btn btn-info btn-just-icon btn-fill btn-round">
+                                        <i class="material-icons">subject</i>
+                                    </a>
+                                    <a href="#pablo" class="btn btn-success btn-just-icon btn-fill btn-round btn-wd">
+                                        <i class="material-icons">mode_edit</i>
+                                    </a>
+                                    <a href="#pablo" class="btn btn-danger btn-just-icon btn-fill btn-round">
+                                        <i class="material-icons">delete</i>
+                                    </a>
+                                </div>
+                                <br>
+                                <div class="footer text-center">
+                                    <button type="button" name="button" class="btn btn-success btn-fill btn-round btn-rotate">
+                                        <i class="material-icons">refresh</i> Back...
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card card-profile">
-                    <div class="card-image">
-                        <a href="/">
-                            <img class="img" src="/assets/img/Nome.png" />
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <h4 class="judul">Inkscape Basic to Expert</h4>
-                        <h5>Rp. 100.000</h5>
-                        <div class="footer">
-                            <a href="/" class="btn btn-danger">Bergabung</a>
+            <div class="col-md-4">
+                <div class="rotating-card-container manual-flip">
+                    <div class="card card-rotate">
+                        <div class="front front-background" style="background-image: url('/assets/img/ceo.jpg');">
+                            <div class="card-content">
+                                <h6 class="category text-info">Judul Disini</h6>
+                                <div class="footer text-center">
+                                    <button type="button" name="button" class="btn btn-danger btn-fill btn-round btn-rotate">
+                                        <i class="material-icons">refresh</i> Lihat Detail
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card card-profile">
-                    <div class="card-image">
-                        <a href="/">
-                            <img class="img" src="/assets/img/placeholder.jpg" />
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <h4 class="judul">Inkscape Basic to Expert</h4>
-                        <h5>Rp. 75.000</h5>
-                        <div class="footer">
-                            <a href="/" class="btn btn-danger">Bergabung</a>
+                        <div class="back back-background">
+                            <div class="card-content">
+                                <h5 class="card-title">
+                                    Manage Post
+                                </h5>
+                                <p class="card-description">As an Admin, you have shortcuts to edit, view or delete the posts.</p>
+                                <div class="footer text-center">
+                                    <a href="#pablo" class="btn btn-info btn-just-icon btn-fill btn-round">
+                                        <i class="material-icons">subject</i>
+                                    </a>
+                                    <a href="#pablo" class="btn btn-success btn-just-icon btn-fill btn-round btn-wd">
+                                        <i class="material-icons">mode_edit</i>
+                                    </a>
+                                    <a href="#pablo" class="btn btn-danger btn-just-icon btn-fill btn-round">
+                                        <i class="material-icons">delete</i>
+                                    </a>
+                                </div>
+                                <br>
+                                <div class="footer text-center">
+                                    <button type="button" name="button" class="btn btn-success btn-fill btn-round btn-rotate">
+                                        <i class="material-icons">refresh</i> Back...
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -71,7 +130,7 @@
         </div>
     </div>
 </div>
-<div class="section features-5" style="background-color:#2f3337!important;">
+<div class="section features-5">
     <div class="col-md text-center">
         <h2 class="title" style="color: #fff;">Mau Dapat Info Seputar Kursus Terbaru ?</h2>
     </div>

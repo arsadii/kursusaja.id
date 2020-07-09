@@ -1,5 +1,5 @@
 <div class="container text-center">
-    <div class="col-md-12" style="margin-top: 70px!important;">
+    <div class="col-md-12" style="margin-top: 90px!important;">
         <h2 class="title" style="color: rgb(255, 103, 2)!important;">Katalog Kursus</h2>
     </div>
     <div class="cards">

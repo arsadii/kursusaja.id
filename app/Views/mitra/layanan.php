@@ -15,7 +15,7 @@
                             <button class="btn btn-primary btn-raised btn-fab btn-fab-mini" style="pointer-events: none">Kursus</button>
                         </div>
                         <div class="col text-right">
-                            <button data-toggle="modal" data-target="#tambahkursus" class="btn btn-primary btn-raised btn-fab btn-fab-mini"><i class="material-icons">add</i>
+                            <button data-toggle="modal" data-target="#tambahlayanan" class="btn btn-primary btn-raised btn-fab btn-fab-mini"><i class="material-icons">add</i>
                             </button>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                             <button class="btn btn-primary btn-raised btn-fab btn-fab-mini" style="pointer-events: none">KURMA</button>
                         </div>
                         <div class="col text-right">
-                            <button data-toggle="modal" data-target="#tambahkurma" class="btn btn-primary btn-raised btn-fab btn-fab-mini"><i class="material-icons">add</i>
+                            <button data-toggle="modal" data-target="#tambahlayanan" class="btn btn-primary btn-raised btn-fab btn-fab-mini"><i class="material-icons">add</i>
                             </button>
                         </div>
                     </div>
@@ -131,7 +131,7 @@
                             <button class="btn btn-primary btn-raised btn-fab btn-fab-mini" style="pointer-events: none">Event</button>
                         </div>
                         <div class="col text-right">
-                            <button data-toggle="modal" data-target="#tambahevent" class="btn btn-primary btn-raised btn-fab btn-fab-mini"><i class="material-icons">add</i>
+                            <button data-toggle="modal" data-target="#tambahlayanan" class="btn btn-primary btn-raised btn-fab btn-fab-mini"><i class="material-icons">add</i>
                             </button>
                         </div>
                     </div>

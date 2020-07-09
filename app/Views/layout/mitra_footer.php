@@ -3,9 +3,116 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="jkeluar">Yakin Ingin Keluar ?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
             </div>
             <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button><button class="btn btn-danger" type="button">Keluar</button></div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="tambahlayanan" tabindex="-1" role="dialog" aria-labelledby="jtambah" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="jtambah">Tambah Layanan</h5>
+            </div>
+            <div class="modal-body">
+                <form class="card card-body">
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="exampleFormControlInput1">
+                                Judul
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="exampleFormControlInput1">
+                                Keterangan
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <textarea class="form-control form-control-solid" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="exampleFormControlInput1">
+                                Harga
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="exampleFormControlInput1">
+                                Upload Gambar
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input type="hidden"><input type="file" name="...">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button><button class="btn btn-danger" type="button">Tambah</button></div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="tambahpromosi" tabindex="-1" role="dialog" aria-labelledby="jtambah" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="jtambah">Tambah Promosi</h5>
+            </div>
+            <div class="modal-body">
+                <form class="card card-body">
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="exampleFormControlInput1">
+                                Judul
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="exampleFormControlInput1">
+                                Keterangan
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <textarea class="form-control form-control-solid" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="exampleFormControlInput1">
+                                Harga
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="exampleFormControlInput1">
+                                Upload Gambar
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input type="hidden"><input type="file" name="...">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button><button class="btn btn-danger" type="button">Tambah</button></div>
         </div>
     </div>
 </div>
