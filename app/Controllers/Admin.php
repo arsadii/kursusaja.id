@@ -14,6 +14,16 @@ class Admin extends BaseController
         echo view('admin/dashboard_admin');
         echo view('layout/admin_footer');
     }
+    public function portfolio_user()
+    {
+        $data = [
+            'title' => 'Pangaturan Akun User - Kursusaja.id',
+            'menu' => 'Dashboard Admin',
+        ];
+        echo view('layout/admin_header', $data);
+        echo view('admin/dashboard_admin');
+        echo view('layout/admin_footer');
+    }
     public function user_akun()
     {
         $data = [
