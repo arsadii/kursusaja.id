@@ -99,86 +99,54 @@ class Pages extends BaseController
         echo view('layout/user_footer');
     }
 
-    // User ----------------------------------------------------
-    // public function dashboard_user()
-    // {
-    //     $data = [
-    //         'title' => 'Dashboard - Kursusaja.id',
-    //         'menu' => 'Kursus'
-    //     ];
-    //     echo view('layout/user_header', $data);
-    //     echo view('user/dashboard_user');
-    //     echo view('layout/user_footer');
-    // }
-    // public function karya_user()
-    // {
-    //     $data = [
-    //         'title' => 'Karya Saya - Kursusaja.id',
-    //         'menu' => 'Portfolio'
-    //     ];
-    //     echo view('layout/user_header', $data);
-    //     echo view('user/karya_user');
-    //     echo view('layout/user_footer');
-    // }
-    // public function reward()
-    // {
-    //     $data = [
-    //         'title' => 'Rewards - Kursusaja.id',
-    //         'menu' => 'Rewards'
-    //     ];
-    //     echo view('layout/user_header', $data);
-    //     echo view('user/reward');
-    //     echo view('layout/user_footer');
-    // }
-    // public function profil_user()
-    // {
-    //     $data = [
-    //         'title' => 'Profil Saya - Kursusaja.id',
-    //         'menu' => 'Profil'
-    //     ];
-    //     echo view('layout/user_header', $data);
-    //     echo view('user/profil');
-    //     echo view('layout/user_footer');
-    // }
-    // public function materi()
-    // {
-    //     $data = [
-    //         'title' => 'Materi - Kursusaja.id',
+    public function cekmasuk()
+    {
+        $data = [
+            'username' => $this->request->getVar('username'),
+            'password' => $this->request->getVar('password'),
+        ];
 
-    //     ];
-    //     echo view('user/materi_kursus', $data);
-    //     echo view('layout/user_footer');
-    // }
+        $profil = $this->penggunaModel->ceklogin($data['username']);
 
-    // Mitra-------------------------------------------------------
-    // public function layanan()
-    // {
-    //     $data = [
-    //         'title' => 'Layanan - Kursusaja.id',
-    //         'menu' => 'Layanan'
-    //     ];
-    //     echo view('layout/mitra_header', $data);
-    //     echo view('mitra/layanan');
-    //     echo view('layout/mitra_footer');
-    // }
-    // public function promosi()
-    // {
-    //     $data = [
-    //         'title' => 'Promosi - Kursusaja.id',
-    //         'menu' => 'Promosi'
-    //     ];
-    //     echo view('layout/mitra_header', $data);
-    //     echo view('mitra/promosi');
-    //     echo view('layout/mitra_footer');
-    // }
-    // public function profil_mitra()
-    // {
-    //     $data = [
-    //         'title' => 'Promosi - Kursusaja.id',
-    //         'menu' => 'Profil'
-    //     ];
-    //     echo view('layout/mitra_header', $data);
-    //     echo view('mitra/profil');
-    //     echo view('layout/mitra_footer');
-    // }
+        if ($profil != null) {
+            if ($profil['password'] == $data['password']) {
+                //Login Berhasil
+                echo "Data Benar";
+            } else {
+                echo "Password Salah";
+            }
+        } else {
+            //Belum Daftar
+            echo "Pengguna tidak terdaftar";
+        }
+    }
+
+    public function aksidaftar()
+    {
+        $role = 'admin';
+
+        //Ambil username dan Cek Data berdasarkan Username
+        $username = $this->request->getVar('username');
+        $ada = $this->penggunaModel->cariuser($username);
+
+        if ($ada != null) {
+            echo "Username" . $username . "sudah digunakan!";
+        } else {
+            //Insert ke database
+            $this->penggunaModel->save([
+                'username' => $this->request->getVar('username'),
+                'password' => $this->request->getVar('password'),
+                'role' => $role,
+                'nama_lngkp' => $this->request->getVar('nama'),
+                'ttl' => $this->request->getVar('tanggallahir'),
+                'alamat' => $this->request->getVar('alamat'),
+                'hp' => $this->request->getVar('no_hp'),
+                'email' => $this->request->getVar('email')
+            ]);
+        }
+
+        echo view('layout/header');
+        echo view('pages/masuk');
+        echo view('layout/footer');
+    }
 }

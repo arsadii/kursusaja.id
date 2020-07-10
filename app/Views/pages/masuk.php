@@ -20,7 +20,7 @@
       <div class="row">
          <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
             <div class="card card-signup">
-               <form class="form" method="post" action="aksi-masuk.php">
+               <form class="form" method="post" action="/pages/cekmasuk">
                   <div class="header header-primary text-center">
                      <h4 class="card-title">Masuk</h4>
                   </div>

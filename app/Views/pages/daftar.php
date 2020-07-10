@@ -56,7 +56,7 @@
       <div class="row">
          <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
             <div class="card card-signup">
-               <form class="form" method="post" action="simpan-daftar.php" enctype="multipart/form-data">
+               <form class="form" method="post" action="/pages/aksidaftar" enctype="multipart/form-data">
                   <div class="header header-primary text-center">
                      <h4 class="card-title">Daftar</h4>
                   </div>
@@ -69,12 +69,13 @@
                         <input type="text" class="form-control" style="color: #000;" name="username" placeholder="Nama Pengguna">
                         <input type="text" placeholder="Nomor HP" name="no_hp" class="form-control" style="color: #000;" />
                         <input type="text" placeholder="Alamat" name="alamat" class="form-control" style="color: #000;" />
+                        <input type="date" placeholder="Tanggal Lahir" name="tanggallahir" class="form-control" style="color: #000;" />
                      </div>
                      <div class="form-group input-group has-primary">
                         <span class="input-group-addon">
                            <i class="material-icons">email</i>
                         </span>
-                        <input type="text" placeholder="Email" name="email" class="form-control" style="color: #000;" />
+                        <input type="email" placeholder="Email" name="email" class="form-control" style="color: #000;" />
                      </div>
                      <div class="form-group input-group has-primary">
                         <span class="input-group-addon">

@@ -8,6 +8,7 @@ class PenggunaModel extends Model
 {
     protected $table = 'pengguna';
     protected $useTimestamps = true;
+    protected $allowedFields = ['username', 'password', 'role', 'nama_lngkp', 'ttl', 'alamat', 'hp', 'email'];
 
     public function getPengguna($id = false)
     {
@@ -18,12 +19,15 @@ class PenggunaModel extends Model
         return $this->where(['id' => $id])->first();
     }
 
-    public function chosePengguna($id = false)
+    public function cariuser($username)
     {
-        if ($id == false) {
-            return $this->findAll();
-        }
+        return $this->where(['username' => $username])->first();
+    }
 
-        return $this->where(['id' => $id])->first();
+    public function ceklogin($username)
+    {
+        $hasil = $this->where('username', $username)->first();
+
+        return $hasil;
     }
 }

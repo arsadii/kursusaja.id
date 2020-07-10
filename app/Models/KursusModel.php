@@ -8,6 +8,7 @@ class KursusModel extends Model
 {
     protected $table = 'kursus';
     protected $useTimestamps = true;
+    protected $allowedFields = ['id_lmbg', 'judul', 'deskripsi', 'harga', 'daerah', 'tgl_mulai', 'lama_kursus'];
 
     public function getKursus($id = false)
     {
