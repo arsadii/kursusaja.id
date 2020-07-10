@@ -83,7 +83,7 @@
                     </div>
                     <br>
                     <div class="sidenav-menu-heading text-center">
-                        <a class="btn btn-primary btn-raised btn-fab btn-fab-mini" href="<?= base_url('/pages/dashboard_user'); ?>">Kembali Ke Dashboard</a>
+                        <a class="btn btn-primary btn-raised btn-fab btn-fab-mini" href="/user/dashboard_user">Kembali Ke Dashboard</a>
                     </div>
                 </div>
             </nav>

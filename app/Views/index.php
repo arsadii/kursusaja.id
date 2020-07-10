@@ -16,7 +16,7 @@
 </div>
 <div class="main main-raised">
     <div class="section">
-        <div class="container text-center">
+        <div class="container text-center" style="width: 85%;">
             <div class="col-md text-center">
                 <h2 class="title" style="color: rgb(255, 103, 2)!important;">Kursus</h2>
             </div>
@@ -46,7 +46,7 @@
         </div>
     </div>
     <div class="section">
-        <div class="container text-center">
+        <div class="container text-center" style="width: 85%;">
             <div class="col-md text-center">
                 <h2 class="title" style="color: rgb(255, 103, 2)!important;">Event</h2>
             </div>
@@ -72,6 +72,50 @@
                     <?php endforeach; ?>
                 </div>
                 <a href="/Pages/Event" class="btn btn-danger">Tampil Lebih Banyak</a>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="carousel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="card card-raised card-carousel">
+                        <div id="carousel-slide" class="carousel slide" data-ride="carousel">
+                            <div class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-slide" data-slide-to="0" class=""></li>
+                                    <li data-target="#carousel-slide" data-slide-to="1" class=""></li>
+                                    <li data-target="#carousel-slide" data-slide-to="2" class="active"></li>
+                                    <li data-target="#carousel-slide" data-slide-to="3" class=""></li>
+                                    <li data-target="#carousel-slide" data-slide-to="4" class=""></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div class="item">
+                                        <img src="assets/img/Burung.png" alt="Awesome Image">
+                                    </div>
+                                    <div class="item">
+                                        <img src="assets/img/ceo.jpg" alt="Awesome Image">
+                                    </div>
+                                    <div class="item active">
+                                        <img src="assets/img/Levi.jpg" alt="Awesome Image">
+                                    </div>
+                                    <div class="item">
+                                        <img src="assets/img/Flew.png" alt="Awesome Image">
+                                    </div>
+                                    <div class="item">
+                                        <img src="assets/img/Nome.png" alt="Awesome Image">
+                                    </div>
+                                </div>
+                                <a class="left carousel-control" href="#carousel-slide" data-slide="prev">
+                                    <i class="material-icons">keyboard_arrow_left</i>
+                                </a>
+                                <a class="right carousel-control" href="#carousel-slide" data-slide="next">
+                                    <i class="material-icons">keyboard_arrow_right</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -116,7 +160,7 @@
                 <h2 class="title" style="color:#fff!important">Tentang Kami</h2>
             </div>
             <div class="col-md-6">
-                <img src="assets/img/Logo Panjang.png" width="350px" alt="">
+                <img src="assets/img/Logo Panjang.png" width="300px" alt="">
                 <h4>Berdiri sejak Januari 2020</h4>
                 <p>Kursusaja.id adalah platform penyedia kursus, yang mempertemukan para calon peserta kursus dan jasa penyedia layanan kursus. Fokus kursus adalah kursus keterampilan, yang akan menambah value pesertanya sehingga dapat dengan mudah mendapatkan pekerjaan.</p>
                 <h4>Visi :</h4>

@@ -1,4 +1,4 @@
-<div class="container" style="width: 80%">
+<div class="container" style="width: 85%">
     <div class="col-md-12 text-center" style="margin-top: 90px!important;">
         <h2 class="title" style="color: rgb(255, 103, 2)!important;">Portfolio</h2>
     </div>
@@ -19,25 +19,10 @@
                         </div>
                         <div class="back back-background">
                             <div class="card-content">
-                                <h5 class="card-title">
-                                    Manage Post
-                                </h5>
-                                <p class="card-description">As an Admin, you have shortcuts to edit, view or delete the posts.</p>
-                                <div class="footer text-center">
-                                    <a href="#pablo" class="btn btn-info btn-just-icon btn-fill btn-round">
-                                        <i class="material-icons">subject</i>
-                                    </a>
-                                    <a href="#pablo" class="btn btn-success btn-just-icon btn-fill btn-round btn-wd">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#pablo" class="btn btn-danger btn-just-icon btn-fill btn-round">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </div>
-                                <br>
+                                <h6 class="title">Nama Designer</h6>
                                 <div class="footer text-center">
                                     <button type="button" name="button" class="btn btn-success btn-fill btn-round btn-rotate">
-                                        <i class="material-icons">refresh</i> Back...
+                                        <i class="material-icons">refresh</i> Kembali
                                     </button>
                                 </div>
                             </div>
@@ -48,7 +33,7 @@
             <div class="col-md-4">
                 <div class="rotating-card-container manual-flip">
                     <div class="card card-rotate">
-                        <div class="front front-background" style="background-image: url('/assets/img/ceo.jpg');">
+                        <div class="front front-background" style="background-image: url('/assets/img/city.jpg');">
                             <div class="card-content">
                                 <h6 class="category text-info">Judul Disini</h6>
                                 <div class="footer text-center">
@@ -60,25 +45,10 @@
                         </div>
                         <div class="back back-background">
                             <div class="card-content">
-                                <h5 class="card-title">
-                                    Manage Post
-                                </h5>
-                                <p class="card-description">As an Admin, you have shortcuts to edit, view or delete the posts.</p>
-                                <div class="footer text-center">
-                                    <a href="#pablo" class="btn btn-info btn-just-icon btn-fill btn-round">
-                                        <i class="material-icons">subject</i>
-                                    </a>
-                                    <a href="#pablo" class="btn btn-success btn-just-icon btn-fill btn-round btn-wd">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#pablo" class="btn btn-danger btn-just-icon btn-fill btn-round">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </div>
-                                <br>
+                                <h6 class="title">Nama Designer</h6>
                                 <div class="footer text-center">
                                     <button type="button" name="button" class="btn btn-success btn-fill btn-round btn-rotate">
-                                        <i class="material-icons">refresh</i> Back...
+                                        <i class="material-icons">refresh</i> Kembali
                                     </button>
                                 </div>
                             </div>
@@ -89,7 +59,7 @@
             <div class="col-md-4">
                 <div class="rotating-card-container manual-flip">
                     <div class="card card-rotate">
-                        <div class="front front-background" style="background-image: url('/assets/img/ceo.jpg');">
+                        <div class="front front-background" style="background-image: url('/assets/img/Flew.png');">
                             <div class="card-content">
                                 <h6 class="category text-info">Judul Disini</h6>
                                 <div class="footer text-center">
@@ -101,25 +71,10 @@
                         </div>
                         <div class="back back-background">
                             <div class="card-content">
-                                <h5 class="card-title">
-                                    Manage Post
-                                </h5>
-                                <p class="card-description">As an Admin, you have shortcuts to edit, view or delete the posts.</p>
-                                <div class="footer text-center">
-                                    <a href="#pablo" class="btn btn-info btn-just-icon btn-fill btn-round">
-                                        <i class="material-icons">subject</i>
-                                    </a>
-                                    <a href="#pablo" class="btn btn-success btn-just-icon btn-fill btn-round btn-wd">
-                                        <i class="material-icons">mode_edit</i>
-                                    </a>
-                                    <a href="#pablo" class="btn btn-danger btn-just-icon btn-fill btn-round">
-                                        <i class="material-icons">delete</i>
-                                    </a>
-                                </div>
-                                <br>
+                                <h6 class="title">Nama Designer</h6>
                                 <div class="footer text-center">
                                     <button type="button" name="button" class="btn btn-success btn-fill btn-round btn-rotate">
-                                        <i class="material-icons">refresh</i> Back...
+                                        <i class="material-icons">refresh</i> Kembali
                                     </button>
                                 </div>
                             </div>

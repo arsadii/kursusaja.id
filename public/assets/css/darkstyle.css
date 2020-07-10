@@ -297,7 +297,7 @@ input[type="date"].input-lg,.input-group-lg input[type="date"],input[type="time"
 .label.label-warning{background-color:#ff9800}
 .label.label-danger{background-color:#f44336}
 .label.label-rose{background-color:#e91e63}
-.form-control,.form-group .form-control{border:0;background-image:linear-gradient(#ff6702,#ff6702),linear-gradient(#d2d2d2,#d2d2d2);background-size:0 2px,100% 1px;background-repeat:no-repeat;background-position:center bottom,center calc(100% - 1px);background-color:transparent;transition:background 0 ease-out;float:none;box-shadow:none;border-radius:0;font-weight:400}
+.form-control,.form-group .form-control{border: 0;background-image: linear-gradient(rgb(255, 103, 2), rgb(255, 103, 2)),linear-gradient(#d2d2d2, #d2d2d2);background-size: 0 2px, 100% 1px;background-repeat: no-repeat;background-position: center bottom, center calc(100% - 1px);background-color: transparent;transition: background 0s ease-out;float: none;box-shadow: none;border-radius: 0;font-weight: 400;}
 .form-control::-moz-placeholder,.form-group .form-control::-moz-placeholder{color:#aaa;font-weight:400}
 .form-control:-ms-input-placeholder,.form-group .form-control:-ms-input-placeholder{color:#aaa;font-weight:400}
 .form-control::-webkit-input-placeholder,.form-group .form-control::-webkit-input-placeholder{color:#aaa;font-weight:400}
@@ -707,7 +707,8 @@ h2.title{margin-bottom:30px}
 .tooltip-inner{padding:10px 15px;min-width:130px}
 .carousel .carousel-control.left,.carousel .carousel-control.right{background-image:none}
 .carousel .carousel-control.right i{right:0}
-.carousel .item{text-align:center}
+.carousel .item{text-align:center;object-fit: cover}
+.carousel .item img{width: 100%;height: 340px}
 .carousel.carousel-full-nagivation .carousel-control{width:50%}
 .carousel.carousel-full-nagivation .carousel-control.left,.carousel.carousel-full-nagivation .carousel-control.right{background-image:none}
 .carousel.carousel-full-nagivation .carousel-control .material-icons,.carousel.carousel-full-nagivation .carousel-control .fa{display:none}
@@ -1296,7 +1297,7 @@ b{border-color:transparent transparent #888;border-width:0 4px 5px}
 .section-danger{background:#ffcdd2;background:-webkit-linear-gradient(60deg,#ffcdd2,#e57373);background:-o-linear-gradient(60deg,#ffcdd2,#e57373);background:-moz-linear-gradient(60deg,#ffcdd2,#e57373);background:linear-gradient(60deg,#ffcdd2,#e57373)}
 .section-rose{background:#f8bbd0;background:-webkit-linear-gradient(60deg,#f8bbd0,#f06292);background:-o-linear-gradient(60deg,#f8bbd0,#f06292);background:-moz-linear-gradient(60deg,#f8bbd0,#f06292);background:linear-gradient(60deg,#f8bbd0,#f06292)}
 .section-space{height:70px;display:block}
-.section{padding:50px 0}
+.section{padding:30px 0}
 .section-navbars{padding-bottom:0}
 .section-full-screen{height:100vh}
 .section-signup{padding-top:20vh}

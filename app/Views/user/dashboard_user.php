@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card-header">Finding Gratitude<div class="col text-right">
-                                <a class="btn btn-primary btn-raised btn-fab btn-fab-mini" href="/pages/materi">Masuk</a>
+                                <a class="btn btn-primary btn-raised btn-fab btn-fab-mini" href="/user/materi">Masuk</a>
                             </div>
                         </div>
                         <div class="row">
@@ -45,7 +45,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card-header">Judul Kursus <div class="col text-right">
-                                <a class="btn btn-primary btn-raised btn-fab btn-fab-mini" href="/pages/materi">Masuk</a>
+                                <a class="btn btn-primary btn-raised btn-fab btn-fab-mini" href="/user/materi">Masuk</a>
                             </div>
                         </div>
                         <div class="row">
@@ -76,7 +76,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card-header">Judul Kursus <div class="col text-right">
-                                <a class="btn btn-primary btn-raised btn-fab btn-fab-mini" href="/pages/materi">Masuk</a>
+                                <a class="btn btn-primary btn-raised btn-fab btn-fab-mini" href="/user/materi">Masuk</a>
                             </div>
                         </div>
                         <div class="row">

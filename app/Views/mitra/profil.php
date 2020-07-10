@@ -10,12 +10,13 @@
             </div>
         </div>
         <div class="container mb-4 col-md-10 text-center">
-            <img class="img-fluid" style="width: 250px;height: 250px;border-radius:100%" src="/assets/img/ceo.jpg">
-        </div>
-        <div class="mb-4 text-center">
-            <span class="btn btn-primary btn-raised btn-fab btn-fab-mini">
-                <input type="hidden"><input type="file" name="...">
-            </span>
+            <img class="img-fluid mb-4" style="width: 250px;height: 250px;border-radius:100%" src="../assets/img/ceo.jpg">
+            <div class="mb-2 text-center">
+                <span class="btn btn-primary btn-raised btn-fab btn-fab-mini">
+                    <input type="hidden"><input type="file" name="...">
+                </span>
+            </div>
+            <button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="submit">Simpan</button>
         </div>
         <div class="container mb-4 col-md-10">
             <form class="card card-body">

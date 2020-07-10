@@ -65,8 +65,11 @@
                         </div>
                     </div>
                     <br>
-                    <div class="sidenav-menu-heading">
+                    <div class="sidenav-menu-heading mb-5">
                         <h2 class="page-header-title text-center" style="display:block!important;color:#fff">Nama Penyelenggara</a>
+                    </div>
+                    <div class="sidenav-menu-heading text-center">
+                        <a class="btn btn-primary btn-raised btn-fab btn-fab-mini" href="/">Kembali Ke Beranda</a>
                     </div>
                 </div>
             </nav>

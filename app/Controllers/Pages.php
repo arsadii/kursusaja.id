@@ -50,7 +50,7 @@ class Pages extends BaseController
     public function portfolio()
     {
         $data = [
-            'title' => 'Event - Kursusaja.id',
+            'title' => 'Portfolio - Kursusaja.id',
             'menu' => 'Portfolio'
         ];
         echo view('layout/header', $data);

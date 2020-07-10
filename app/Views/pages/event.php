@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="container text-center" style="width: 85%;">
     <div class="col-md-12" style="margin-top: 90px!important;">
         <h2 class="title" style="color: rgb(255, 103, 2)!important;">Event</h2>
     </div>

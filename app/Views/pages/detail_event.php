@@ -65,8 +65,11 @@
                         </div>
                     </div>
                     <br>
-                    <div class="sidenav-menu-heading">
+                    <div class="sidenav-menu-heading mb-5">
                         <h2 class="page-header-title text-center" style="display:block!important;color:#fff">Nama Penyelenggara</a>
+                    </div>
+                    <div class="sidenav-menu-heading text-center">
+                        <a class="btn btn-primary btn-raised btn-fab btn-fab-mini" href="/">Kembali Ke Beranda</a>
                     </div>
                 </div>
             </nav>
@@ -101,7 +104,7 @@
                         </div>
                     </div>
                     <div class="col-md mb-4 text-center">
-                        <a class="btn btn-primary btn-raised btn-fab btn-fab-mini" href="<?= base_url('/pages/pembayaran'); ?>">Bergabung</a>
+                        <a class="btn btn-primary btn-raised btn-fab btn-fab-mini" href="/pages/pembayaran">Bergabung</a>
                     </div>
                 </div>
             </main>
