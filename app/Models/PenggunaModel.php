@@ -8,7 +8,7 @@ class PenggunaModel extends Model
 {
     protected $table = 'pengguna';
     protected $useTimestamps = true;
-    protected $allowedFields = ['username', 'password', 'role', 'nama_lngkp', 'ttl', 'alamat', 'hp', 'email'];
+    protected $allowedFields = ['username', 'password', 'role', 'nama_lngkp', 'ttl', 'alamat', 'hp', 'email', 'created_at', 'updated_at'];
 
     public function getPengguna($id = false)
     {
