@@ -16,7 +16,7 @@
 </head>
 
 <body style="background-color: #2f3337!important;">
-    <nav class="navbar navbar-default navbar-fixed-top" color-on-scroll="">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="col-md-8 col-md-offset-2">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
@@ -68,4 +68,3 @@
             </div>
         </div>
     </nav>
-</body>

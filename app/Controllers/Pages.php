@@ -63,15 +63,12 @@ class Pages extends BaseController
             'title' => 'Masuk - Kursusaja.id',
             'menu' => 'Masuk'
         ];
-        echo view('layout/header', $data);
-        echo view('pages/masuk');
-        echo view('layout/footer');
+        echo view('pages/masuk', $data);
     }
     public function daftar()
     {
         $data = [
-            'title' => 'Daftar - Kursusaja.id',
-            'menu' => 'Daftar'
+            'title' => 'Daftar - Kursusaja.id'
         ];
         echo view('layout/header', $data);
         echo view('pages/daftar');

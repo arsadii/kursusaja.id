@@ -1,14 +1,24 @@
+<footer class="footer mt-auto footer-light text-center">
+    <div class="container-fluid">
+        <div class="copyright">
+            &copy; <script>
+                document.write(new Date().getFullYear())
+            </script> Kursusaja.id - All Right Reserved
+        </div>
+    </div>
+</footer>
+</div>
 <div class="modal fade" id="keluar" tabindex="-1" role="dialog" aria-labelledby="jkeluar" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="jkeluar">Yakin Ingin Keluar ?</h5>
             </div>
-            <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button><a href="<?= base_url('/'); ?>" class="btn btn-danger" type="button">Keluar</a></div>
+            <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button><a href="/" class="btn btn-danger" type="button">Keluar</a></div>
         </div>
     </div>
 </div>
-<div class="modal fade" id="tambahlayanan" tabindex="-1" role="dialog" aria-labelledby="jtambah" aria-hidden="true">
+<div class="modal fade" id="tambahlayanan" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -62,7 +72,7 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="tambahpromosi" tabindex="-1" role="dialog" aria-labelledby="jtambah" aria-hidden="true">
+<div class="modal fade" id="tambahpromosi" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">

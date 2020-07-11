@@ -5,80 +5,68 @@
     <div class="cards">
         <div class="row">
             <div class="col-md-4">
-                <div class="rotating-card-container manual-flip">
-                    <div class="card card-rotate">
-                        <div class="front front-background" style="background-image: url('/assets/img/ceo.jpg');">
-                            <div class="card-content">
-                                <h6 class="category text-info">Judul Disini</h6>
-                                <div class="footer text-center">
-                                    <button type="button" name="button" class="btn btn-danger btn-fill btn-round btn-rotate">
-                                        <i class="material-icons">refresh</i> Lihat Detail
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="back back-background">
-                            <div class="card-content">
-                                <h6 class="title">Nama Designer</h6>
-                                <div class="footer text-center">
-                                    <button type="button" name="button" class="btn btn-success btn-fill btn-round btn-rotate">
-                                        <i class="material-icons">refresh</i> Kembali
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                <div class="card card-background" style="background-image: url('/assets/img/ceo.jpg')">
+                    <div class="card-content">
+                        <label class="label label-rose">Designed By</label>
+                        <h3 class="card-title">Beautiful Project</h3>
+                        <p class="card-description">
+                            Don't be scared of the truth because we need to restart the human foundation in truth.
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="rotating-card-container manual-flip">
-                    <div class="card card-rotate">
-                        <div class="front front-background" style="background-image: url('/assets/img/city.jpg');">
-                            <div class="card-content">
-                                <h6 class="category text-info">Judul Disini</h6>
-                                <div class="footer text-center">
-                                    <button type="button" name="button" class="btn btn-danger btn-fill btn-round btn-rotate">
-                                        <i class="material-icons">refresh</i> Lihat Detail
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="back back-background">
-                            <div class="card-content">
-                                <h6 class="title">Nama Designer</h6>
-                                <div class="footer text-center">
-                                    <button type="button" name="button" class="btn btn-success btn-fill btn-round btn-rotate">
-                                        <i class="material-icons">refresh</i> Kembali
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                <div class="card card-background" style="background-image: url('/assets/img/city.jpg')">
+                    <div class="card-content">
+                        <label class="label label-rose">Designed By</label>
+                        <h3 class="card-title">Beautiful Project</h3>
+                        <p class="card-description">
+                            Don't be scared of the truth because we need to restart the human foundation in truth.
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="rotating-card-container manual-flip">
-                    <div class="card card-rotate">
-                        <div class="front front-background" style="background-image: url('/assets/img/Flew.png');">
-                            <div class="card-content">
-                                <h6 class="category text-info">Judul Disini</h6>
-                                <div class="footer text-center">
-                                    <button type="button" name="button" class="btn btn-danger btn-fill btn-round btn-rotate">
-                                        <i class="material-icons">refresh</i> Lihat Detail
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="back back-background">
-                            <div class="card-content">
-                                <h6 class="title">Nama Designer</h6>
-                                <div class="footer text-center">
-                                    <button type="button" name="button" class="btn btn-success btn-fill btn-round btn-rotate">
-                                        <i class="material-icons">refresh</i> Kembali
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                <div class="card card-background" style="background-image: url('/assets/img/Flew.png')">
+                    <div class="card-content">
+                        <label class="label label-rose">Designed By</label>
+                        <h3 class="card-title">Beautiful Project</h3>
+                        <p class="card-description">
+                            Don't be scared of the truth because we need to restart the human foundation in truth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-background" style="background-image: url('/assets/img/ceo.jpg')">
+                    <div class="card-content">
+                        <label class="label label-rose">Designed By</label>
+                        <h3 class="card-title">Beautiful Project</h3>
+                        <p class="card-description">
+                            Don't be scared of the truth because we need to restart the human foundation in truth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-background" style="background-image: url('/assets/img/city.jpg')">
+                    <div class="card-content">
+                        <label class="label label-rose">Designed By</label>
+                        <h3 class="card-title">Beautiful Project</h3>
+                        <p class="card-description">
+                            Don't be scared of the truth because we need to restart the human foundation in truth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-background" style="background-image: url('/assets/img/Flew.png')">
+                    <div class="card-content">
+                        <label class="label label-rose">Designed By</label>
+                        <h3 class="card-title">Beautiful Project</h3>
+                        <p class="card-description">
+                            Don't be scared of the truth because we need to restart the human foundation in truth.
+                        </p>
                     </div>
                 </div>
             </div>

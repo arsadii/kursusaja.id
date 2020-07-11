@@ -9,103 +9,105 @@
                 </div>
             </div>
         </div>
-        <div class="container mb-4 col-md-10 text-center">
-            <img class="img-fluid mb-4" style="width: 250px;height: 250px;border-radius:100%" src="../assets/img/ceo.jpg">
-            <div class="mb-2 text-center">
-                <span class="btn btn-primary btn-raised btn-fab btn-fab-mini">
-                    <input type="hidden"><input type="file" name="...">
-                </span>
+        <div class="row">
+            <div class="container mb-4 col-md-10 text-center">
+                <img class="img-fluid mb-4" style="width: 250px;height: 250px;border-radius:100%" src="../assets/img/ceo.jpg">
+                <div class="mb-2 text-center">
+                    <span class="btn btn-primary btn-raised btn-fab btn-fab-mini">
+                        <input type="hidden"><input type="file" name="...">
+                    </span>
+                </div>
+                <button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="submit">Simpan</button>
             </div>
-            <button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="submit">Simpan</button>
-        </div>
-        <div class="container mb-4 col-md-10">
-            <form class="card card-body">
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-3 text-center" style="margin:10px 0;">
-                            <label for="exampleFormControlInput1">
-                                Nama Lengkap
-                            </label>
-                        </div>
-                        <div class="col-md-9">
-                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-3 text-center" style="margin:10px 0;">
-                            <label for="exampleFormControlInput1">
-                                Nama Pengguna
-                            </label>
-                        </div>
-                        <div class="col-md-9">
-                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+            <div class="container mb-4 col-md-10">
+                <form class="card card-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3 text-center" style="margin:10px 0;">
+                                <label for="exampleFormControlInput1">
+                                    Nama Lengkap
+                                </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-3 text-center" style="margin:10px 0;">
-                            <label for="exampleFormControlInput1">
-                                Tempat Tanggal Lahir
-                            </label>
-                        </div>
-                        <div class="col-md-9">
-                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-3 text-center" style="margin:10px 0;">
-                            <label for="exampleFormControlInput1">
-                                Alamat
-                            </label>
-                        </div>
-                        <div class="col-md-9">
-                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3 text-center" style="margin:10px 0;">
+                                <label for="exampleFormControlInput1">
+                                    Nama Pengguna
+                                </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-3 text-center" style="margin:10px 0;">
-                            <label for="exampleFormControlInput1">
-                                Email
-                            </label>
-                        </div>
-                        <div class="col-md-9">
-                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-3 text-center" style="margin:10px 0;">
-                            <label for="exampleFormControlInput1">
-                                No. Handphone
-                            </label>
-                        </div>
-                        <div class="col-md-9">
-                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3 text-center" style="margin:10px 0;">
+                                <label for="exampleFormControlInput1">
+                                    Tempat Tanggal Lahir
+                                </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-3 text-center" style="margin:10px 0;">
-                            <label for="exampleFormControlInput1">
-                                Password
-                            </label>
-                        </div>
-                        <div class="col-md-9">
-                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3 text-center" style="margin:10px 0;">
+                                <label for="exampleFormControlInput1">
+                                    Alamat
+                                </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer"><button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="button" data-toggle="modal" data-target="#ubah">Ubah</button></div>
-            </form>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3 text-center" style="margin:10px 0;">
+                                <label for="exampleFormControlInput1">
+                                    Email
+                                </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3 text-center" style="margin:10px 0;">
+                                <label for="exampleFormControlInput1">
+                                    No. Handphone
+                                </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3 text-center" style="margin:10px 0;">
+                                <label for="exampleFormControlInput1">
+                                    Password
+                                </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="button" data-toggle="modal" data-target="#ubah">Ubah</button></div>
+                </form>
+            </div>
         </div>
         <div class="modal fade" id="ubah" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -192,5 +194,3 @@
             </div>
         </div>
     </main>
-</div>
-</div>

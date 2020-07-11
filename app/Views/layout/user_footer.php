@@ -1,3 +1,13 @@
+<footer class="footer mt-auto footer-light text-center">
+    <div class="container-fluid">
+        <div class="copyright">
+            &copy; <script>
+                document.write(new Date().getFullYear())
+            </script> Kursusaja.id - All Right Reserved
+        </div>
+    </div>
+</footer>
+</div>
 <div class="modal fade" id="keluar" tabindex="-1" role="dialog" aria-labelledby="jkeluar" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">

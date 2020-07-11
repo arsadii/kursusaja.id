@@ -1,7 +1,7 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="page-header">
-            <div class="container col-md-12">
+            <div class="container">
                 <div class="page-header-content">
                     <h2 class="page-header-title text-center" style="display:block!important;color:rgb(255, 103, 2)">
                         <span>Kursus Saya</span>
@@ -13,10 +13,10 @@
             <div class="card mb-5">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card-header">Finding Gratitude<div class="col text-right">
+                        <h2 class="card-header">Finding Gratitude<div class="col text-right">
                                 <a class="btn btn-primary btn-raised btn-fab btn-fab-mini" href="/user/materi">Masuk</a>
                             </div>
-                        </div>
+                        </h2>
                         <div class="row">
                             <div class="col-8">
                                 <div class="card-body">
@@ -44,10 +44,10 @@
             <div class="card mb-5">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card-header">Judul Kursus <div class="col text-right">
+                        <h2 class="card-header">Judul Kursus <div class="col text-right">
                                 <a class="btn btn-primary btn-raised btn-fab btn-fab-mini" href="/user/materi">Masuk</a>
                             </div>
-                        </div>
+                        </h2>
                         <div class="row">
                             <div class="col-8">
                                 <div class="card-body">
@@ -75,10 +75,10 @@
             <div class="card mb-5">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card-header">Judul Kursus <div class="col text-right">
+                        <h2 class="card-header">Judul Kursus <div class="col text-right">
                                 <a class="btn btn-primary btn-raised btn-fab btn-fab-mini" href="/user/materi">Masuk</a>
                             </div>
-                        </div>
+                        </h2>
                         <div class="row">
                             <div class="col-8">
                                 <div class="card-body">
@@ -103,5 +103,3 @@
             </div>
         </div>
     </main>
-</div>
-</div>

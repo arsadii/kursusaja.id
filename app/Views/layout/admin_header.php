@@ -101,7 +101,59 @@
                         </div>
                         <div class="sidenav-menu-heading text-center">Kursusaja.id<br>Bergabung Sejak 2020</div>
                     </div>
-                    <br>
+                    <div class="nav accordion mb-4" id="accordionSidenav">
+                        <div class="sidenav-menu-heading">Admin</div>
+                        <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#pengguna" aria-expanded="false" aria-controls="penguna">
+                            <div class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg></div>
+                            Pengguna
+                        </a>
+                        <div class="collapse" id="pengguna" data-parent="#accordionSidenav">
+                            <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
+                                <a class="nav-link" href="/">
+                                    Akun
+                                    <span class="badge badge-dark text-primary ml-auto">New</span>
+                                </a>
+                                <a class="nav-link" href="/">
+                                    Portfolio
+                                    <span class="badge badge-dark text-primary ml-auto">New</span>
+                                </a>
+                                <a class="nav-link" href="/">
+                                    Perkembangan
+                                    <span class="badge badge-dark text-primary ml-auto">New</span>
+                                </a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#mitra" aria-expanded="false" aria-controls="mitra">
+                            <div class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg></div>
+                            Mitra
+                        </a>
+                        <div class="collapse" id="mitra" data-parent="#accordionSidenav">
+                            <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
+                                <a class="nav-link" href="/">
+                                    Akun
+                                    <span class="badge badge-dark text-primary ml-auto">New</span>
+                                </a>
+                                <a class="nav-link" href="/">
+                                    Portfolio
+                                    <span class="badge badge-dark text-primary ml-auto">New</span>
+                                </a>
+                                <a class="nav-link" href="/">
+                                    Perkembangan
+                                    <span class="badge badge-dark text-primary ml-auto">New</span>
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
                     <div class="sidenav-menu-heading text-center">
                         <a class="nav-link" data-toggle="modal" data-target="#keluar">Keluar</a>
                     </div>
