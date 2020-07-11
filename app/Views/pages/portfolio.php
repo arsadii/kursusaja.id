@@ -9,9 +9,6 @@
                     <div class="card-content">
                         <label class="label label-rose">Designed By</label>
                         <h3 class="card-title">Beautiful Project</h3>
-                        <p class="card-description">
-                            Don't be scared of the truth because we need to restart the human foundation in truth.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -20,9 +17,6 @@
                     <div class="card-content">
                         <label class="label label-rose">Designed By</label>
                         <h3 class="card-title">Beautiful Project</h3>
-                        <p class="card-description">
-                            Don't be scared of the truth because we need to restart the human foundation in truth.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -31,9 +25,6 @@
                     <div class="card-content">
                         <label class="label label-rose">Designed By</label>
                         <h3 class="card-title">Beautiful Project</h3>
-                        <p class="card-description">
-                            Don't be scared of the truth because we need to restart the human foundation in truth.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -42,9 +33,6 @@
                     <div class="card-content">
                         <label class="label label-rose">Designed By</label>
                         <h3 class="card-title">Beautiful Project</h3>
-                        <p class="card-description">
-                            Don't be scared of the truth because we need to restart the human foundation in truth.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -53,9 +41,6 @@
                     <div class="card-content">
                         <label class="label label-rose">Designed By</label>
                         <h3 class="card-title">Beautiful Project</h3>
-                        <p class="card-description">
-                            Don't be scared of the truth because we need to restart the human foundation in truth.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -64,9 +49,6 @@
                     <div class="card-content">
                         <label class="label label-rose">Designed By</label>
                         <h3 class="card-title">Beautiful Project</h3>
-                        <p class="card-description">
-                            Don't be scared of the truth because we need to restart the human foundation in truth.
-                        </p>
                     </div>
                 </div>
             </div>

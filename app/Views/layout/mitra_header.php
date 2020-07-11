@@ -95,12 +95,15 @@
     $status1 = '';
     $status2 = '';
     $status3 = '';
+    $status4 = '';
     if ($menu == 'Profil') {
         $status1 = 'active';
-    } else if ($menu == 'Layanan') {
+    } else if ($menu == 'Dashboard') {
         $status2 = 'active';
-    } else if ($menu == 'Promosi') {
+    } else if ($menu == 'Layanan') {
         $status3 = 'active';
+    } else if ($menu == 'Promosi') {
+        $status4 = 'active';
     }
     ?>
     <div id="layoutSidenav">
@@ -115,9 +118,10 @@
                     </div>
                     <br>
                     <div class="sidenav-menu-heading text-center">
-                        <a class="nav-link <?= $status1 ?>" href="<?= base_url('/mitra/profil_mitra'); ?>">Profil</a>
-                        <a class="nav-link <?= $status2 ?>" href="<?= base_url('/mitra/layanan'); ?>">Layanan</a>
-                        <a class="nav-link <?= $status3 ?>" href="<?= base_url('/mitra/promosi'); ?>">Promosi</a><br>
+                        <a class="nav-link <?= $status1 ?>" href="/mitra/profil_mitra">Profil</a>
+                        <a class="nav-link <?= $status2 ?>" href="/mitra/dashboard_mitra">Dashboard</a>
+                        <a class="nav-link <?= $status3 ?>" href="/mitra/layanan">Layanan</a>
+                        <a class="nav-link <?= $status4 ?>" href="/mitra/promosi">Promosi</a><br>
                         <a class="nav-link" data-toggle="modal" data-target="#keluar">Keluar</a>
                     </div>
                 </div>

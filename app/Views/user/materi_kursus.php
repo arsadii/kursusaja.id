@@ -102,7 +102,7 @@
                 <div class="container col-md-11">
                     <div class="card mb-5" style="background-color:transparent">
                         <div class="card-body text-center" style="padding:0;height:640px"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/-IW2c9Scmtk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                        <div class="card-footer medium">Keterangan Disini</div>
+                        <div class="card-footer medium" style="background-color: #eee">Keterangan Disini</div>
                     </div>
                     <div class="row mb-4">
                         <div class="col text-left">
@@ -114,5 +114,3 @@
                     </div>
                 </div>
             </main>
-        </div>
-    </div>

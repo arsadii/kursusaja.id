@@ -102,7 +102,7 @@
                         <div class="sidenav-menu-heading text-center">Kursusaja.id<br>Bergabung Sejak 2020</div>
                     </div>
                     <div class="nav accordion mb-4" id="accordionSidenav">
-                        <div class="sidenav-menu-heading">Admin</div>
+                        <a class="sidenav-menu-heading" href="/admin/dashboard_admin">Admin</a>
                         <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#pengguna" aria-expanded="false" aria-controls="penguna">
                             <div class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
                                     <rect x="3" y="3" width="7" height="7"></rect>

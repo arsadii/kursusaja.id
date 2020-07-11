@@ -118,10 +118,10 @@
                     </div>
                     <br>
                     <div class="sidenav-menu-heading text-center">
-                        <a class="nav-link <?= $status1 ?>" href="<?= base_url('/user/profil_user'); ?>">Profil Saya</a>
-                        <a class="nav-link <?= $status2 ?>" href="<?= base_url('/user/dashboard_user'); ?>">Kursus Saya</a>
-                        <a class="nav-link <?= $status3 ?>" href="<?= base_url('/user/karya_user'); ?>">Portfolio</a>
-                        <a class="nav-link <?= $status4 ?>" href="<?= base_url('/user/reward'); ?>">Rewards</a><br>
+                        <a class="nav-link <?= $status1 ?>" href="/user/profil_user">Profil Saya</a>
+                        <a class="nav-link <?= $status2 ?>" href="/user/dashboard_user">Dashboard</a>
+                        <a class="nav-link <?= $status3 ?>" href="/user/karya_user">Portfolio</a>
+                        <a class="nav-link <?= $status4 ?>" href="/user/reward">Rewards</a><br>
                         <a class="nav-link" data-toggle="modal" data-target="#keluar">Keluar</a>
                     </div>
                 </div>

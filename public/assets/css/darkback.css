@@ -1382,7 +1382,7 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
 .card-header{padding:1rem 1.35rem;margin-bottom:0;background-color:rgba(31, 45, 65, 0.03);border-bottom:1px solid rgba(31,45,65,0.125)}
 .card-header:first-child{border-radius:.35rem .35rem 0 0}
 .card-header + .list-group .list-group-item:first-child{border-top:0}
-.card-footer{padding:1rem 1.35rem;background-color:rgba(31, 45, 65, 0.03);border-top: 1px solid rgba(31, 45, 65, 0.125)}
+.card-footer{padding:1rem 1.35rem;background-color:rgba(31, 45, 65, 0.2);border-top: 1px solid rgba(31, 45, 65, 0.125)}
 .card-footer:last-child{border-radius:0 0 .35rem .35rem}
 .card-header-tabs{margin-right:-.675rem;margin-bottom:-1rem;margin-left:-.675rem;border-bottom:0}
 .card-header-pills{margin-right:-.675rem;margin-left:-.675rem}

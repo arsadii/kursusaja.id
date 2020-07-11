@@ -4,15 +4,15 @@
             <div class="page-header page-header-dark">
                 <div class="page-header-content">
                     <h2 class="page-header-title text-center" style="display:block!important;color:rgb(255, 103, 2)">
-                        <span>Dashboard Admin</span>
+                        <span>Dashboard Mitra</span>
                     </h2>
                 </div>
             </div>
         </div>
         <div class="container col-md-10">
             <nav class="nav nav-borders">
-                <a class="nav-link active ml-0" href="/admin/dashboard_admin">Dashboard</a>
-                <a class="nav-link" href="/admin/pengaturan_admin">Pengaturan</a>
+                <a class="nav-link active ml-0" href="/mitra/dashboard_mitra">Dashboard</a>
+                <a class="nav-link" href="/mitra/pengaturan_mitra">Pengaturan</a>
             </nav>
             <hr class="mt-0 mb-4">
             <div class="row">

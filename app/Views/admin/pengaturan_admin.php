@@ -9,7 +9,7 @@
                 </div>
             </div>
         </div>
-        <div class="container mt-4">
+        <div class="container col-md-10">
             <nav class="nav nav-borders">
                 <a class="nav-link ml-0" href="/admin/dashboard_admin">Dashboard</a>
                 <a class="nav-link active" href="/admin/pengaturan_admin">Pengaturan</a>

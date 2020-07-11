@@ -21,6 +21,16 @@ class Mitra extends BaseController
         $this->materiModel = new MateriModel();
     }
     // Mitra
+    public function dashboard_mitra()
+    {
+        $data = [
+            'title' => 'Dashboard Mitra - Kursusaja.id',
+            'menu' => 'Dashboard'
+        ];
+        echo view('layout/mitra_header', $data);
+        echo view('mitra/dashboard_mitra');
+        echo view('layout/mitra_footer');
+    }
     public function layanan()
     {
         $data = [

@@ -31,6 +31,16 @@ class User extends BaseController
         echo view('user/dashboard_user');
         echo view('layout/user_footer');
     }
+    public function kursus_user()
+    {
+        $data = [
+            'title' => 'Dashboard - Kursusaja.id',
+            'menu' => 'Kursus'
+        ];
+        echo view('layout/user_header', $data);
+        echo view('user/kursus_user');
+        echo view('layout/user_footer');
+    }
     public function karya_user()
     {
         $data = [
