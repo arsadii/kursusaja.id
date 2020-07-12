@@ -13,6 +13,7 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
    <link href="/assets/css/darkstyle.css?v=1.2.1" rel="stylesheet" />
+   <link rel="stylesheet" href="/assets/js/sweetalert2.min.css">
 </head>
 
 <body class="login-page">
@@ -39,14 +40,11 @@
             $status1 = 'active';
          } else if ($menu == 'Kursus') {
             $status2 = 'active';
-         }
-         else if ($menu == 'Event') {
+         } else if ($menu == 'Event') {
             $status3 = 'active';
-         }
-         else if ($menu == 'Portfolio') {
+         } else if ($menu == 'Portfolio') {
             $status4 = 'active';
-         }
-         else if ($menu == 'Masuk') {
+         } else if ($menu == 'Masuk') {
             $status5 = 'active';
          }
          ?>
@@ -75,6 +73,18 @@
       <div class="container">
          <div class="row">
             <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+               <?php if (session()->getFlashdata('flashdata')) : ?>
+                  <div class="flash-data-daftarakun" data-flashdata="<?php echo session()->getFlashdata('flashdata'); ?> "></div>
+                  <?php if (session()->getFlashdata('flashdata') == 'Data Berhasil Di Simpan!') : ?>
+                     <div class="alert alert-success" style="margin-bottom: 60px" role="alert">
+                        <?= session()->getFlashdata('flashdata'); ?>
+                     </div>
+                  <?php else : ?>
+                     <div class="alert alert-danger" style="margin-bottom: 60px" role=" alert">
+                        <?= session()->getFlashdata('flashdata'); ?>
+                     </div>
+                  <?php endif; ?>
+               <?php endif; ?>
                <div class="card card-signup">
                   <form class="form" method="post" action="/pages/cekmasuk">
                      <?= csrf_field(); ?>
@@ -102,6 +112,7 @@
                            </div>
                         </div>
                      </div>
+
                      <div class="footer text-center">
                         <button class="btn btn-primary btn-simple btn-lg" type="submit" name="masuk">Masuk</button><br>
                      </div>

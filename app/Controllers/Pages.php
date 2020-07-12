@@ -120,6 +120,7 @@ class Pages extends BaseController
             ]
 
         ])) {
+            session()->setFlashdata('flashdata', 'Data Gagal Di Simpan!');
             $validation = \Config\Services::validation();
             return redirect()->to('/pages/masuk')->withInput()->with('validation', $validation);
         }
@@ -138,6 +139,7 @@ class Pages extends BaseController
             'email' => $this->request->getVar('email')
             // 'created_at'=>$date;
         ]);
+        session()->setFlashdata('flashdata', 'Data Berhasil Di Simpan!');
         return redirect()->to('/pages/masuk');
     }
     public function daftar()

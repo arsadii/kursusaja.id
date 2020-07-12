@@ -20,4 +20,9 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <script src="/assets/js/style.js" type="text/javascript"></script>
 
+<!-- SweetAlert -->
+<script src="/assets/js/sweetalert2.all.js" type="text/javascript"></script>
+<script src="/assets/js/script.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/assets/js/sweetalert2.min.css">
+
 </html>
