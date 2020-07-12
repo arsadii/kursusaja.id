@@ -142,6 +142,86 @@ class Pages extends BaseController
         session()->setFlashdata('flashdata', 'Data Berhasil Di Simpan!');
         return redirect()->to('/pages/masuk');
     }
+    public function cekmasuk()
+    {
+        if (!$this->validate([
+            'username' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Nama Pengguna harus di isi'
+                ]
+            ],
+            'password' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Kata Sandi harus di isi'
+                ]
+            ]
+
+        ])) {
+            $validation = \Config\Services::validation();
+            return redirect()->to('/pages/masuk')->withInput()->with('validation', $validation);
+        }
+
+        $data = [
+            'username' => $this->request->getVar('username'),
+            'password' => $this->request->getVar('password'),
+        ];
+        $cek = $this->penggunaModel->ceklogin($data['username']);
+        // $cek = $this->penggunaModel->cek_akun($username, $password);
+
+        // if ($cek['username'] != $username) {
+        //     if ($cek['password'] != $password) {
+        //         session()->set('username', $cek['username']);
+        //         session()->set('password', $cek['password']);
+        //         session()->set('nama_lngkp', $cek['nama_lngkp']);
+        //         session()->set('id', $cek['id']);
+        //         session()->set('role', $cek['role']);
+        //         if (session()->set('role') == 'Admin') {
+        //             return redirect()->to('/admin/dashboard_admin');
+        //         } else {
+        //         }
+        //     } else {
+        //         session()->setFlashdata('flashdata', 'Username atau Password Salah !');
+        //         return redirect()->to('/pages/masuk');
+        //     }
+        // } else {
+        //     //Belum Daftar/Akun Salah
+        //     session()->setFlashdata('flashdata', 'Username atau Password Salah !');
+        //     return redirect()->to('/pages/masuk');
+        // }
+
+        if ($cek != null) {
+            if ($cek['password'] == $data['password']) {
+                session()->set('username', $cek['username']);
+                session()->set('password', $cek['password']);
+                session()->set('nama_lngkp', $cek['nama_lngkp']);
+                session()->set('id', $cek['id']);
+                session()->set('role', $cek['role']);
+                //Login Berhasil
+                if (session()->get('role') == 'admin') {
+                    return redirect()->to('/admin/dashboard_admin');
+                } elseif (session()->get('role') == 'mitra') {
+                    return redirect()->to('/mitra/dashboard_mitra');
+                } else {
+                    return redirect()->to('/user/dashboard_user');
+                }
+            } else {
+                // echo "Password Salah";
+                session()->setFlashdata('flashdata', 'Password anda Salah !');
+                return redirect()->to('/pages/masuk');
+            }
+        } else {
+            //Belum Daftar
+            session()->setFlashdata('flashdata', 'Pengguna belum terdaftar !');
+            return redirect()->to('/pages/masuk');
+        }
+    }
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to('/pages/masuk');
+    }
     public function daftar()
     {
         $data = [
@@ -171,47 +251,5 @@ class Pages extends BaseController
         ];
         echo view('pages/detail_event', $data);
         echo view('layout/user_footer');
-    }
-
-    public function cekmasuk()
-    {
-        if (!$this->validate([
-            'username' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Nama Pengguna harus di isi'
-                ]
-            ],
-            'password' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Kata Sandi harus di isi'
-                ]
-            ]
-
-        ])) {
-            $validation = \Config\Services::validation();
-            return redirect()->to('/pages/masuk')->withInput()->with('validation', $validation);
-        }
-
-        $data = [
-            'username' => $this->request->getVar('username'),
-            'password' => $this->request->getVar('password'),
-
-        ];
-
-        $profil = $this->penggunaModel->ceklogin($data['username']);
-
-        if ($profil != null) {
-            if ($profil['password'] == $data['password']) {
-                //Login Berhasil
-                echo "Data Benar";
-            } else {
-                echo "Password Salah";
-            }
-        } else {
-            //Belum Daftar
-            echo "Pengguna tidak terdaftar";
-        }
     }
 }

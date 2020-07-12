@@ -26,8 +26,14 @@ class PenggunaModel extends Model
 
     public function ceklogin($username)
     {
-        $hasil = $this->where('username', $username)->first();
+        $hasil = $this->where('username', $username)->get()->getRowArray();
 
         return $hasil;
     }
+    // public function cek_akun($username, $password)
+    // {
+    //     return $this->db->table('pengguna')
+    //         ->where(array('username' => $username, 'password' => $password))
+    //         ->get()->getRowArray();
+    // }
 }
