@@ -11,8 +11,8 @@
         </div>
         <div class="container col-md-10">
             <nav class="nav nav-borders">
-                <a class="nav-link ml-0" href="/admin/dashboard_admin">Dashboard</a>
-                <a class="nav-link active" href="/admin/pengaturan_admin">Pengaturan</a>
+                <a class="nav-link ml-0" href="/admin/dashboard">Dashboard</a>
+                <a class="nav-link active" href="/admin/pengaturan">Pengaturan</a>
             </nav>
             <hr class="mt-0 mb-4">
             <div class="row">
@@ -20,7 +20,7 @@
                     <div class="card mb-4">
                         <div class="card-header">Ubah Foto Profil</div>
                         <div class="card-body text-center">
-                            <img class="img-fluid mb-4" style="width: 250px;height: 250px;border-radius:100%" src="../assets/img/ceo.jpg">
+                            <img class="img-fluid mb-4" style="width: 250px;height: 250px;border-radius:100%" src="/assets/img/ceo.jpg">
                             <div class="small font-italic text-muted mb-4">JPG atau PNG tidak lebih dari 5 MB</div>
                             <button class="btn btn-primary" type="submit">Simpan</button>
                         </div>

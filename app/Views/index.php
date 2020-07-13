@@ -1,8 +1,8 @@
-<div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/img/1.jpg');">
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('/assets/img/1.jpg');">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center">
-                <h2 class="title">Cari Kursus ? Ya Kursusaja.id</h2>
+                <h2 class="title">Cari Kursus ? Ya Kursusaja</h2>
                 <form role="search">
                     <div class="form-group form-primary">
                         <input type="text" class="form-control" placeholder="Cari Kursus Kamu Disini">

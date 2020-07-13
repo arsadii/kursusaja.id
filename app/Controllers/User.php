@@ -21,34 +21,34 @@ class User extends BaseController
         $this->materiModel = new MateriModel();
     }
     // User 
-    public function dashboard_user()
+    public function dashboard()
     {
         $data = [
             'title' => 'Dashboard - Kursusaja.id',
             'menu' => 'Kursus'
         ];
         echo view('layout/user_header', $data);
-        echo view('user/dashboard_user');
+        echo view('user/dashboard');
         echo view('layout/user_footer');
     }
-    public function kursus_user()
+    public function kursus()
     {
         $data = [
             'title' => 'Dashboard - Kursusaja.id',
             'menu' => 'Kursus'
         ];
         echo view('layout/user_header', $data);
-        echo view('user/kursus_user');
+        echo view('user/kursus');
         echo view('layout/user_footer');
     }
-    public function karya_user()
+    public function portfolio()
     {
         $data = [
-            'title' => 'Karya Saya - Kursusaja.id',
+            'title' => 'Portfolio - Kursusaja.id',
             'menu' => 'Portfolio'
         ];
         echo view('layout/user_header', $data);
-        echo view('user/karya_user');
+        echo view('user/portfolio');
         echo view('layout/user_footer');
     }
     public function reward()
@@ -61,7 +61,7 @@ class User extends BaseController
         echo view('user/reward');
         echo view('layout/user_footer');
     }
-    public function profil_user()
+    public function profil()
     {
         $data = [
             'title' => 'Profil Saya - Kursusaja.id',
