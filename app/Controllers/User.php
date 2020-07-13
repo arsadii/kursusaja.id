@@ -64,11 +64,21 @@ class User extends BaseController
     public function profil()
     {
         $data = [
-            'title' => 'Profil Saya - Kursusaja.id',
+            'title' => 'Profil - Kursusaja.id',
             'menu' => 'Profil'
         ];
         echo view('layout/user_header', $data);
         echo view('user/profil');
+        echo view('layout/user_footer');
+    }
+    public function pengaturan()
+    {
+        $data = [
+            'title' => 'Pengaturan Profil - Kursusaja.id',
+            'menu' => 'Profil'
+        ];
+        echo view('layout/user_header', $data);
+        echo view('user/pengaturan');
         echo view('layout/user_footer');
     }
     public function materi()

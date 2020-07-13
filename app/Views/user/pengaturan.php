@@ -4,15 +4,15 @@
             <div class="page-header page-header-dark">
                 <div class="page-header-content">
                     <h2 class="page-header-title text-center" style="display:block!important;color:rgb(255, 103, 2)">
-                        <span>Pengaturan Admin</span>
+                        <span>Pengaturan Profil User</span>
                     </h2>
                 </div>
             </div>
         </div>
         <div class="container col-md-10">
             <nav class="nav nav-borders">
-                <a class="nav-link ml-0" href="/admin/dashboard">Dashboard</a>
-                <a class="nav-link active" href="/admin/pengaturan">Pengaturan</a>
+                <a class="nav-link ml-0" href="/user/profil">Profil</a>
+                <a class="nav-link active" href="/user/pengaturan">Pengaturan</a>
             </nav>
             <hr class="mt-0 mb-4">
             <div class="row">

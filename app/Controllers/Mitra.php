@@ -35,7 +35,7 @@ class Mitra extends BaseController
     {
         $data = [
             'title' => 'Dashboard Mitra - Kursusaja.id',
-            'menu' => 'Dashboard'
+            'menu' => 'Profil'
         ];
         echo view('layout/mitra_header', $data);
         echo view('mitra/pengaturan');

@@ -10,11 +10,6 @@
             </div>
         </div>
         <div class="container col-md-10">
-            <nav class="nav nav-borders">
-                <a class="nav-link active ml-0" href="/mitra/dashboard_mitra">Dashboard</a>
-                <a class="nav-link" href="/mitra/pengaturan_mitra">Pengaturan</a>
-            </nav>
-            <hr class="mt-0 mb-4">
             <div class="row">
                 <div class="col-xxl-4 col-xl-12 mb-4">
                     <div class="card card-waves h-100">
