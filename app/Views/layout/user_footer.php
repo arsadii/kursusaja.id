@@ -14,7 +14,7 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="jkeluar">Yakin Ingin Keluar ?</h5>
             </div>
-            <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button><a href="<?= base_url('/'); ?>" class="btn btn-danger" type="button">Keluar</a></div>
+            <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button><a href="<?= base_url('/pages/logout'); ?>" class="btn btn-danger" type="button">Keluar</a></div>
         </div>
     </div>
 </div>

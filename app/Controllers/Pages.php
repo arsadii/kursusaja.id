@@ -199,9 +199,9 @@ class Pages extends BaseController
                 session()->set('id', $cek['id']);
                 session()->set('role', $cek['role']);
                 //Login Berhasil
-                if (session()->get('role') == 'admin') {
+                if (session()->get('role') == 'Admin') {
                     return redirect()->to('/admin/dashboard_admin');
-                } elseif (session()->get('role') == 'mitra') {
+                } elseif (session()->get('role') == 'Mitra') {
                     return redirect()->to('/mitra/dashboard_mitra');
                 } else {
                     return redirect()->to('/user/dashboard_user');

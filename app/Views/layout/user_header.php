@@ -128,7 +128,7 @@
                 <div class="sidenav-footer">
                     <div class="sidenav-footer-content">
                         <div class="sidenav-footer-title">Login Sebagai :</div>
-                        <div class="sidenav-footer-subtitle">Kursusaja.id</div>
+                        <div class="sidenav-footer-subtitle"><?= session()->get('role'); ?></div>
                     </div>
                 </div>
             </nav>
