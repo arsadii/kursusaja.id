@@ -21,14 +21,24 @@ class Mitra extends BaseController
         $this->materiModel = new MateriModel();
     }
     // Mitra
-    public function dashboard_mitra()
+    public function dashboard()
     {
         $data = [
             'title' => 'Dashboard Mitra - Kursusaja.id',
             'menu' => 'Dashboard'
         ];
         echo view('layout/mitra_header', $data);
-        echo view('mitra/dashboard_mitra');
+        echo view('mitra/dashboard');
+        echo view('layout/mitra_footer');
+    }
+    public function pengaturan()
+    {
+        $data = [
+            'title' => 'Dashboard Mitra - Kursusaja.id',
+            'menu' => 'Dashboard'
+        ];
+        echo view('layout/mitra_header', $data);
+        echo view('mitra/pengaturan');
         echo view('layout/mitra_footer');
     }
     public function layanan()
@@ -51,7 +61,7 @@ class Mitra extends BaseController
         echo view('mitra/promosi');
         echo view('layout/mitra_footer');
     }
-    public function profil_mitra()
+    public function profil()
     {
         $data = [
             'title' => 'Promosi - Kursusaja.id',
@@ -59,6 +69,36 @@ class Mitra extends BaseController
         ];
         echo view('layout/mitra_header', $data);
         echo view('mitra/profil');
+        echo view('layout/mitra_footer');
+    }
+    public function detail_layanan()
+    {
+        $data = [
+            'title' => 'Detail Layanan - Kursusaja.id',
+            'menu' => 'Layanan'
+        ];
+        echo view('layout/mitra_header', $data);
+        echo view('mitra/detail_layanan');
+        echo view('layout/mitra_footer');
+    }
+    public function peserta_layanan()
+    {
+        $data = [
+            'title' => 'Detail Peserta - Kursusaja.id',
+            'menu' => 'Layanan'
+        ];
+        echo view('layout/mitra_header', $data);
+        echo view('mitra/data_peserta');
+        echo view('layout/mitra_footer');
+    }
+    public function detail_promosi()
+    {
+        $data = [
+            'title' => 'Detail Promosi - Kursusaja.id',
+            'menu' => 'Promosi'
+        ];
+        echo view('layout/mitra_header', $data);
+        echo view('mitra/detail_promosi');
         echo view('layout/mitra_footer');
     }
 }

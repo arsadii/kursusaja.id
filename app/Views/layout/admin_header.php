@@ -91,6 +91,15 @@
             </li> -->
         </ul>
     </nav>
+    <?php
+    $status1 = '';
+    $status2 = '';
+    if ($menu == 'Pengguna') {
+        $status1 = 'active';
+    } else if ($menu == 'Mitra') {
+        $status2 = 'active';
+    }
+    ?>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sidenav sidenav-dark">
@@ -102,8 +111,8 @@
                         <div class="sidenav-menu-heading text-center">Kursusaja.id<br>Bergabung Sejak 2020</div>
                     </div>
                     <div class="nav accordion mb-4" id="accordionSidenav">
-                        <a class="sidenav-menu-heading" href="/admin/dashboard_admin">Admin</a>
-                        <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#pengguna" aria-expanded="false" aria-controls="penguna">
+                        <a class="sidenav-menu-heading" href="/admin/dashboard">Admin</a>
+                        <a class="nav-link <?= $status1 ?> collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#pengguna" aria-expanded="false" aria-controls="penguna">
                             <div class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
                                     <rect x="3" y="3" width="7" height="7"></rect>
                                     <rect x="14" y="3" width="7" height="7"></rect>
@@ -114,21 +123,19 @@
                         </a>
                         <div class="collapse" id="pengguna" data-parent="#accordionSidenav">
                             <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
-                                <a class="nav-link" href="/">
+                                <a class="nav-link" href="/admin/user_akun">
                                     Akun
                                     <span class="badge badge-dark text-primary ml-auto">New</span>
                                 </a>
-                                <a class="nav-link" href="/">
+                                <a class="nav-link" href="/admin/user_portfolio">
                                     Portfolio
-                                    <span class="badge badge-dark text-primary ml-auto">New</span>
                                 </a>
-                                <a class="nav-link" href="/">
+                                <a class="nav-link" href="/admin/user_perkembangan">
                                     Perkembangan
-                                    <span class="badge badge-dark text-primary ml-auto">New</span>
                                 </a>
                             </nav>
                         </div>
-                        <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#mitra" aria-expanded="false" aria-controls="mitra">
+                        <a class="nav-link <?= $status2 ?> collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#mitra" aria-expanded="false" aria-controls="mitra">
                             <div class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
                                     <rect x="3" y="3" width="7" height="7"></rect>
                                     <rect x="14" y="3" width="7" height="7"></rect>
@@ -139,17 +146,14 @@
                         </a>
                         <div class="collapse" id="mitra" data-parent="#accordionSidenav">
                             <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
-                                <a class="nav-link" href="/">
+                                <a class="nav-link" href="/admin/mitra_akun">
                                     Akun
-                                    <span class="badge badge-dark text-primary ml-auto">New</span>
                                 </a>
-                                <a class="nav-link" href="/">
-                                    Portfolio
-                                    <span class="badge badge-dark text-primary ml-auto">New</span>
+                                <a class="nav-link" href="/admin/mitra_layanan">
+                                    Layanan
                                 </a>
-                                <a class="nav-link" href="/">
-                                    Perkembangan
-                                    <span class="badge badge-dark text-primary ml-auto">New</span>
+                                <a class="nav-link" href="/admin/mitra_promosi">
+                                    Promosi
                                 </a>
                             </nav>
                         </div>

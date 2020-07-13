@@ -5,49 +5,31 @@
     <div class="cards">
         <div class="row">
             <div class="col-md-4">
-                <div class="card card-background" style="background-image: url('/assets/img/ceo.jpg')">
-                    <div class="card-content">
-                        <label class="label label-rose">Designed By</label>
+                <div class="card card-background" style="background-image: url('/assets/img/bg2.jpg')">
+                    <div class="card-content" style="min-height: 180px">
+                    </div>
+                    <div class="footer" style="border: none;z-index:3;background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0))">
+                        <label class="label label-primary">Designed By</label>
                         <h3 class="card-title">Beautiful Project</h3>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card card-background" style="background-image: url('/assets/img/city.jpg')">
-                    <div class="card-content">
-                        <label class="label label-rose">Designed By</label>
-                        <h3 class="card-title">Beautiful Project</h3>
+                <div class="card card-background" style="background-image: url('/assets/img/skynight.jpg')">
+                    <div class="card-content" style="min-height: 180px">
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-background" style="background-image: url('/assets/img/Flew.png')">
-                    <div class="card-content">
-                        <label class="label label-rose">Designed By</label>
-                        <h3 class="card-title">Beautiful Project</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-background" style="background-image: url('/assets/img/ceo.jpg')">
-                    <div class="card-content">
-                        <label class="label label-rose">Designed By</label>
-                        <h3 class="card-title">Beautiful Project</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-background" style="background-image: url('/assets/img/city.jpg')">
-                    <div class="card-content">
-                        <label class="label label-rose">Designed By</label>
+                    <div class="footer" style="border: none;z-index:3;background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0))">
+                        <label class="label label-primary">Designed By</label>
                         <h3 class="card-title">Beautiful Project</h3>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card card-background" style="background-image: url('/assets/img/Flew.png')">
-                    <div class="card-content">
-                        <label class="label label-rose">Designed By</label>
+                    <div class="card-content" style="min-height: 180px">
+                    </div>
+                    <div class="footer" style="border: none;z-index:3;background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0))">
+                        <label class="label label-primary">Designed By</label>
                         <h3 class="card-title">Beautiful Project</h3>
                     </div>
                 </div>

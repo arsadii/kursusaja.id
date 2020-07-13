@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title><?= $title; ?></title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <link href="/assets/css/darkback.css" rel="stylesheet" />
@@ -118,9 +117,9 @@
                     </div>
                     <br>
                     <div class="sidenav-menu-heading text-center">
-                        <a class="nav-link <?= $status1 ?>" href="/user/profil_user">Profil Saya</a>
-                        <a class="nav-link <?= $status2 ?>" href="/user/dashboard_user">Dashboard</a>
-                        <a class="nav-link <?= $status3 ?>" href="/user/karya_user">Portfolio</a>
+                        <a class="nav-link <?= $status1 ?>" href="/user/profil">Profil</a>
+                        <a class="nav-link <?= $status2 ?>" href="/user/dashboard">Dashboard</a>
+                        <a class="nav-link <?= $status3 ?>" href="/user/portfolio">Portfolio</a>
                         <a class="nav-link <?= $status4 ?>" href="/user/reward">Rewards</a><br>
                         <a class="nav-link" data-toggle="modal" data-target="#keluar">Keluar</a>
                     </div>

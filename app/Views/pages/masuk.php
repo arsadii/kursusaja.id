@@ -96,9 +96,8 @@
                            <span class="input-group-addon">
                               <i class="material-icons">face</i>
                            </span>
-                           <input type="text" name="username" class="form-control <?= ($validation->hasError('username')) ?
-                                                                                       'is-invalid' : ''; ?>" style="color: #000;" placeholder="Nama Pengguna" autofocus value="<?= old('username'); ?>">
-                           <div class="invalid-feedback text-danger pl-5">
+                           <input type="text" name="username" class="form-control <?= ($validation->hasError('username')) ? 'is-invalid' : ''; ?>" style="color: #000;" placeholder="Nama Pengguna" autofocus value="<?= old('username'); ?>">
+                           <div class="text-danger pl-5">
                               <?= $validation->getError('username'); ?>
                            </div>
                         </div>
@@ -107,7 +106,7 @@
                               <i class="material-icons">lock_outline</i>
                            </span>
                            <input type="password" name="password" placeholder="Password..." class="form-control <?= ($validation->hasError('password')) ? 'is-invalid' : ''; ?>" value="<?= old('password'); ?>" style="color: #000;" />
-                           <div class=" invalid-feedback text-danger">
+                           <div class="text-danger">
                               <?= $validation->getError('password'); ?>
                            </div>
                         </div>
@@ -149,7 +148,7 @@
                         <i class="material-icons">info</i>
                      </span>
                      <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" value="<?= old('nama'); ?>" style="color: #000;" name="nama" placeholder="Nama Lengkap">
-                     <div class="invalid-feedback text-danger pl-5">
+                     <div class="text-danger pl-5">
                         <?= $validation->getError('nama'); ?>
                      </div>
                   </div>
@@ -158,7 +157,7 @@
                         <i class="material-icons">face</i>
                      </span>
                      <input type="text" class="form-control <?= ($validation->hasError('usernamed')) ? 'is-invalid' : ''; ?>" value="<?= old('usernamed'); ?>" style="color: #000;" name="usernamed" placeholder="Nama Pengguna">
-                     <div class="invalid-feedback text-danger pl-5">
+                     <div class="text-danger pl-5">
                         <?= $validation->getError('usernamed'); ?>
                      </div>
                   </div>
@@ -167,7 +166,7 @@
                         <i class="material-icons">call</i>
                      </span>
                      <input type="text" placeholder="Nomor HP" name="no_hp" class="form-control <?= ($validation->hasError('no_hp')) ? 'is-invalid' : ''; ?>" value="<?= old('no_hp'); ?>" style="color: #000;" />
-                     <div class="invalid-feedback text-danger pl-5">
+                     <div class="text-danger pl-5">
                         <?= $validation->getError('no_hp'); ?>
                      </div>
                   </div>
@@ -176,7 +175,7 @@
                         <i class="material-icons">home</i>
                      </span>
                      <input type="text" placeholder="Alamat" name="alamat" class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>" value="<?= old('alamat'); ?>" style="color: #000;" />
-                     <div class="invalid-feedback text-danger pl-5">
+                     <div class="text-danger pl-5">
                         <?= $validation->getError('alamat'); ?>
                      </div>
                   </div>
@@ -185,7 +184,7 @@
                         <i class="material-icons">event</i>
                      </span>
                      <input type="date" placeholder="Tanggal Lahir" name="tanggallahir" class="form-control <?= ($validation->hasError('tanggallahir')) ? 'is-invalid' : ''; ?>" value="<?= old('tanggallahir'); ?>" style="color: #000;" placeholder="Tanggal lahir" />
-                     <div class="invalid-feedback text-danger pl-5">
+                     <div class="text-danger pl-5">
                         <?= $validation->getError('tanggallahir'); ?>
                      </div>
                   </div>
@@ -194,7 +193,7 @@
                         <i class="material-icons">email</i>
                      </span>
                      <input type="email" placeholder="Email" name="email" class="form-control <?= ($validation->hasError('email')) ? 'is-invalid' : ''; ?>" value="<?= old('email'); ?>" style="color: #000;" />
-                     <div class="invalid-feedback text-danger pl-5">
+                     <div class="text-danger pl-5">
                         <?= $validation->getError('email'); ?>
                      </div>
                   </div>
@@ -203,7 +202,7 @@
                         <i class="material-icons">lock_outline</i>
                      </span>
                      <input type="password" placeholder="Password..." name="passwordd" class="form-control <?= ($validation->hasError('paswordd')) ? 'is-invalid' : ''; ?>" style="color: #000;" />
-                     <div class="invalid-feedback text-danger pl-5">
+                     <div class="text-danger pl-5">
                         <?= $validation->getError('passwordd'); ?>
                      </div>
                   </div>

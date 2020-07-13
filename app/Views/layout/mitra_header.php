@@ -118,8 +118,8 @@
                     </div>
                     <br>
                     <div class="sidenav-menu-heading text-center">
-                        <a class="nav-link <?= $status1 ?>" href="/mitra/profil_mitra">Profil</a>
-                        <a class="nav-link <?= $status2 ?>" href="/mitra/dashboard_mitra">Dashboard</a>
+                        <a class="nav-link <?= $status1 ?>" href="/mitra/profil">Profil</a>
+                        <a class="nav-link <?= $status2 ?>" href="/mitra/dashboard">Dashboard</a>
                         <a class="nav-link <?= $status3 ?>" href="/mitra/layanan">Layanan</a>
                         <a class="nav-link <?= $status4 ?>" href="/mitra/promosi">Promosi</a><br>
                         <a class="nav-link" data-toggle="modal" data-target="#keluar">Keluar</a>

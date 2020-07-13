@@ -10,33 +10,50 @@
                     </div>
                 </div>
                 <div class="container col-md-10">
-                    <div class="row">
-                        <div class="col text-right">
-                            <button data-toggle="modal" data-target="#tambahpromosi" class="btn btn-primary btn-raised btn-fab btn-fab-mini"><i class="material-icons">add</i>
-                            </button>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card mb-5" style="border:none;border-radius:unset">
-                                <div class="card-img-top">
-                                    <img class="img" src="/assets/img/Flew.png" alt="...">
+                    <div class="card card-header-actions mb-4">
+                        <h2 class="card-header">Judul Promosi
+                            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambahpromosi">Tambah Promosi</button>
+                        </h2>
+                        <div class="card-body text-center">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="card card-img-top mb-4">
+                                        <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
+                                        <div class="card-img-overlay">
+                                            <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
+                                            <button class="close" type="button" data-toggle="modal" data-target="#editpromosi"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                        </div>
+                                        <div class="card-footer">
+                                            <h3 class="badge badge-primary">Judul</h3>
+                                            <p class="card-text">Keterangan</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Judul</h5>
-                                    <p class="card-text">Keterangan</p>
+                                <div class="col-md-4">
+                                    <div class="card card-img-top mb-4">
+                                        <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
+                                        <div class="card-img-overlay">
+                                            <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
+                                            <button class="close" type="button" data-toggle="modal" data-target="#editpromosi"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                        </div>
+                                        <div class="card-footer">
+                                            <h3 class="badge badge-primary">Judul</h3>
+                                            <p class="card-text">Keterangan</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card mb-5" style="border:none;border-radius:unset">
-                                <div class="card-img-top">
-                                    <img class="img" src="/assets/img/Flew.png" alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Judul</h5>
-                                    <p class="card-text">Keterangan</p>
+                                <div class="col-md-4">
+                                    <div class="card card-img-top mb-4">
+                                        <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
+                                        <div class="card-img-overlay">
+                                            <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
+                                            <button class="close" type="button" data-toggle="modal" data-target="#editpromosi"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                        </div>
+                                        <div class="card-footer">
+                                            <h3 class="badge badge-primary">Judul</h3>
+                                            <p class="card-text">Keterangan</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

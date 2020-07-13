@@ -11,8 +11,8 @@
         </div>
         <div class="container col-md-10">
             <nav class="nav nav-borders">
-                <a class="nav-link ml-0" href="/user/dashboard_user">Dashboard</a>
-                <a class="nav-link active" href="/user/kursus_user">Kursus Saya</a>
+                <a class="nav-link ml-0" href="/user/dashboard">Dashboard</a>
+                <a class="nav-link active" href="/user/kursus">Kursus Saya</a>
             </nav>
             <hr class="mt-0 mb-4">
         </div>
