@@ -88,6 +88,22 @@
         </div>
     </div>
 </div>
+
+<!-- Templates Upload Foto -->
+<script>
+    function previewImg() {
+        const gambar = document.querySelector('#gambar');
+        const gambarLabel = document.querySelector('.custom-file-label');
+        const imgPreview = document.querySelector('.img-preview');
+
+        gambarLabel.textContent = gambar.files[0].name;
+        fileGambar.readAsDataURL(sampul.files[0])
+
+        fileGambar.onload = function(e) {
+            imgPreview.src = e.target.result;
+        }
+    }
+</script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="/assets/js/back.js"></script>

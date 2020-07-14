@@ -30,10 +30,13 @@ class PenggunaModel extends Model
 
         return $hasil;
     }
-    // public function cek_akun($username, $password)
-    // {
-    //     return $this->db->table('pengguna')
-    //         ->where(array('username' => $username, 'password' => $password))
-    //         ->get()->getRowArray();
-    // }
+    public function pilihPengguna($id)
+    {
+        $hasil = $this->where($id)->get()->getRowArray();
+
+        return $hasil;
+        // return $this->db->table('pengguna')
+        //     ->where($id)
+        //     ->get()->getRowArray();
+    }
 }

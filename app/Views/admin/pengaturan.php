@@ -18,32 +18,52 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="card mb-4">
+                        <?php $id = session()->get('id'); ?>
                         <div class="card-header">Ubah Foto Profil</div>
-                        <div class="card-body text-center">
-                            <img class="img-fluid mb-4" style="width: 250px;height: 250px;border-radius:100%" src="/assets/img/ceo.jpg">
-                            <div class="small font-italic text-muted mb-4">JPG atau PNG tidak lebih dari 5 MB</div>
-                            <button class="btn btn-primary" type="submit">Simpan</button>
-                        </div>
+                        <form method="POST" action="/admin/ubahfotoprofil/<?= $id; ?>" enctype="multipart/form-data">
+                            <div class="card-body text-center">
+                                <img class="img-fluid mb-4" style="width: 250px;height: 250px;border-radius:100%" src="/assets/img/ceo.jpg">
+                                <div class="custom-file pl-5">
+                                    <input type="file" class="custom-file-input" id="gambar" name="gambar" onchange="prviewImg()">
+                                    <label class="custom-file-label" for="gambar">Pilih gambar...</label>
+                                </div>
+                                <div class="text-danger mt-1" style="text-align: left;">
+                                    <?= $validation->getError('gambar'); ?>
+                                </div>
+                                <div class="small font-italic text-muted mt-3 mb-4">JPG atau PNG tidak lebih dari 5 MB</div>
+                                <!-- <button class="btn btn-primary" type="button">Unggah</button> -->
+                                <button class="btn btn-primary" type="submit">Simpan</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <div class="card mb-4">
-                        <div class="card-header">Ubah Password</div>
+                        <div class="card-header">Ubah Kata Sandi</div>
                         <div class="card-body">
-                            <form>
+                            <form method="POST" action="/admin/ubahsandi/<?$id?>">
                                 <div class="form-group">
-                                    <label class="small mb-1" for="currentPassword">Password Sekarang</label>
-                                    <input class="form-control" id="currentPassword" type="password" placeholder="Password Sekarang">
+                                    <label class="small mb-1" for="passlama">Kata SandiSekarang</label>
+                                    <input class="form-control" name="passlama" type="password" placeholder="Kata SandiSekarang">
+                                    <div class="text-danger pl-1">
+                                        <?= $validation->getError('passlama'); ?>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="small mb-1" for="newPassword">Password Baru</label>
-                                    <input class="form-control" id="newPassword" type="password" placeholder="Password Baru">
+                                    <label class="small mb-1" for="passbaru">Kata SandiBaru</label>
+                                    <input class="form-control" name="passbaru" type="password" placeholder="Kata SandiBaru">
+                                    <div class="text-danger pl-1">
+                                        <?= $validation->getError('passbaru'); ?>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="small mb-1" for="confirmPassword">Konfirmasi Password</label>
-                                    <input class="form-control" id="confirmPassword" type="password" placeholder="Konfirmasi Password Baru">
+                                    <label class="small mb-1" for="confirmpass">Konfirmasi Password</label>
+                                    <input class="form-control" name="confirmpass" type="password" placeholder="Konfirmasi Kata SandiBaru">
+                                    <div class="text-danger pl-1">
+                                        <?= $validation->getError('confirmpass'); ?>
+                                    </div>
                                 </div>
-                                <button class="btn btn-primary" type="button">Simpan</button>
+                                <button class="btn btn-primary" type="submit">Simpan</button>
                             </form>
                         </div>
                     </div>
@@ -58,7 +78,7 @@
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" value="<?= $user['nama_lngkp'] ?>" type="email" placeholder="" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +90,7 @@
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" value="<?= $user['username'] ?>" placeholder="" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +102,7 @@
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" value="<?= $user['ttl'] ?>" type="email" placeholder="" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +114,7 @@
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" value="<?= $user['alamat'] ?>" type="email" placeholder="" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +126,7 @@
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" value="<?= $user['email'] ?>" type="email" placeholder="" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -118,11 +138,11 @@
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" value="<?= $user['hp'] ?>" type="email" placeholder="" disabled>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-3 text-center" style="margin:10px 0;">
                                         <label for="exampleFormControlInput1">
@@ -130,10 +150,10 @@
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled>
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" value="<?= session()->get('password'); ?>" type="email" placeholder="" disabled>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="modal-footer"><button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="button" data-toggle="modal" data-target="#ubah">Ubah</button></div>
                         </form>
                     </div>
@@ -145,83 +165,104 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Ubah Data</h5>
+                    <h5 class="modal-title">Ubah Profil</h5>
                 </div>
                 <div class="modal-body">
-                    <form class="card card-body">
+                    <form class="card card-body" method="POST" action="/admin/ubahprofil/<?= $id ?>">
                         <div class="form-group">
                             <div class="col-md text-center">
-                                <label for="exampleFormControlInput1">
+                                <label for="nama">
                                     Nama Lengkap
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="">
+                                <input class="form-control form-control-solid" name="nama" value="<?= $user['nama_lngkp'] ?>" type="text" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md text-center">
-                                <label for="exampleFormControlInput1">
+                                <label for="username">
                                     Nama Pengguna
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="">
+                                <input class="form-control form-control-solid" name="username" value="<?= $user['username'] ?>" type="text" placeholder="">
+                                <div class="text-danger pl-5">
+                                    <?= $validation->getError('username'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md text-center">
-                                <label for="exampleFormControlInput1">
+                                <label for="ttl">
                                     Tempat Tanggal Lahir
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="">
+                                <input class="form-control form-control-solid" name="ttl" value="<?= $user['ttl'] ?>" type="date" placeholder="">
+                                <div class="text-danger pl-5">
+                                    <?= $validation->getError('ttl'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md text-center">
-                                <label for="exampleFormControlInput1">
+                                <label for="alamat">
                                     Alamat
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="">
+                                <input class="form-control form-control-solid" name="alamat" value="<?= $user['alamat'] ?>" type="text" placeholder="">
+                                <div class="text-danger pl-5">
+                                    <?= $validation->getError('alamat'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md text-center">
-                                <label for="exampleFormControlInput1">
+                                <label for="email">
                                     Email
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="">
+                                <input class="form-control form-control-solid" name="email" value="<?= $user['email'] ?>" type="email" placeholder="">
+                                <div class="text-danger pl-5">
+                                    <?= $validation->getError('email'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md text-center">
-                                <label for="exampleFormControlInput1">
+                                <label for="hp">
                                     No. Handphone
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="">
+                                <input class="form-control form-control-solid" name="hp" value="<?= $user['hp'] ?>" type="text" placeholder="">
+                                <div class="text-danger pl-5">
+                                    <?= $validation->getError('hp'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md text-center">
-                                <label for="exampleFormControlInput1">
+                                <label for="pass">
                                     Password
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="">
+                                <input class="form-control form-control-solid" name="pass" type="password" placeholder="">
+                                <div class="text-danger pl-5">
+                                    <?= $validation->getError('pass'); ?>
+                                </div>
                             </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" data-dismiss="modal">Tutup</button>
+                            <button class="btn btn-danger" type="submit">Simpan</button>
                         </div>
                     </form>
                 </div>
-                <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button><button class="btn btn-danger" type="button">Edit</button></div>
             </div>
         </div>
     </div>
