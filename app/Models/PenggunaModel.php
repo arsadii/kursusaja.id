@@ -8,7 +8,7 @@ class PenggunaModel extends Model
 {
     protected $table = 'pengguna';
     protected $useTimestamps = true;
-    protected $allowedFields = ['username', 'password', 'role', 'nama_lngkp', 'ttl', 'alamat', 'hp', 'email', 'created_at', 'updated_at'];
+    protected $allowedFields = ['username', 'password', 'role', 'nama_lngkp', 'ttl', 'alamat', 'hp', 'email', 'gambar', 'created_at', 'updated_at'];
 
     public function getPengguna($id = false)
     {
@@ -30,13 +30,10 @@ class PenggunaModel extends Model
 
         return $hasil;
     }
-    public function pilihPengguna($id)
+    public function pilihPengguna($role)
     {
-        $hasil = $this->where($id)->get()->getRowArray();
+        return $this->where(['role' => $role])->get()->getResultArray();
 
-        return $hasil;
-        // return $this->db->table('pengguna')
-        //     ->where($id)
-        //     ->get()->getRowArray();
+        // return $hasil;
     }
 }

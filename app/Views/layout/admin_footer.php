@@ -62,22 +62,28 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="detail" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Detail Peserta</h5>
-            </div>
-            <div class="modal-body">
-                <div class="card-body text-center">
-                    <img class="img-fluid mb-4" style="width: 200px;height: 200px;border-radius:100%" src="/assets/img/ceo.jpg">
-                    <div class="text-muted">Nama Peserta</div>
+<?php $i = 1; ?>
+<?php foreach ($pengguna as $p) : ?>
+
+    <div class="modal fade" id="detail<?= $i; ?>" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detail Peserta</h5>
                 </div>
+                <div class="modal-body">
+                    <div class="card-body text-center">
+                        <img class="img-fluid mb-4" style="width: 200px;height: 200px;border-radius:100%" src="/assets/img/profil/pengguna/<?= $p['gambar'] ?>">
+                        <h3 class="text-black"><?= $p['nama_lngkp'] ?></h3>
+                    </div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button></div>
             </div>
-            <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button></div>
         </div>
     </div>
-</div>
+    <?php $i++ ?>
+<?php endforeach; ?>
+
 <div class="modal fade" id="hapusdata" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -88,8 +94,6 @@
         </div>
     </div>
 </div>
-
-<!-- Templates Upload Foto -->
 <script>
     function previewImg() {
         const gambar = document.querySelector('#gambar');
@@ -97,7 +101,9 @@
         const imgPreview = document.querySelector('.img-preview');
 
         gambarLabel.textContent = gambar.files[0].name;
-        fileGambar.readAsDataURL(sampul.files[0])
+
+        const fileGambar = new FileReader();
+        fileGambar.readAsDataURL(gambar.files[0]);
 
         fileGambar.onload = function(e) {
             imgPreview.src = e.target.result;

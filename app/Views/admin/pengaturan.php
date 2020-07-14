@@ -22,13 +22,14 @@
                         <div class="card-header">Ubah Foto Profil</div>
                         <form method="POST" action="/admin/ubahfotoprofil/<?= $id; ?>" enctype="multipart/form-data">
                             <div class="card-body text-center">
-                                <img class="img-fluid mb-4" style="width: 250px;height: 250px;border-radius:100%" src="/assets/img/ceo.jpg">
-                                <div class="custom-file pl-5">
-                                    <input type="file" class="custom-file-input" id="gambar" name="gambar" onchange="prviewImg()">
+                                <img class="img-fluid img-preview mb-4" style="width: 250px;height: 250px;border-radius:100%" src="/assets/img/profil/admin/<?= $user['gambar'] ?>">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input <?= ($validation->hasError('gambar')) ?
+                                                                                    'is-invalid' : ''; ?>" id="gambar" name="gambar" type="file" onchange="previewImg()">
+                                    <div class="invalid-feedback">
+                                        <?= $validation->getError('gambar'); ?>
+                                    </div>
                                     <label class="custom-file-label" for="gambar">Pilih Gambar</label>
-                                </div>
-                                <div class="text-danger mt-1" style="text-align: left;">
-                                    <?= $validation->getError('gambar'); ?>
                                 </div>
                                 <div class="small font-italic text-muted mt-3 mb-4">JPG atau PNG tidak lebih dari 5 MB</div>
                                 <button class="btn btn-primary" type="submit">Simpan</button>
@@ -77,7 +78,7 @@
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" value="<?= $user['nama_lngkp'] ?>" type="email" placeholder="" disabled>
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" value="<?= $user['nama_lngkp'] ?>" type="text" placeholder="" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +90,7 @@
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" value="<?= $user['username'] ?>" placeholder="" disabled>
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" value="<?= $user['username'] ?>" placeholder="" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +102,7 @@
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" value="<?= $user['ttl'] ?>" type="email" placeholder="" disabled>
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" value="<?= $user['ttl'] ?>" type="text" placeholder="" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +114,7 @@
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" value="<?= $user['alamat'] ?>" type="email" placeholder="" disabled>
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" value="<?= $user['alamat'] ?>" type="text" placeholder="" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +138,7 @@
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" value="<?= $user['hp'] ?>" type="email" placeholder="" disabled>
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" value="<?= $user['hp'] ?>" type="text" placeholder="" disabled>
                                     </div>
                                 </div>
                             </div>

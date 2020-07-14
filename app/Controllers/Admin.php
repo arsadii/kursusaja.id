@@ -27,6 +27,7 @@ class Admin extends BaseController
         $data = [
             'title' => 'Dashboard Admin - Kursusaja.id',
             'menu' => '',
+            'user' => $this->penggunaModel->getPengguna(session()->get('id'))
         ];
         echo view('layout/admin_header', $data);
         echo view('admin/dashboard');
@@ -34,9 +35,6 @@ class Admin extends BaseController
     }
     public function pengaturan()
     {
-        // $id = session()->get('id');
-        // $pengguna = $this->penggunaModel->pilihPengguna($id);/*  */
-        // $user = $this->kursusModel->getKursus(session()->get('id'));
         $data = [
             'title' => 'Pangaturan Admin - Kursusaja.id',
             'menu' => '',
@@ -52,6 +50,8 @@ class Admin extends BaseController
         $data = [
             'title' => 'Pangaturan Akun User - Kursusaja.id',
             'menu' => 'Pengguna',
+            'validation' => \Config\Services::validation(),
+            'user' => $this->penggunaModel->getPengguna(session()->get('id'))
         ];
         echo view('layout/admin_header', $data);
         echo view('admin/user_portfolio');
@@ -59,9 +59,13 @@ class Admin extends BaseController
     }
     public function user_akun()
     {
+        $role = 'Peserta';
         $data = [
             'title' => 'Pangaturan Akun Pengguna - Kursusaja.id',
             'menu' => 'Pengguna',
+            'validation' => \Config\Services::validation(),
+            'user' => $this->penggunaModel->getPengguna(session()->get('id')),
+            'pengguna' => $this->penggunaModel->pilihPengguna($role)
         ];
         echo view('layout/admin_header', $data);
         echo view('admin/user_akun');
@@ -72,6 +76,8 @@ class Admin extends BaseController
         $data = [
             'title' => 'Perkembangan Pengguna - Kursusaja.id',
             'menu' => 'Pengguna',
+            'validation' => \Config\Services::validation(),
+            'user' => $this->penggunaModel->getPengguna(session()->get('id'))
         ];
         echo view('layout/admin_header', $data);
         echo view('admin/user_perkembangan');
@@ -82,6 +88,8 @@ class Admin extends BaseController
         $data = [
             'title' => 'Pangaturan Akun Mitra - Kursusaja.id',
             'menu' => 'Mitra',
+            'validation' => \Config\Services::validation(),
+            'user' => $this->penggunaModel->getPengguna(session()->get('id'))
         ];
         echo view('layout/admin_header', $data);
         echo view('admin/mitra_akun');
@@ -92,6 +100,8 @@ class Admin extends BaseController
         $data = [
             'title' => 'Pangaturan Layanan Mitra - Kursusaja.id',
             'menu' => 'Mitra',
+            'validation' => \Config\Services::validation(),
+            'user' => $this->penggunaModel->getPengguna(session()->get('id'))
         ];
         echo view('layout/admin_header', $data);
         echo view('admin/mitra_layanan');
@@ -102,6 +112,8 @@ class Admin extends BaseController
         $data = [
             'title' => 'Pangaturan Promosi Mitra - Kursusaja.id',
             'menu' => 'Mitra',
+            'validation' => \Config\Services::validation(),
+            'user' => $this->penggunaModel->getPengguna(session()->get('id'))
         ];
         echo view('layout/admin_header', $data);
         echo view('admin/mitra_promosi');
@@ -218,46 +230,36 @@ class Admin extends BaseController
             session()->setFlashdata('flashdata', 'Data Berhasil Di Ubah!');
             return redirect()->to('/admin/pengaturan');
         } else {
-            session()->setFlashdata('flashdata', 'Kata Sandi salah!');
+            session()->setFlashdata('flashdata', 'Kata Sandi Salah!');
             return redirect()->to('/admin/pengaturan');
         }
     }
     public function ubahfotoprofil($id)
     {
-        // $fileGambar = $this->request->getVar('profil');
-        // $namaGambar = $fileGambar->getName();
-        // dd($this->request->getVar('gambar'));
-        $user = $this->penggunaModel->getPengguna(session()->get('id'));
         if (!$this->validate([
             'gambar' => [
                 'rules' => 'uploaded[gambar]|max_size[gambar,5120]|is_image[gambar]|mime_in[gambar,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'uploaded' => 'Foto belum di pilih!',
-                    'max_size' => 'Ukuran Gambar terlalu besar!',
-                    'is_image' => 'File yang Anda pilih bukan gambar!',
-                    'mime_in' => 'File yang Anda pilih bukan gambar!'
+                    'uploaded' => 'Foto Belum Di Pilih!',
+                    'max_size' => 'Ukuran Gambar Terlalu Besar!',
+                    'is_image' => 'File Yang Anda Pilih Bukan Gambar!',
+                    'mime_in' => 'File Yang Anda Pilih Bukan Gambar!'
                 ]
             ],
-
         ])) {
-            // dd('salah');
-
             session()->setFlashdata('flashdata', 'Data Gagal Di Ubah!');
-            // $validation = \Config\Services::validation();
-            // return redirect()->to('/admin/pengaturan')->withInput()->with('validation', $validation);
             return redirect()->to('/admin/pengaturan')->withInput();
         }
         $fileGambar = $this->request->getFile('gambar');
-        // dd($fileGambar);
-        // dd('berhasil');
         $namaGambar = $fileGambar->getName();
-        $fileGambar->move('assets/img');
+        $fileGambar->move('assets/img/profil/admin');
         $id = session()->get('id');
 
         $this->penggunaModel->save([
             'id' => $id,
             'gambar' => $namaGambar
         ]);
+
         session()->setFlashdata('flashdata', 'Data Berhasil Di Ubah!');
         return redirect()->to('/admin/pengaturan');
     }
