@@ -72,7 +72,7 @@ class Mitra extends BaseController
     public function profil()
     {
         $data = [
-            'title' => 'Promosi - Kursusaja.id',
+            'title' => 'Profil Mitra - Kursusaja.id',
             'menu' => 'Profil'
         ];
         echo view('layout/mitra_header', $data);

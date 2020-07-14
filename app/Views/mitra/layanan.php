@@ -15,10 +15,10 @@
                             <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambahlayanan">Tambah Kursus</button>
                         </h2>
                         <div class="card-body text-center">
-                            <div class="row ">
+                            <div class="row">
                                 <?php foreach ($kursus as $k) : ?>
-                                    <div class="col-md-4">
-                                        <div class="card card-img-top mb-4">
+                                    <div class="col-xxl-4 col-xl-4">
+                                        <div class="card h-100 card-img-top mb-4">
                                             <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
                                             <div class="card-img-overlay">
                                                 <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
@@ -26,7 +26,7 @@
                                             </div>
                                             <div class="card-footer">
                                                 <h3 class="badge badge-primary"><?= $k['judul']; ?></h3>
-                                                <p class="card-text"><?= $k['deskripsi']; ?></p>
+                                                <p class="keterangan d-flex flex-column justify-content-center py-5 py-xl-4"><?= $k['deskripsi']; ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -43,8 +43,8 @@
                         <div class="card-body text-center">
                             <div class="row">
                                 <?php foreach ($kurma as $ku) : ?>
-                                    <div class="col-md-4">
-                                        <div class="card card-img-top mb-4">
+                                    <div class="col-xxl-4 col-xl-4">
+                                        <div class="card h-100 card-img-top mb-4">
                                             <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
                                             <div class="card-img-overlay">
                                                 <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
@@ -52,7 +52,7 @@
                                             </div>
                                             <div class="card-footer">
                                                 <h3 class="badge badge-primary"><?= $ku['judul']; ?></h3>
-                                                <p class="card-text"><?= $ku['deskripsi']; ?></p>
+                                                <p class="keterangan d-flex flex-column justify-content-center py-5 py-xl-4"><?= $ku['deskripsi']; ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -69,8 +69,8 @@
                         <div class="card-body text-center">
                             <div class="row">
                                 <?php foreach ($event as $e) : ?>
-                                    <div class="col-md-4">
-                                        <div class="card card-img-top mb-4">
+                                    <div class="col-xxl-4 col-xl-4">
+                                        <div class="card h-100 card-img-top mb-4">
                                             <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
                                             <div class="card-img-overlay">
                                                 <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
@@ -78,7 +78,7 @@
                                             </div>
                                             <div class="card-footer">
                                                 <h3 class="badge badge-primary"><?= $e['judul'] ?></h3>
-                                                <p class="card-text"><?= $e['deskripsi'] ?></p>
+                                                <p class="keterangan d-flex flex-column justify-content-center py-5 py-xl-4"><?= $e['deskripsi'] ?></p>
                                             </div>
                                         </div>
                                     </div>

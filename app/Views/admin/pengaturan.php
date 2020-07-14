@@ -25,13 +25,12 @@
                                 <img class="img-fluid mb-4" style="width: 250px;height: 250px;border-radius:100%" src="/assets/img/ceo.jpg">
                                 <div class="custom-file pl-5">
                                     <input type="file" class="custom-file-input" id="gambar" name="gambar" onchange="prviewImg()">
-                                    <label class="custom-file-label" for="gambar">Pilih gambar...</label>
+                                    <label class="custom-file-label" for="gambar">Pilih Gambar</label>
                                 </div>
                                 <div class="text-danger mt-1" style="text-align: left;">
                                     <?= $validation->getError('gambar'); ?>
                                 </div>
                                 <div class="small font-italic text-muted mt-3 mb-4">JPG atau PNG tidak lebih dari 5 MB</div>
-                                <!-- <button class="btn btn-primary" type="button">Unggah</button> -->
                                 <button class="btn btn-primary" type="submit">Simpan</button>
                             </div>
                         </form>
@@ -39,26 +38,26 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="card mb-4">
-                        <div class="card-header">Ubah Kata Sandi</div>
+                        <div class="card-header">Ubah Password</div>
                         <div class="card-body">
                             <form method="POST" action="/admin/ubahsandi/<?$id?>">
                                 <div class="form-group">
-                                    <label class="small mb-1" for="passlama">Kata SandiSekarang</label>
-                                    <input class="form-control" name="passlama" type="password" placeholder="Kata SandiSekarang">
+                                    <label class="small mb-1" for="passlama">Password Sekarang</label>
+                                    <input class="form-control" name="passlama" type="password" placeholder="Password Sekarang">
                                     <div class="text-danger pl-1">
                                         <?= $validation->getError('passlama'); ?>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="small mb-1" for="passbaru">Kata SandiBaru</label>
-                                    <input class="form-control" name="passbaru" type="password" placeholder="Kata SandiBaru">
+                                    <label class="small mb-1" for="passbaru">Password Baru</label>
+                                    <input class="form-control" name="passbaru" type="password" placeholder="Password Baru">
                                     <div class="text-danger pl-1">
                                         <?= $validation->getError('passbaru'); ?>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="small mb-1" for="confirmpass">Konfirmasi Password</label>
-                                    <input class="form-control" name="confirmpass" type="password" placeholder="Konfirmasi Kata SandiBaru">
+                                    <input class="form-control" name="confirmpass" type="password" placeholder="Konfirmasi Password Baru">
                                     <div class="text-danger pl-1">
                                         <?= $validation->getError('confirmpass'); ?>
                                     </div>
@@ -142,18 +141,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="form-group">
-                                <div class="row">
-                                    <div class="col-md-3 text-center" style="margin:10px 0;">
-                                        <label for="exampleFormControlInput1">
-                                            Password
-                                        </label>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" value="<?= session()->get('password'); ?>" type="email" placeholder="" disabled>
-                                    </div>
-                                </div>
-                            </div> -->
                             <div class="modal-footer"><button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="button" data-toggle="modal" data-target="#ubah">Ubah</button></div>
                         </form>
                     </div>
