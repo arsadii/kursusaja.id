@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="copyright">
             &copy; <script>
-                document.write(new Date().getFullYear())
+                documnt.write(new Date().getFullYear())
             </script> Kursusaja.id - All Right Reserved
         </div>
     </div>
@@ -89,7 +89,7 @@
                 <h5 class="modal-title">Edit Layanan</h5>
             </div>
             <div class="modal-body">
-                <form class="card card-body">
+                <form role="form" id="form-ubah-layanan" class="card card-body">
                     <div class="form-group">
                         <div class="col-md text-center">
                             <label for="exampleFormControlInput1">
@@ -97,7 +97,7 @@
                             </label>
                         </div>
                         <div class="col-md">
-                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="">
+                            <input class="form-control form-control-solid" id="inp-judul-layanan" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
@@ -132,7 +132,10 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button><button class="btn btn-danger" type="button">Simpan</button></div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button>
+                <button class="btn btn-danger" type="submit">Simpan</button>
+            </div>
         </div>
     </div>
 </div>
@@ -253,4 +256,54 @@
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
 <script src="/assets/js/datatables-demo.js"></script>
+<script>
+    var BASEURL = "<?= base_url() ?>";
+
+    $(document).ready(function() {
+        // Menghandle ketika tombol edit layanan diklik
+        $(".btn-edit-kursus").click(function() {
+            var id = $(this).data("id"); // Mengambil data id dari elemen menggunakan property id
+            // Minta data ke server dengan id yg bersangkutan
+            $.ajax({
+                type: "get",
+                url: BASEURL + "/mitra/ambil_data_kursus/" + id,
+                dataType: "json",
+                success: function(response) {
+                    console.log(response);
+                    // Datanya di server nanti direturn, sehingga bisa diterima via reponse ini
+                    var kursus = response.kursus;
+                    // Populate data kursus ke form
+                    $("#inp-judul-layanan").val(kursus.judul);
+                    // !!! Lanjutkan sesuai dengan field-field yang lainnya
+                    // Buka modal
+                    $("#editlayanan").modal("show");
+                }
+            });
+        });
+
+        // Menghandle ketika form ubah layanan disubmit
+        $("#form-ubah-layanan").submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "post",
+                url: BASEURL + "/mitra/update_data_kursus",
+                data: new FormData(this),
+                dataType: "json",
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    console.log(response); // Cek responsenya di browser console
+
+                    // Tampilkan pesan ke user ketika ubah data berhasil
+                    // Pesannya bisa dikembalikan via reaponse, sama seperti pas get data, 
+                    // namun kali ini cuma string biasa yg berisi pesan sukses
+                    alert(response);
+
+                    // Tutup kembali modalnya ketika selesai
+                    $("#editlayanan").modal("hide");
+                }
+            });
+        })
+    });
+</script>
 </body>

@@ -8,9 +8,11 @@ use App\Models\PenggunaModel;
 use App\Models\MitraModel;
 use App\Models\MateriModel;
 use App\Models\KurmaModel;
+use CodeIgniter\API\ResponseTrait;
 
 class Mitra extends BaseController
 {
+    use ResponseTrait;
     // Pages
     protected $kursusModel;
     public function __construct()
@@ -227,5 +229,34 @@ class Mitra extends BaseController
             session()->setFlashdata('flashdata', 'Kata Sandi salah!');
             return redirect()->to('/mitra/pengaturan');
         }
+    }
+
+    //
+    // BATAS SERVICE
+    //
+
+    public function ambil_data_kursus($id)
+    {
+        $kursus = $this->kursusModel->getKursus($id);
+
+        if (!$kursus) {
+            return $this->respond("ID kursus tidak ditemukan");
+        }
+
+        return $this->respond([
+            "kursus" => $kursus
+        ]);
+    }
+
+    public function update_data_kursus()
+    {
+        // Terima datanya sama seperti biasa, $this->request->getVar() atau ->getPost()
+        // Proses datanya seperti update biasa
+
+        // Jika error
+        return $this->respond("Terjadi masalah saat update data kursus");
+
+        // Jika berhasil
+        return $this->respond("Berhasil update data kursus");
     }
 }

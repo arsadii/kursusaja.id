@@ -141,18 +141,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="form-group">
-                                <div class="row">
-                                    <div class="col-md-3 text-center" style="margin:10px 0;">
-                                        <label for="exampleFormControlInput1">
-                                            Password
-                                        </label>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $akun['password']; ?>">
-                                    </div>
-                                </div>
-                            </div> -->
                             <div class="modal-footer"><button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="button" data-toggle="modal" data-target="#ubah">Ubah</button></div>
                         </form>
                     </div>

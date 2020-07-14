@@ -22,7 +22,7 @@
                                             <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
                                             <div class="card-img-overlay">
                                                 <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
-                                                <button class="close" type="button" data-toggle="modal" data-target="#editlayanan"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                                <button class="close btn-edit-kursus" type="button" data-id="<?= $k['id']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                                             </div>
                                             <div class="card-footer">
                                                 <h3 class="badge badge-primary"><?= $k['judul']; ?></h3>
