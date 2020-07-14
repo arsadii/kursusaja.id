@@ -17,4 +17,9 @@ class EventModel extends Model
 
         return $this->where(['id' => $id])->first();
     }
+
+    public function getEventMitra($idmitra)
+    {
+        return $this->where(['id_lmbg'])->findAll();
+    }
 }

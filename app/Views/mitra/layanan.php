@@ -15,46 +15,22 @@
                             <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambahlayanan">Tambah Kursus</button>
                         </h2>
                         <div class="card-body text-center">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card card-img-top mb-4">
-                                        <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
-                                        <div class="card-img-overlay">
-                                            <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
-                                            <button class="close" type="button" data-toggle="modal" data-target="#editlayanan"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                        </div>
-                                        <div class="card-footer">
-                                            <h3 class="badge badge-primary">Judul</h3>
-                                            <p class="card-text">Keterangan</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card card-img-top mb-4">
-                                        <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
-                                        <div class="card-img-overlay">
-                                            <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
-                                            <button class="close" type="button" data-toggle="modal" data-target="#editlayanan"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                        </div>
-                                        <div class="card-footer">
-                                            <h3 class="badge badge-primary">Judul</h3>
-                                            <p class="card-text">Keterangan</p>
+                            <div class="row ">
+                                <?php foreach ($kursus as $k) : ?>
+                                    <div class="col-md-4">
+                                        <div class="card card-img-top mb-4">
+                                            <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
+                                            <div class="card-img-overlay">
+                                                <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
+                                                <button class="close" type="button" data-toggle="modal" data-target="#editlayanan"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                            </div>
+                                            <div class="card-footer">
+                                                <h3 class="badge badge-primary"><?= $k['judul']; ?></h3>
+                                                <p class="card-text"><?= $k['deskripsi']; ?></p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card card-img-top mb-4">
-                                        <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
-                                        <div class="card-img-overlay">
-                                            <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
-                                            <button class="close" type="button" data-toggle="modal" data-target="#editlayanan"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                        </div>
-                                        <div class="card-footer">
-                                            <h3 class="badge badge-primary">Judul</h3>
-                                            <p class="card-text">Keterangan</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
@@ -66,45 +42,21 @@
                         </h2>
                         <div class="card-body text-center">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card card-img-top mb-4">
-                                        <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
-                                        <div class="card-img-overlay">
-                                            <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
-                                            <button class="close" type="button" data-toggle="modal" data-target="#editlayanan"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                        </div>
-                                        <div class="card-footer">
-                                            <h3 class="badge badge-primary">Judul</h3>
-                                            <p class="card-text">Keterangan</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card card-img-top mb-4">
-                                        <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
-                                        <div class="card-img-overlay">
-                                            <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
-                                            <button class="close" type="button" data-toggle="modal" data-target="#editlayanan"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                        </div>
-                                        <div class="card-footer">
-                                            <h3 class="badge badge-primary">Judul</h3>
-                                            <p class="card-text">Keterangan</p>
+                                <?php foreach ($kurma as $ku) : ?>
+                                    <div class="col-md-4">
+                                        <div class="card card-img-top mb-4">
+                                            <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
+                                            <div class="card-img-overlay">
+                                                <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
+                                                <button class="close" type="button" data-toggle="modal" data-target="#editlayanan"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                            </div>
+                                            <div class="card-footer">
+                                                <h3 class="badge badge-primary"><?= $ku['judul']; ?></h3>
+                                                <p class="card-text"><?= $ku['deskripsi']; ?></p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card card-img-top mb-4">
-                                        <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
-                                        <div class="card-img-overlay">
-                                            <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
-                                            <button class="close" type="button" data-toggle="modal" data-target="#editlayanan"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                        </div>
-                                        <div class="card-footer">
-                                            <h3 class="badge badge-primary">Judul</h3>
-                                            <p class="card-text">Keterangan</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
@@ -116,45 +68,21 @@
                         </h2>
                         <div class="card-body text-center">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card card-img-top mb-4">
-                                        <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
-                                        <div class="card-img-overlay">
-                                            <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
-                                            <button class="close" type="button" data-toggle="modal" data-target="#editlayanan"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                        </div>
-                                        <div class="card-footer">
-                                            <h3 class="badge badge-primary">Judul</h3>
-                                            <p class="card-text">Keterangan</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card card-img-top mb-4">
-                                        <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
-                                        <div class="card-img-overlay">
-                                            <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
-                                            <button class="close" type="button" data-toggle="modal" data-target="#editlayanan"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                        </div>
-                                        <div class="card-footer">
-                                            <h3 class="badge badge-primary">Judul</h3>
-                                            <p class="card-text">Keterangan</p>
+                                <?php foreach ($event as $e) : ?>
+                                    <div class="col-md-4">
+                                        <div class="card card-img-top mb-4">
+                                            <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
+                                            <div class="card-img-overlay">
+                                                <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
+                                                <button class="close" type="button" data-toggle="modal" data-target="#editlayanan"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                            </div>
+                                            <div class="card-footer">
+                                                <h3 class="badge badge-primary"><?= $e['judul'] ?></h3>
+                                                <p class="card-text"><?= $e['deskripsi'] ?></p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card card-img-top mb-4">
-                                        <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
-                                        <div class="card-img-overlay">
-                                            <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
-                                            <button class="close" type="button" data-toggle="modal" data-target="#editlayanan"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                        </div>
-                                        <div class="card-footer">
-                                            <h3 class="badge badge-primary">Judul</h3>
-                                            <p class="card-text">Keterangan</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
