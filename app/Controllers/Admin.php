@@ -247,8 +247,8 @@ class Admin extends BaseController
             // return redirect()->to('/admin/pengaturan')->withInput()->with('validation', $validation);
             return redirect()->to('/admin/pengaturan')->withInput();
         }
-        $fileGambar = $this->request->getVar('gambar');
-        dd($fileGambar);
+        $fileGambar = $this->request->getFile('gambar');
+        // dd($fileGambar);
         // dd('berhasil');
         $namaGambar = $fileGambar->getName();
         $fileGambar->move('assets/img');

@@ -18,6 +18,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="card mb-4">
+                        <?php $id = session()->get('id'); ?>
                         <div class="card-header">Ubah Foto Profil</div>
                         <div class="card-body text-center">
                             <img class="img-fluid mb-4" style="width: 250px;height: 250px;border-radius:100%" src="/assets/img/ceo.jpg">
@@ -30,20 +31,29 @@
                     <div class="card mb-4">
                         <div class="card-header">Ubah Password</div>
                         <div class="card-body">
-                            <form>
+                            <form method="POST" action="/mitra/ubahsandi/<?$id;?>">
                                 <div class="form-group">
-                                    <label class="small mb-1" for="currentPassword">Password Sekarang</label>
-                                    <input class="form-control" id="currentPassword" type="password" placeholder="Password Sekarang">
+                                    <label class="small mb-1" for="passlama">Kata Sandi Sekarang</label>
+                                    <input class="form-control" name="passlama" type="password" placeholder="Kata Sandi Sekarang">
+                                    <div class="text-danger pl-1">
+                                        <?= $validation->getError('passlama'); ?>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="small mb-1" for="newPassword">Password Baru</label>
-                                    <input class="form-control" id="newPassword" type="password" placeholder="Password Baru">
+                                    <label class="small mb-1" for="passbaru">Kata Sandi Baru</label>
+                                    <input class="form-control" name="passbaru" type="password" placeholder="Kata Sandi Baru">
+                                    <div class="text-danger pl-1">
+                                        <?= $validation->getError('passbaru'); ?>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="small mb-1" for="confirmPassword">Konfirmasi Password</label>
-                                    <input class="form-control" id="confirmPassword" type="password" placeholder="Konfirmasi Password Baru">
+                                    <label class="small mb-1" for="confirmpass">Konfirmasi Kata Sandi</label>
+                                    <input class="form-control" name="confirmpass" type="password" placeholder="Konfirmasi Kata Sandi Baru">
+                                    <div class="text-danger pl-1">
+                                        <?= $validation->getError('confirmpass'); ?>
+                                    </div>
                                 </div>
-                                <button class="btn btn-primary" type="button">Simpan</button>
+                                <button class="btn btn-primary" type="submit">Simpan</button>
                             </form>
                         </div>
                     </div>
@@ -54,11 +64,11 @@
                                 <div class="row">
                                     <div class="col-md-3 text-center" style="margin:10px 0;">
                                         <label for="exampleFormControlInput1">
-                                            Nama Lengkap
+                                            Nama Lembaga
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $akun['nama_lmbg']; ?>">
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="" disabled value="<?= $akun['nama_lmbg']; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +80,7 @@
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $akun['username']; ?>">
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="" disabled value="<?= $akun['username']; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +92,7 @@
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $akun['tnggl_brdr']; ?>">
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="date" placeholder="" disabled value="<?= $akun['tnggl_brdr']; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +104,7 @@
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $akun['alamat']; ?>">
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="" disabled value="<?= $akun['alamat']; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -118,11 +128,11 @@
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $akun['hp']; ?>">
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="" disabled value="<?= $akun['hp']; ?>">
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-3 text-center" style="margin:10px 0;">
                                         <label for="exampleFormControlInput1">
@@ -133,7 +143,7 @@
                                         <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $akun['password']; ?>">
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="modal-footer"><button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="button" data-toggle="modal" data-target="#ubah">Ubah</button></div>
                         </form>
                     </div>
@@ -148,25 +158,31 @@
                     <h5 class="modal-title">Ubah Data</h5>
                 </div>
                 <div class="modal-body">
-                    <form class="card card-body">
+                    <form class="card card-body" method="POST" action="/mitra/ubahprofil/<?= $id; ?>">
                         <div class="form-group">
                             <div class="col-md text-center">
-                                <label for="exampleFormControlInput1">
-                                    Nama Lengkap
+                                <label for="nama_lmbg">
+                                    Nama Lembaga
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $akun['nama_lmbg']; ?>">
+                                <input class="form-control form-control-solid" name="nama_lmbg" type="text" placeholder="" value="<?= $akun['nama_lmbg']; ?>">
+                                <div class="text-danger pl-1">
+                                    <?= $validation->getError('nama_lmbg'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md text-center">
-                                <label for="exampleFormControlInput1">
+                                <label for="username">
                                     Nama Pengguna
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $akun['username']; ?>">
+                                <input class="form-control form-control-solid" name="username" type="text" placeholder="" value="<?= $akun['username']; ?>">
+                                <div class="text-danger pl-1">
+                                    <?= $validation->getError('username'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -176,7 +192,10 @@
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $akun['tnggl_brdr']; ?>">
+                                <input class="form-control form-control-solid" name="tnggl_brdr" type="date" placeholder="" value="<?= $akun['tnggl_brdr']; ?>">
+                                <div class="text-danger pl-1">
+                                    <?= $validation->getError('tnggl_brdr'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -186,17 +205,10 @@
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $akun['alamat']; ?>">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md text-center">
-                                <label for="exampleFormControlInput1">
-                                    Email
-                                </label>
-                            </div>
-                            <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $akun['email']; ?>">
+                                <input class="form-control form-control-solid" name="alamat" type="text" placeholder="" value="<?= $akun['alamat']; ?>">
+                                <div class="text-danger pl-1">
+                                    <?= $validation->getError('alamat'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -206,22 +218,44 @@
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $akun['hp']; ?>">
+                                <input class="form-control form-control-solid" name="hp" type="text" placeholder="" value="<?= $akun['hp']; ?>">
+                                <div class="text-danger pl-1">
+                                    <?= $validation->getError('hp'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md text-center">
                                 <label for="exampleFormControlInput1">
+                                    Email
+                                </label>
+                            </div>
+                            <div class="col-md">
+                                <input class="form-control form-control-solid" name="email" type="email" placeholder="" value="<?= $akun['email']; ?>">
+                                <div class="text-danger pl-1">
+                                    <?= $validation->getError('email'); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md text-center">
+                                <label for="pass">
                                     Password
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $akun['password']; ?>">
+                                <input class="form-control form-control-solid" name="pass" type="password" placeholder="">
+                                <div class="text-danger pl-1">
+                                    <?= $validation->getError('pass'); ?>
+                                </div>
                             </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button>
+                            <button class="btn btn-danger" type="submit">Simpan</button>
                         </div>
                     </form>
                 </div>
-                <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button><button class="btn btn-danger" type="button">Edit</button></div>
             </div>
         </div>
     </div>

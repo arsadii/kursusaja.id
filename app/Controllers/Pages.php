@@ -191,10 +191,11 @@ class Pages extends BaseController
             }
         } else if ($cekmitra != null) {
             if ($cekmitra['password'] == $data['password']) {
+                session()->set('id', $cekmitra['id']);
                 session()->set('username', $cekmitra['username']);
                 session()->set('password', $cekmitra['password']);
                 session()->set('nama_lngkp', $cekmitra['nama_lmbg']);
-                session()->set('id', $cekmitra['id']);
+                session()->set('role', 'Mitra');
                 //Login Berhasil
 
                 return redirect()->to('/mitra/dashboard');

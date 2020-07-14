@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="small mb-1" for="confirmpass">Konfirmasi Password</label>
-                                    <input class="form-control" name="confirmpass" type="password" placeholder="Konfirmasi Kata SandiBaru">
+                                    <input class="form-control" name="confirmpass" type="password" placeholder="Konfirmasi Kata Sandi Baru">
                                     <div class="text-danger pl-1">
                                         <?= $validation->getError('confirmpass'); ?>
                                     </div>
@@ -177,6 +177,9 @@
                             </div>
                             <div class="col-md">
                                 <input class="form-control form-control-solid" name="nama" value="<?= $user['nama_lngkp'] ?>" type="text" placeholder="">
+                                <div class="text-danger pl-5">
+                                    <?= $validation->getError('nama'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
