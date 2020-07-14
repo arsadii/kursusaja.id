@@ -17,4 +17,11 @@ class MitraModel extends Model
 
         return $this->where(['id' => $id])->first();
     }
+
+    public function ceklogin($username)
+    {
+        $hasil = $this->where('username', $username)->get()->getRowArray();
+
+        return $hasil;
+    }
 }

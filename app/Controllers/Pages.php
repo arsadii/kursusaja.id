@@ -168,29 +168,7 @@ class Pages extends BaseController
             'password' => $this->request->getVar('password'),
         ];
         $cek = $this->penggunaModel->ceklogin($data['username']);
-        // $cek = $this->penggunaModel->cek_akun($username, $password);
-
-        // if ($cek['username'] != $username) {
-        //     if ($cek['password'] != $password) {
-        //         session()->set('username', $cek['username']);
-        //         session()->set('password', $cek['password']);
-        //         session()->set('nama_lngkp', $cek['nama_lngkp']);
-        //         session()->set('id', $cek['id']);
-        //         session()->set('role', $cek['role']);
-        //         if (session()->set('role') == 'Admin') {
-        //             return redirect()->to('/admin/dashboard_admin');
-        //         } else {
-        //         }
-        //     } else {
-        //         session()->setFlashdata('flashdata', 'Username atau Password Salah !');
-        //         return redirect()->to('/pages/masuk');
-        //     }
-        // } else {
-        //     //Belum Daftar/Akun Salah
-        //     session()->setFlashdata('flashdata', 'Username atau Password Salah !');
-        //     return redirect()->to('/pages/masuk');
-        // }
-
+        $cekmitra = $this->mitraModel->ceklogin($data['username']);
         if ($cek != null) {
             if ($cek['password'] == $data['password']) {
                 session()->set('username', $cek['username']);
@@ -206,6 +184,20 @@ class Pages extends BaseController
                 } else {
                     return redirect()->to('/user/dashboard');
                 }
+            } else {
+                // echo "Password Salah";
+                session()->setFlashdata('flashdata', 'Password anda Salah !');
+                return redirect()->to('/pages/masuk');
+            }
+        } else if ($cekmitra != null) {
+            if ($cekmitra['password'] == $data['password']) {
+                session()->set('username', $cekmitra['username']);
+                session()->set('password', $cekmitra['password']);
+                session()->set('nama_lngkp', $cekmitra['nama_lmbg']);
+                session()->set('id', $cekmitra['id']);
+                //Login Berhasil
+
+                return redirect()->to('/mitra/dashboard');
             } else {
                 // echo "Password Salah";
                 session()->setFlashdata('flashdata', 'Password anda Salah !');

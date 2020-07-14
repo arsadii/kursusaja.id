@@ -50,94 +50,91 @@
                     <div class="card mb-4">
                         <div class="card-header">Ubah Data</div>
                         <form class="card card-body">
-                            <?php foreach ($akun as $a) : ?>
-
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center" style="margin:10px 0;">
-                                            <label for="exampleFormControlInput1">
-                                                Nama Lengkap
-                                            </label>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $a['nama_lmbg']; ?>">
-                                        </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3 text-center" style="margin:10px 0;">
+                                        <label for="exampleFormControlInput1">
+                                            Nama Lengkap
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $akun['nama_lmbg']; ?>">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center" style="margin:10px 0;">
-                                            <label for="exampleFormControlInput1">
-                                                Nama Pengguna
-                                            </label>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $a['username']; ?>">
-                                        </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3 text-center" style="margin:10px 0;">
+                                        <label for="exampleFormControlInput1">
+                                            Nama Pengguna
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $akun['username']; ?>">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center" style="margin:10px 0;">
-                                            <label for="exampleFormControlInput1">
-                                                Tempat Tanggal Lahir
-                                            </label>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $a['tnggl_brdr']; ?>">
-                                        </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3 text-center" style="margin:10px 0;">
+                                        <label for="exampleFormControlInput1">
+                                            Tempat Tanggal Lahir
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $akun['tnggl_brdr']; ?>">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center" style="margin:10px 0;">
-                                            <label for="exampleFormControlInput1">
-                                                Alamat
-                                            </label>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $a['alamat']; ?>">
-                                        </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3 text-center" style="margin:10px 0;">
+                                        <label for="exampleFormControlInput1">
+                                            Alamat
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $akun['alamat']; ?>">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center" style="margin:10px 0;">
-                                            <label for="exampleFormControlInput1">
-                                                Email
-                                            </label>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $a['email']; ?>">
-                                        </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3 text-center" style="margin:10px 0;">
+                                        <label for="exampleFormControlInput1">
+                                            Email
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $akun['email']; ?>">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center" style="margin:10px 0;">
-                                            <label for="exampleFormControlInput1">
-                                                No. Handphone
-                                            </label>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $a['hp']; ?>">
-                                        </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3 text-center" style="margin:10px 0;">
+                                        <label for="exampleFormControlInput1">
+                                            No. Handphone
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $akun['hp']; ?>">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-3 text-center" style="margin:10px 0;">
-                                            <label for="exampleFormControlInput1">
-                                                Password
-                                            </label>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $a['password']; ?>">
-                                        </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3 text-center" style="margin:10px 0;">
+                                        <label for="exampleFormControlInput1">
+                                            Password
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $akun['password']; ?>">
                                     </div>
                                 </div>
-                                <div class="modal-footer"><button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="button" data-toggle="modal" data-target="#ubah">Ubah</button></div>
-                            <?php endforeach; ?>
+                            </div>
+                            <div class="modal-footer"><button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="button" data-toggle="modal" data-target="#ubah">Ubah</button></div>
                         </form>
                     </div>
                 </div>
@@ -159,7 +156,7 @@
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $a['nama_lmbg']; ?>">
+                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $akun['nama_lmbg']; ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -169,7 +166,7 @@
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $a['username']; ?>">
+                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $akun['username']; ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -179,7 +176,7 @@
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $a['tnggl_brdr']; ?>">
+                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $akun['tnggl_brdr']; ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -189,7 +186,7 @@
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $a['alamat']; ?>">
+                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $akun['alamat']; ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -199,7 +196,7 @@
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $a['email']; ?>">
+                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $akun['email']; ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -209,7 +206,7 @@
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $a['hp']; ?>">
+                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $akun['hp']; ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -219,7 +216,7 @@
                                 </label>
                             </div>
                             <div class="col-md">
-                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $a['password']; ?>">
+                                <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" value="<?= $akun['password']; ?>">
                             </div>
                         </div>
                     </form>
