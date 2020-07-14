@@ -20,11 +20,20 @@
                     <div class="card mb-4">
                         <?php $id = session()->get('id'); ?>
                         <div class="card-header">Ubah Foto Profil</div>
-                        <div class="card-body text-center">
-                            <img class="img-fluid mb-4" style="width: 250px;height: 250px;border-radius:100%" src="/assets/img/ceo.jpg">
-                            <div class="small font-italic text-muted mb-4">JPG atau PNG tidak lebih dari 5 MB</div>
-                            <button class="btn btn-primary" type="submit">Simpan</button>
-                        </div>
+                        <form method="POST" action="/admin/ubahfotoprofil/<?= $id; ?>" enctype="multipart/form-data">
+                            <div class="card-body text-center">
+                                <img class="img-fluid mb-4" style="width: 250px;height: 250px;border-radius:100%" src="/assets/img/ceo.jpg">
+                                <div class="custom-file pl-5">
+                                    <input type="file" class="custom-file-input" id="gambar" name="gambar" onchange="prviewImg()">
+                                    <label class="custom-file-label" for="gambar">Pilih Gambar</label>
+                                </div>
+                                <div class="text-danger mt-1" style="text-align: left;">
+                                    <?= $validation->getError('gambar'); ?>
+                                </div>
+                                <div class="small font-italic text-muted mt-3 mb-4">JPG atau PNG tidak lebih dari 5 MB</div>
+                                <button class="btn btn-primary" type="submit">Simpan</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-8">
