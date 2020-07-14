@@ -4,13 +4,13 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class KursusModel extends Model
+class KurmaModel extends Model
 {
-    protected $table = 'kursus';
+    protected $table = 'kurma';
     protected $useTimestamps = true;
     protected $allowedFields = ['id_lmbg', 'judul', 'deskripsi', 'harga', 'daerah', 'tgl_mulai', 'lama_kursus'];
 
-    public function getKursus($id = false)
+    public function getKurma($id = false)
     {
         if ($id == false) {
             return $this->findAll();
@@ -19,7 +19,7 @@ class KursusModel extends Model
         return $this->where(['id' => $id])->first();
     }
 
-    public function getKursusMitra($idmitra)
+    public function getKurmaMitra($idmitra)
     {
         return $this->where(['id_lmbg'])->findAll();
     }

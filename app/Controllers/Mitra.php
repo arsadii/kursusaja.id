@@ -7,6 +7,7 @@ use App\Models\EventModel;
 use App\Models\PenggunaModel;
 use App\Models\MitraModel;
 use App\Models\MateriModel;
+use App\Models\KurmaModel;
 
 class Mitra extends BaseController
 {
@@ -19,6 +20,7 @@ class Mitra extends BaseController
         $this->penggunaModel = new PenggunaModel();
         $this->mitraModel = new MitraModel();
         $this->materiModel = new MateriModel();
+        $this->kurmaModel = new KurmaModel();
     }
     // Mitra
     public function dashboard()
@@ -33,22 +35,28 @@ class Mitra extends BaseController
     }
     public function pengaturan()
     {
+        $idmitra = session()->get('id');
         $data = [
             'title' => 'Dashboard Mitra - Kursusaja.id',
-            'menu' => 'Profil'
+            'menu' => 'Profil',
+            'akun' => $this->mitraModel->getMitra($idmitra)
         ];
         echo view('layout/mitra_header', $data);
-        echo view('mitra/pengaturan');
+        echo view('mitra/pengaturan', $data);
         echo view('layout/mitra_footer');
     }
     public function layanan()
     {
+        $idmitra = session()->get('id');
         $data = [
             'title' => 'Layanan - Kursusaja.id',
-            'menu' => 'Layanan'
+            'menu' => 'Layanan',
+            'kursus' => $this->kursusModel->getKursusMitra($idmitra),
+            'kurma' => $this->kurmaModel->getKurmaMitra($idmitra),
+            'event' => $this->eventModel->getEventMitra($idmitra)
         ];
         echo view('layout/mitra_header', $data);
-        echo view('mitra/layanan');
+        echo view('mitra/layanan', $data);
         echo view('layout/mitra_footer');
     }
     public function promosi()

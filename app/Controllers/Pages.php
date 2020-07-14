@@ -200,11 +200,11 @@ class Pages extends BaseController
                 session()->set('role', $cek['role']);
                 //Login Berhasil
                 if (session()->get('role') == 'Admin') {
-                    return redirect()->to('/admin/dashboard_admin');
+                    return redirect()->to('/admin/dashboard');
                 } elseif (session()->get('role') == 'Mitra') {
-                    return redirect()->to('/mitra/dashboard_mitra');
+                    return redirect()->to('/mitra/dashboard');
                 } else {
-                    return redirect()->to('/user/dashboard_user');
+                    return redirect()->to('/user/dashboard');
                 }
             } else {
                 // echo "Password Salah";
