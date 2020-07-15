@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="copyright">
             &copy; <script>
-                documnt.write(new Date().getFullYear())
+                document.write(new Date().getFullYear())
             </script> Kursusaja.id - All Right Reserved
         </div>
     </div>
@@ -97,6 +97,9 @@
                             </label>
                         </div>
                         <div class="col-md">
+                            <input class="form-control form-control-solid" id="inp-id-kursus" name="inp-id-kursus" type="text" placeholder="" hidden>
+                        </div>
+                        <div class="col-md">
                             <input class="form-control form-control-solid" id="inp-judul-kursus" name="inp-judul-kursus" type="text" placeholder="">
                         </div>
                     </div>
@@ -150,11 +153,11 @@
                             <input type="hidden" id="inp-gambar-kursus" name="inp-gambar-kursus"><input type="file" name="...">
                         </div>
                     </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button>
+                        <button class="btn btn-danger" type="submit">Simpan</button>
+                    </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button>
-                <button class="btn btn-danger" type="submit">Simpan</button>
             </div>
         </div>
     </div>
@@ -293,6 +296,7 @@
                     // Datanya di server nanti direturn, sehingga bisa diterima via reponse ini
                     var kursus = response.kursus;
                     // Populate data kursus ke form
+                    $("#inp-id-kursus").val(kursus.id);
                     $("#inp-judul-kursus").val(kursus.judul);
                     $("#inp-keterangan-kursus").val(kursus.deskripsi);
                     $("#inp-harga-kursus").val(kursus.harga);
@@ -308,19 +312,20 @@
 
         // Menghandle ketika form ubah layanan disubmit
         $("#form-ubah-layanan").submit(function(e) {
+            var id = $(this).data("id");
             e.preventDefault();
             $.ajax({
                 type: "post",
                 url: BASEURL + "/mitra/update_data_kursus",
+                method: 'post',
                 data: new FormData(this),
-                dataType: "json",
                 processData: false,
                 contentType: false,
                 success: function(response) {
                     console.log(response); // Cek responsenya di browser console
 
                     // Tampilkan pesan ke user ketika ubah data berhasil
-                    // Pesannya bisa dikembalikan via reaponse, sama seperti pas get data, 
+                    // Pesannya bisa dikembalikan via reaponse, sama seperti pas get data
                     // namun kali ini cuma string biasa yg berisi pesan sukses
                     alert(response);
 

@@ -287,9 +287,10 @@ class Mitra extends BaseController
             return $this->respond("Terjadi masalah saat update data kursus");
         } else {
             $this->kursusModel->save([
+                'id' => $this->request->getVar('inp-id-kursus'),
                 'judul' => $this->request->getVar('inp-judul-kursus'),
                 'gambar' => $this->request->getFile('inp-gambar-kursus'),
-                'deskripsi' => $this->request->getVar('inp-deskripsi-kursus'),
+                'deskripsi' => $this->request->getVar('inp-keterangan-kursus'),
                 'harga' => $this->request->getVar('inp-harga-kursus'),
                 'daerah' => $this->request->getVar('inp-daerah-kursus'),
                 'tgl_mulai' => $this->request->getVar('inp-tanggal-kursus'),
