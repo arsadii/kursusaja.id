@@ -26,8 +26,9 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Id</th>
-                                        <th>Nama</th>
+                                        <th>No</th>
+                                        <th>Username</th>
+                                        <th>Nama Lengkap</th>
                                         <th>Tempat, Tanggal Lahir</th>
                                         <th>Alamat</th>
                                         <th>No Hp</th>
@@ -36,18 +37,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Kursusaja.id</td>
-                                        <td>Kos Mul, Januari 2020</td>
-                                        <td>Jalan Merpati</td>
-                                        <td>0823456789</td>
-                                        <td>Kursusaja.id@gmail.com</td>
-                                        <td class="text-center"><button class="btn btn-primary" data-toggle="modal" data-target="#editdata">Edit</button>
-                                            <tb><button class="btn btn-success" data-toggle="modal" data-target="#detail">Detail</button>
-                                                <tb><button class="btn btn-danger" data-toggle="modal" data-target="#hapusdata">Hapus</button>
-                                        </td>
-                                    </tr>
+                                    <?php $i = 1 ?>
+                                    <?php foreach ($pengguna as $p) : ?>
+
+                                        <tr>
+                                            <td><?= $i; ?></td>
+                                            <td><?= $p['username'] ?></td>
+                                            <td><?= $p['nama_lngkp'] ?></td>
+                                            <td><?= $p['ttl'] ?></td>
+                                            <td><?= $p['alamat'] ?></td>
+                                            <td><?= $p['hp'] ?></td>
+                                            <td><?= $p['email'] ?></td>
+                                            <td class="text-center"><button class="btn btn-primary" data-toggle="modal" data-target="#editdata">Edit</button>
+                                                <tb><button class="btn btn-success" data-toggle="modal" data-target="#detail<?= $i; ?>">Detail</button>
+                                                    <tb><button class="btn btn-danger" data-toggle="modal" data-target="#hapusdata">Hapus</button>
+                                            </td>
+                                        </tr>
+                                        <?php $i++; ?>
+                                    <?php endforeach; ?>
+
                                 </tbody>
                             </table>
                         </div>

@@ -259,10 +259,6 @@ fieldset[disabled] .form-group.is-focused .radio label{color:rgba(0,0,0,0.26)}
 }
 legend{margin-bottom:20px;font-size:21px}
 output{padding-top:8px;font-size:14px;line-height:1.42857}
-.invalid-feedback{display:none;width:100%;margin-top:.25rem;font-size:.875em;color:#e81500}
-.invalid-tooltip{position:absolute;top:100%;z-index:5;display:none;max-width:100%;padding:.25rem .5rem;margin-top:.1rem;font-size:.875rem;line-height:1.5;color:#fff;background-color:rgba(232,21,0,0.9);border-radius:.35rem}
-.valid-feedback{display:none;width:100%;margin-top:.25rem;font-size:.875em;color:#00ac69}
-.valid-tooltip{position:absolute;top:100%;z-index:5;display:none;max-width:100%;padding:.25rem .5rem;margin-top:.1rem;font-size:.875rem;line-height:1.5;color:#fff;background-color:rgba(0,172,105,0.9);border-radius:.35rem}
 .form-control{display:block;width:100%;padding:.5rem .8rem;font-size:14px;line-height:1.2;color:#fff;background-color:#fff;background-clip:padding-box;border:1px solid #dbe5ee;border-radius:.25rem;-webkit-transition:border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;transition:border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out;transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out}
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
 input[type="date"].form-control,input[type="time"].form-control,input[type="datetime-local"].form-control,input[type="month"].form-control{line-height:36px}
