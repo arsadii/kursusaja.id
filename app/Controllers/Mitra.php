@@ -284,7 +284,9 @@ class Mitra extends BaseController
                 ]
             ],
         ])) {
+            session()->setFlashdata('flashdata', 'Data Gagal Di Ubah!');
             return $this->respond("Terjadi masalah saat update data kursus");
+            return redirect()->to('/mitra/layanan')->withInput();
         } else {
             $this->kursusModel->save([
                 'id' => $this->request->getVar('inp-id-kursus'),
@@ -296,6 +298,7 @@ class Mitra extends BaseController
                 'tgl_mulai' => $this->request->getVar('inp-tanggal-kursus'),
             ]);
             return $this->respond("Berhasil update data kursus");
+            return redirect()->to('/mitra/layanan');
         }
     }
 }

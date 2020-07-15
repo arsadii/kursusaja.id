@@ -21,6 +21,6 @@ class KursusModel extends Model
 
     public function getKursusMitra($idmitra)
     {
-        return $this->where(['id_lmbg'])->findAll();
+        return $this->where(['id_lmbg' => $idmitra])->findAll();
     }
 }

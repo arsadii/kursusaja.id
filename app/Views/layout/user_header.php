@@ -111,9 +111,11 @@
                 <div class="sidenav-menu">
                     <div class="nav accordion" id="accordionSidenav">
                         <div class="container col-md-10 text-center" style="margin-top:30px">
-                            <img class="img-fluid" style="width: 300px;height: 200px;border-radius:100%" src="/assets/img/ceo.jpg">
+                            <img class="img-fluid" style="width: 300px;height: 200px;border-radius:100%" src="/assets/img/profil/peserta/<?= $user['gambar'] ?>">
                         </div>
-                        <div class="sidenav-menu-heading text-center">Kursusaja.id<br>Bergabung Sejak 2020</div>
+                        <div class="sidenav-menu-heading text-center"><?= $user['nama_lngkp'] ?>
+                            <br style="font-size: 1px;">Bergabung Sejak <?= date('Y', strtotime($user['ttl'])) ?>
+                        </div>
                     </div>
                     <br>
                     <div class="sidenav-menu-heading text-center">
