@@ -114,7 +114,7 @@
                             <img class="img-fluid" style="width: 300px;height: 200px;border-radius:100%" src="/assets/img/profil/peserta/<?= $user['gambar'] ?>">
                         </div>
                         <div class="sidenav-menu-heading text-center"><?= $user['nama_lngkp'] ?>
-                            <br style="font-size: 1px;">Bergabung Sejak <?= date('Y', strtotime($user['ttl'])) ?>
+                            <br style="font-size: 1px;">Bergabung Sejak <?= date('Y', strtotime($user['created_at'])) ?>
                         </div>
                     </div>
                     <br>

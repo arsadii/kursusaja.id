@@ -8,6 +8,7 @@ class MitraModel extends Model
 {
     protected $table = 'mitra';
     protected $useTimestamps = true;
+    protected $allowedFields = ['username', 'password', 'nama_lmbg', 'tnggl_brdr', 'alamat', 'hp', 'email', 'gambar', 'created_at', 'updated_at'];
 
     public function getMitra($id = false)
     {

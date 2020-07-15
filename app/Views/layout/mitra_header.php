@@ -112,9 +112,9 @@
                 <div class="sidenav-menu">
                     <div class="nav accordion" id="accordionSidenav">
                         <div class="container col-md-10 text-center" style="margin-top:30px">
-                            <img class="img-fluid" style="width: 300px;height: 200px;border-radius:100%" src="/assets/img/ceo.jpg">
+                            <img class="img-fluid" style="width: 300px;height: 200px;border-radius:100%" src="/assets/img/profil/mitra/<?= $akun['gambar']; ?>">
                         </div>
-                        <div class="sidenav-menu-heading text-center">Kursusaja.id<br>Bergabung Sejak 2020</div>
+                        <div class="sidenav-menu-heading text-center"><?= $akun['nama_lmbg']; ?><br>Bergabung Sejak <?= date('Y', strtotime($akun['created_at'])) ?></div>
                     </div>
                     <br>
                     <div class="sidenav-menu-heading text-center">

@@ -29,7 +29,8 @@ class Mitra extends BaseController
     {
         $data = [
             'title' => 'Dashboard Mitra - Kursusaja.id',
-            'menu' => 'Dashboard'
+            'menu' => 'Dashboard',
+            'akun' => $this->mitraModel->getMitra(session()->get('id'))
         ];
         echo view('layout/mitra_header', $data);
         echo view('mitra/dashboard');
@@ -54,6 +55,7 @@ class Mitra extends BaseController
         $data = [
             'title' => 'Layanan - Kursusaja.id',
             'menu' => 'Layanan',
+            'akun' => $this->mitraModel->getMitra(session()->get('id')),
             'kursus' => $this->kursusModel->getKursusMitra($idmitra),
             'kurma' => $this->kurmaModel->getKurmaMitra($idmitra),
             'event' => $this->eventModel->getEventMitra($idmitra)
@@ -66,7 +68,8 @@ class Mitra extends BaseController
     {
         $data = [
             'title' => 'Promosi - Kursusaja.id',
-            'menu' => 'Promosi'
+            'menu' => 'Promosi',
+            'akun' => $this->mitraModel->getMitra(session()->get('id'))
         ];
         echo view('layout/mitra_header', $data);
         echo view('mitra/promosi');
@@ -76,7 +79,8 @@ class Mitra extends BaseController
     {
         $data = [
             'title' => 'Profil Mitra - Kursusaja.id',
-            'menu' => 'Profil'
+            'menu' => 'Profil',
+            'akun' => $this->mitraModel->getMitra(session()->get('id'))
         ];
         echo view('layout/mitra_header', $data);
         echo view('mitra/profil');
@@ -229,6 +233,35 @@ class Mitra extends BaseController
             session()->setFlashdata('flashdata', 'Kata Sandi salah!');
             return redirect()->to('/mitra/pengaturan');
         }
+    }
+    public function ubahfotoprofil($id)
+    {
+        if (!$this->validate([
+            'gambar' => [
+                'rules' => 'uploaded[gambar]|max_size[gambar,5120]|is_image[gambar]|mime_in[gambar,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'uploaded' => 'Foto Belum Di Pilih!',
+                    'max_size' => 'Ukuran Gambar Terlalu Besar!',
+                    'is_image' => 'File Yang Anda Pilih Bukan Gambar!',
+                    'mime_in' => 'File Yang Anda Pilih Bukan Gambar!'
+                ]
+            ],
+        ])) {
+            session()->setFlashdata('flashdata', 'Data Gagal Di Ubah!');
+            return redirect()->to('/mitra/pengaturan')->withInput();
+        }
+        $fileGambar = $this->request->getFile('gambar');
+        $namaGambar = $fileGambar->getName();
+        $fileGambar->move('assets/img/profil/mitra');
+        $id = session()->get('id');
+
+        $this->mitraModel->save([
+            'id' => $id,
+            'gambar' => $namaGambar
+        ]);
+
+        session()->setFlashdata('flashdata', 'Data Berhasil Di Ubah!');
+        return redirect()->to('/mitra/pengaturan');
     }
 
     //

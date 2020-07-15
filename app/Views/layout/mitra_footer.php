@@ -280,6 +280,22 @@
 <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
 <script src="/assets/js/datatables-demo.js"></script>
 <script>
+    function previewImg() {
+        const gambar = document.querySelector('#gambar');
+        const gambarLabel = document.querySelector('.custom-file-label');
+        const imgPreview = document.querySelector('.img-preview');
+
+        gambarLabel.textContent = gambar.files[0].name;
+
+        const fileGambar = new FileReader();
+        fileGambar.readAsDataURL(gambar.files[0]);
+
+        fileGambar.onload = function(e) {
+            imgPreview.src = e.target.result;
+        }
+    }
+</script>
+<script>
     var BASEURL = "<?= base_url() ?>";
 
     $(document).ready(function() {
