@@ -92,42 +92,62 @@
                 <form role="form" id="form-ubah-layanan" class="card card-body">
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="exampleFormControlInput1">
+                            <label for="inp-judul-kursus">
                                 Judul
                             </label>
                         </div>
                         <div class="col-md">
-                            <input class="form-control form-control-solid" id="inp-judul-layanan" type="text" placeholder="">
+                            <input class="form-control form-control-solid" id="inp-judul-kursus" name="inp-judul-kursus" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="exampleFormControlInput1">
+                            <label for="inp-keterangan-kursus">
                                 Keterangan
                             </label>
                         </div>
                         <div class="col-md">
-                            <textarea class="form-control form-control-solid" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control form-control-solid" id="inp-keterangan-kursus" name="inp-keterangan-kursus" rows="3"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="exampleFormControlInput1">
+                            <label for="inp-harga-kursus">
                                 Harga
                             </label>
                         </div>
                         <div class="col-md">
-                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="">
+                            <input class="form-control form-control-solid" id="inp-harga-kursus" name="inp-harga-kursus" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="exampleFormControlInput1">
+                            <label for="inp-daerah-kursus">
+                                Daerah
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="inp-daerah-kursus" name="inp-daerah-kursus" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="inp-tanggal-kursus">
+                                Tanggal Mulai
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="inp-tanggal-kursus" name="inp-tanggal-kursus" type="date" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="inp-gambar-kursus">
                                 Upload Gambar
                             </label>
                         </div>
                         <div class="col-md">
-                            <input type="hidden"><input type="file" name="...">
+                            <input type="hidden" id="inp-gambar-kursus" name="inp-gambar-kursus"><input type="file" name="...">
                         </div>
                     </div>
                 </form>
@@ -273,7 +293,12 @@
                     // Datanya di server nanti direturn, sehingga bisa diterima via reponse ini
                     var kursus = response.kursus;
                     // Populate data kursus ke form
-                    $("#inp-judul-layanan").val(kursus.judul);
+                    $("#inp-judul-kursus").val(kursus.judul);
+                    $("#inp-keterangan-kursus").val(kursus.deskripsi);
+                    $("#inp-harga-kursus").val(kursus.harga);
+                    $("#inp-gambar-kursus").val(kursus.gambar);
+                    $("#inp-daerah-kursus").val(kursus.daerah);
+                    $("#inp-tanggal-kursus").val(kursus.tgl_mulai);
                     // !!! Lanjutkan sesuai dengan field-field yang lainnya
                     // Buka modal
                     $("#editlayanan").modal("show");

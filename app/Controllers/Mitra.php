@@ -251,12 +251,50 @@ class Mitra extends BaseController
     public function update_data_kursus()
     {
         // Terima datanya sama seperti biasa, $this->request->getVar() atau ->getPost()
-        // Proses datanya seperti update biasa
-
-        // Jika error
-        return $this->respond("Terjadi masalah saat update data kursus");
-
-        // Jika berhasil
-        return $this->respond("Berhasil update data kursus");
+        if (!$this->validate([
+            'inp-judul-kursus' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Nama Kursus tidak boleh kosong!'
+                ]
+            ],
+            'inp-keterangan-kursus' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Keterangan tidak boleh kosong!',
+                ]
+            ],
+            'inp-harga-kursus' => [
+                'rules' => 'required|integer',
+                'errors' => [
+                    'required' => 'Harga tidak boleh kosong!',
+                    'integer' => 'Harga harus berupa Angka!'
+                ]
+            ],
+            'inp-daerah-kursus' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Daerah tidak boleh kosong!',
+                ]
+            ],
+            'inp-tanggal-kursus' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Tanggal Mulai tidak boleh kosong!',
+                ]
+            ],
+        ])) {
+            return $this->respond("Terjadi masalah saat update data kursus");
+        } else {
+            $this->kursusModel->save([
+                'judul' => $this->request->getVar('inp-judul-kursus'),
+                'gambar' => $this->request->getFile('inp-gambar-kursus'),
+                'deskripsi' => $this->request->getVar('inp-deskripsi-kursus'),
+                'harga' => $this->request->getVar('inp-harga-kursus'),
+                'daerah' => $this->request->getVar('inp-daerah-kursus'),
+                'tgl_mulai' => $this->request->getVar('inp-tanggal-kursus'),
+            ]);
+            return $this->respond("Berhasil update data kursus");
+        }
     }
 }
