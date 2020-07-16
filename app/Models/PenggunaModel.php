@@ -33,7 +33,9 @@ class PenggunaModel extends Model
     public function pilihPengguna($role)
     {
         return $this->where(['role' => $role])->get()->getResultArray();
-
-        // return $hasil;
+    }
+    public function pilihGambar($role)
+    {
+        return $this->where(['role' => $role])->get()->getResultArray();
     }
 }

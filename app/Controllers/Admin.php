@@ -7,12 +7,14 @@ use App\Models\EventModel;
 use App\Models\PenggunaModel;
 use App\Models\MitraModel;
 use App\Models\MateriModel;
+use CodeIgniter\API\ResponseTrait;
 use Config\Services;
 use DateTime;
 use DateTimeZone;
 
 class Admin extends BaseController
 {
+    use ResponseTrait;
     protected $kursusModel;
     public function __construct()
     {
@@ -24,22 +26,26 @@ class Admin extends BaseController
     }
     public function dashboard()
     {
+        $role = 'Peserta';
         $data = [
             'title' => 'Dashboard Admin - Kursusaja.id',
             'menu' => '',
-            'user' => $this->penggunaModel->getPengguna(session()->get('id'))
+            'user' => $this->penggunaModel->getPengguna(session()->get('id')),
+            'pengguna' => $this->penggunaModel->pilihPengguna($role)
         ];
         echo view('layout/admin_header', $data);
-        echo view('admin/dashboard');
-        echo view('layout/admin_footer');
+        echo view('admin/dashboard', $data);
+        echo view('layout/admin_footer', $data);
     }
     public function pengaturan()
     {
+        $role = 'Peserta';
         $data = [
             'title' => 'Pangaturan Admin - Kursusaja.id',
             'menu' => '',
             'validation' => \Config\Services::validation(),
-            'user' => $this->penggunaModel->getPengguna(session()->get('id'))
+            'user' => $this->penggunaModel->getPengguna(session()->get('id')),
+            'pengguna' => $this->penggunaModel->pilihPengguna($role)
         ];
         echo view('layout/admin_header', $data);
         echo view('admin/pengaturan');
@@ -47,16 +53,92 @@ class Admin extends BaseController
     }
     public function user_portfolio()
     {
+        $role = 'Peserta';
         $data = [
             'title' => 'Pangaturan Akun User - Kursusaja.id',
             'menu' => 'Pengguna',
             'validation' => \Config\Services::validation(),
-            'user' => $this->penggunaModel->getPengguna(session()->get('id'))
+            'user' => $this->penggunaModel->getPengguna(session()->get('id')),
+            'pengguna' => $this->penggunaModel->pilihPengguna($role)
+
         ];
         echo view('layout/admin_header', $data);
         echo view('admin/user_portfolio');
         echo view('layout/admin_footer');
     }
+
+    public function ambil_data_akun($id)
+    {
+        $pengguna = $this->penggunaModel->getPengguna($id);
+
+        if (!$pengguna) {
+            return $this->respond("ID Pengguna Tidak Ditemukan");
+        }
+
+        return $this->respond([
+            "pengguna" => $pengguna
+        ]);
+    }
+
+    public function update_data_akun()
+    {
+        // Terima datanya sama seperti biasa, $this->request->getVar() atau ->getPost()
+        if (!$this->validate([
+            'inp-username' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Username Tidak Boleh Kosong!'
+                ]
+            ],
+            'inp-namalengkap' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Nama Tidak Boleh Kosong!',
+                ]
+            ],
+            'inp-ttl' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Tempat, Tanggal Lahir Tidak Boleh Kosong!',
+                ]
+            ],
+            'inp-alamat' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Alamat Tidak Boleh Kosong!',
+                ]
+            ],
+            'inp-nohp' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Nomor Hp Tidak Boleh Kosong!',
+                ]
+            ],
+            'inp-email' => [
+                'rules' => 'required|valid_email',
+                'errors' => [
+                    'required' => 'Email Tidak Boleh Kosong!',
+                    'valid_email' => 'Email Yang Dimasukkan Tidak Valid.'
+                ]
+            ],
+        ])) {
+            session()->setFlashdata('flashdata', 'Data Gagal Di Ubah!');
+            return $this->respond("Terjadi Masalah Saat Update Data Kursus");
+            return redirect()->to('/admin/user_akun')->withInput();
+        } else {
+            $this->penggunaModel->save([
+                'username' => $this->request->getVar('inp-username'),
+                'nama_lngkp' => $this->request->getVar('inp-namalengkap'),
+                'ttl' => $this->request->getFile('inp-ttl'),
+                'alamat' => $this->request->getVar('inp-alamat'),
+                'nohp' => $this->request->getVar('inp-nohp'),
+                'email' => $this->request->getVar('inp-email'),
+            ]);
+            return $this->respond("Berhasil Update Data Akun");
+            return redirect()->to('/admin/user_akun');
+        }
+    }
+
     public function user_akun()
     {
         $role = 'Peserta';
@@ -65,19 +147,23 @@ class Admin extends BaseController
             'menu' => 'Pengguna',
             'validation' => \Config\Services::validation(),
             'user' => $this->penggunaModel->getPengguna(session()->get('id')),
-            'pengguna' => $this->penggunaModel->pilihPengguna($role)
+            'pengguna' => $this->penggunaModel->pilihPengguna($role),
+            'gambar' => $this->penggunaModel->pilihGambar($role)
         ];
         echo view('layout/admin_header', $data);
         echo view('admin/user_akun');
-        echo view('layout/admin_footer');
+        echo view('layout/admin_footer', $data);
     }
     public function user_perkembangan()
     {
+        $role = 'Peserta';
         $data = [
             'title' => 'Perkembangan Pengguna - Kursusaja.id',
             'menu' => 'Pengguna',
             'validation' => \Config\Services::validation(),
-            'user' => $this->penggunaModel->getPengguna(session()->get('id'))
+            'user' => $this->penggunaModel->getPengguna(session()->get('id')),
+            'pengguna' => $this->penggunaModel->pilihPengguna($role)
+
         ];
         echo view('layout/admin_header', $data);
         echo view('admin/user_perkembangan');

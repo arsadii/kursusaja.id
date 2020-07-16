@@ -22,67 +22,92 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Edit Layanan</h5>
+                <h5 class="modal-title">Edit Data</h5>
             </div>
             <div class="modal-body">
-                <form class="card card-body">
+                <form class="card card-body" role="form" id="form-edit-akun">
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="exampleFormControlInput1">
-                                Judul
+                            <label for="inp-username">
+                                Username
                             </label>
                         </div>
                         <div class="col-md">
-                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="">
+                            <input class="form-control form-control-solid" id="inp-username" name="inp-username" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="exampleFormControlInput1">
-                                Keterangan
+                            <label for="inp-namalengkap">
+                                Nama Lengkap
                             </label>
                         </div>
                         <div class="col-md">
-                            <textarea class="form-control form-control-solid" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <input class="form-control form-control-solid" id="inp-namalengkap" name="inp-namalengkap" rows="3"></input>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="exampleFormControlInput1">
-                                Harga
+                            <label for="inp-ttl">
+                                Tempat, Tanggal Lahir
                             </label>
                         </div>
                         <div class="col-md">
-                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="">
+                            <input class="form-control form-control-solid" id="inp-ttl" name="inp-ttl" type="text" placeholder="">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="inp-alamat">
+                                Alamat
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="inp-alamat" name="inp-alamat" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="inp-nohp">
+                                No. Hp
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="inp-nohp" name="inp-nohp" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="inp-email">
+                                Email
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="inp-email" name="inp-email" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button><button class="btn btn-danger" type="button">Simpan</button></div>
                 </form>
             </div>
-            <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button><button class="btn btn-danger" type="button">Simpan</button></div>
         </div>
     </div>
 </div>
-<?php $i = 1; ?>
-<?php foreach ($pengguna as $p) : ?>
-
-    <div class="modal fade" id="detail<?= $i; ?>" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Detail Peserta</h5>
-                </div>
-                <div class="modal-body">
-                    <div class="card-body text-center">
-                        <img class="img-fluid mb-4" style="width: 200px;height: 200px;border-radius:100%" src="/assets/img/profil/pengguna/<?= $p['gambar'] ?>">
-                        <h3 class="text-black"><?= $p['nama_lngkp'] ?></h3>
-                    </div>
-                </div>
-                <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button></div>
+<div class="modal fade" id="detail" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="inp-nama-peserta" class="modal-title">Detail Peserta</h5>
             </div>
+            <div class="modal-body">
+                <div class="card-body text-center">
+                    <img class="img-fluid mb-4" id="gambar" style="width: 200px;height: 200px;border-radius:100%" src="/assets/img/profil/pengguna/<?= $user['gambar'] ?>">
+                    <h3 id="nama" class="text-black"><span>Nama Peserta</span></h3>
+                </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button></div>
         </div>
     </div>
-    <?php $i++ ?>
-<?php endforeach; ?>
+</div>
 
 <div class="modal fade" id="hapusdata" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -109,6 +134,85 @@
             imgPreview.src = e.target.result;
         }
     }
+</script>
+<script>
+    var BASEURL = "<?= base_url() ?>";
+
+    $(document).ready(function() {
+        $(".btn-detail").click(function() {
+            var id = $(this).data("id");
+            var img = $("gambar").text();
+            $.ajax({
+                type: "get",
+                url: BASEURL + "/admin/ambil_data_akun/" + id,
+                dataType: "json",
+                data: {
+                    id: pengguna
+                },
+                success: function(response) {
+                    console.log(response);
+                    var pengguna = response.pengguna;
+                    var img = new Image();
+                    img.onload = function() {
+                        $("#gambar").attr('src', pengguna.gambar);
+                    }
+                    $("#nama").attr('span' + pengguna.nama_lngkp);
+                    $("#detail").modal("show");
+                }
+            });
+        });
+
+        // Menghandle ketika tombol edit diklik
+        $(".btn-edit").click(function() {
+            var id = $(this).data("id"); // Mengambil data id dari elemen menggunakan property id
+            // Minta data ke server dengan id yg bersangkutan
+            $.ajax({
+                type: "get",
+                url: BASEURL + "/admin/ambil_data_akun/" + id,
+                dataType: "json",
+                success: function(response) {
+                    console.log(response);
+                    // Datanya di server nanti direturn, sehingga bisa diterima via reponse ini
+                    var pengguna = response.pengguna;
+                    // Populate data kursus ke form
+                    $("#inp-username").val(pengguna.username);
+                    $("#inp-namalengkap").val(pengguna.nama_lngkp);
+                    $("#inp-ttl").val(pengguna.ttl);
+                    $("#inp-alamat").val(pengguna.alamat);
+                    $("#inp-nohp").val(pengguna.hp);
+                    $("#inp-email").val(pengguna.email);
+                    // !!! Lanjutkan sesuai dengan field-field yang lainnya
+                    // Buka modal
+                    $("#editdata").modal("show");
+                }
+            });
+        });
+
+        // Menghandle ketika form ubah layanan disubmit
+        $("#form-edit-akun").submit(function(e) {
+            var id = $(this).data("id");
+            e.preventDefault();
+            $.ajax({
+                type: "post",
+                url: BASEURL + "/admin/update_data_akun",
+                method: 'post',
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    console.log(response); // Cek responsenya di browser console
+
+                    // Tampilkan pesan ke user ketika ubah data berhasil
+                    // Pesannya bisa dikembalikan via response, sama seperti pas get data
+                    // namun kali ini cuma string biasa yg berisi pesan sukses
+                    alert(response);
+
+                    // Tutup kembali modalnya ketika selesai
+                    $("#editdata").modal("hide");
+                }
+            });
+        })
+    });
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

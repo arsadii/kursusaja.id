@@ -39,7 +39,6 @@
                                 <tbody>
                                     <?php $i = 1 ?>
                                     <?php foreach ($pengguna as $p) : ?>
-
                                         <tr>
                                             <td><?= $i; ?></td>
                                             <td><?= $p['username'] ?></td>
@@ -48,14 +47,13 @@
                                             <td><?= $p['alamat'] ?></td>
                                             <td><?= $p['hp'] ?></td>
                                             <td><?= $p['email'] ?></td>
-                                            <td class="text-center"><button class="btn btn-primary" data-toggle="modal" data-target="#editdata">Edit</button>
-                                                <tb><button class="btn btn-success" data-toggle="modal" data-target="#detail<?= $i; ?>">Detail</button>
+                                            <td class="text-center"><button class="btn btn-edit btn-primary" data-id="<?= $p['id'] ?>" data-toggle="modal" data-target="#editdata">Edit</button>
+                                                <tb><button class="btn btn-detail btn-success" data-id="<?= $p['id'] ?>" data-toggle="modal" data-target="#detail">Detail</button>
                                                     <tb><button class="btn btn-danger" data-toggle="modal" data-target="#hapusdata">Hapus</button>
                                             </td>
                                         </tr>
                                         <?php $i++; ?>
                                     <?php endforeach; ?>
-
                                 </tbody>
                             </table>
                         </div>
