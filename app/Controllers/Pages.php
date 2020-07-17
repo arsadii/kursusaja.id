@@ -64,7 +64,7 @@ class Pages extends BaseController
     {
         $data = [
             'title' => 'Masuk - Kursusaja.id',
-            'menu' => 'Masuk',
+            'menu' => '',
             'validation' => \Config\Services::validation()
         ];
         echo view('pages/masuk', $data);

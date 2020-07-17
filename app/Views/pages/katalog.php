@@ -13,7 +13,13 @@
                             </a>
                         </div>
                         <div class="card-content">
-                            <h4 class="judul"><?= $k['judul']; ?></h4>
+                            <h4 class="judul">
+                                <?php
+                                $num_char = 50;
+                                $text = $k['judul'];
+                                echo substr($text, 0, $num_char) . '...';
+                                ?>
+                            </h4>
                             <h5>Rp. <?= $k['harga']; ?></h5>
                             <div class="footer">
                                 <a href="/pages/detailkursus/<?= $k['id']; ?>" class="btn btn-danger">Detail</a>

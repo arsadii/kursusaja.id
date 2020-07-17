@@ -31,7 +31,13 @@
                                     </a>
                                 </div>
                                 <div class="card-content">
-                                    <h4 class="judul"><?= $k['judul']; ?></h4>
+                                    <h4 class="judul">
+                                        <?php
+                                        $num_char = 50;
+                                        $text = $k['judul'];
+                                        echo substr($text, 0, $num_char) . '...';
+                                        ?>
+                                    </h4>
                                     <h5>Rp. <?= $k['harga']; ?></h5>
                                     <div class="footer">
                                         <a href="/pages/detailkursus/<?= $k['id']; ?>" class="btn btn-danger">Detail</a>
@@ -41,7 +47,7 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <a href="/Pages/Katalog" class="btn btn-danger">Tampil Lebih Banyak</a>
+                <a href="/Pages/Katalog">Tampil Lebih Banyak</a>
             </div>
         </div>
     </div>
@@ -61,7 +67,13 @@
                                     </a>
                                 </div>
                                 <div class="card-content">
-                                    <h4 class="judul"><?= $e['judul']; ?></h4>
+                                    <h4 class="judul">
+                                        <?php
+                                        $num_char = 50;
+                                        $text = $e['judul'];
+                                        echo substr($text, 0, $num_char) . '...';
+                                        ?>
+                                    </h4>
                                     <h5>Rp. <?= $e['harga']; ?></h5>
                                     <div class="footer">
                                         <a href="/pages/detailevent/<?= $e['id']; ?>" class="btn btn-danger">Detail</a>
@@ -71,9 +83,12 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <a href="/Pages/Event" class="btn btn-danger">Tampil Lebih Banyak</a>
+                <a href="/Pages/Event">Tampil Lebih Banyak</a>
             </div>
         </div>
+    </div>
+    <div class="col-md text-center">
+        <h2 class="title" style="color: rgb(255, 103, 2)!important;">Portfolio</h2>
     </div>
     <div class="section" id="carousel">
         <div class="container">

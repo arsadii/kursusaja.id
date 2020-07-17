@@ -13,7 +13,13 @@
                             </a>
                         </div>
                         <div class="card-content">
-                            <h4 class="judul"><?= $e['judul']; ?></h4>
+                            <h4 class="judul">
+                                <?php
+                                $num_char = 50;
+                                $text = $e['judul'];
+                                echo substr($text, 0, $num_char) . '...';
+                                ?>
+                            </h4>
                             <h5>Rp. <?= $e['harga']; ?></h5>
                             <div class="footer">
                                 <a href="/pages/detailevent/<?= $e['id']; ?>" class="btn btn-danger">Detail</a>
