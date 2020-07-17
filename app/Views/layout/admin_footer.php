@@ -100,8 +100,8 @@
             </div>
             <div class="modal-body">
                 <div class="card-body text-center">
-                    <img class="img-fluid mb-4" id="gambar" style="width: 200px;height: 200px;border-radius:100%" src="/assets/img/profil/pengguna/<?= $user['gambar'] ?>">
-                    <h3 id="nama" class="text-black"><span>Nama Peserta</span></h3>
+                    <img class="img-fluid mb-4" id="gambar" style="width: 200px;height: 200px;border-radius:100%" src="">
+                    <h3 id="nama" class="text-black"></h3>
                 </div>
             </div>
             <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button></div>
@@ -119,6 +119,15 @@
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="/assets/js/back.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" crossorigin="anonymous"></script>
+<script src="/assets/js/chart-area-demo.js"></script>
+<script src="/assets/js/chart-bar-demo.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+<script src="/assets/js/datatables-demo.js"></script>
 <script>
     function previewImg() {
         const gambar = document.querySelector('#gambar');
@@ -141,22 +150,15 @@
     $(document).ready(function() {
         $(".btn-detail").click(function() {
             var id = $(this).data("id");
-            var img = $("gambar").text();
             $.ajax({
                 type: "get",
                 url: BASEURL + "/admin/ambil_data_akun/" + id,
                 dataType: "json",
-                data: {
-                    id: pengguna
-                },
                 success: function(response) {
-                    console.log(response);
                     var pengguna = response.pengguna;
-                    var img = new Image();
-                    img.onload = function() {
-                        $("#gambar").attr('src', pengguna.gambar);
-                    }
-                    $("#nama").attr('span' + pengguna.nama_lngkp);
+                    $("#gambar").attr("src", "/assets/img/profil/pengguna/" + pengguna.gambar);
+                    console.log(pengguna.gambar);
+                    $("#nama").text(pengguna.nama_lngkp);
                     $("#detail").modal("show");
                 }
             });
@@ -164,6 +166,7 @@
 
         // Menghandle ketika tombol edit diklik
         $(".btn-edit").click(function() {
+            console.log("Tombol berhasil");
             var id = $(this).data("id"); // Mengambil data id dari elemen menggunakan property id
             // Minta data ke server dengan id yg bersangkutan
             $.ajax({
@@ -214,13 +217,4 @@
         })
     });
 </script>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script src="/assets/js/back.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" crossorigin="anonymous"></script>
-<script src="/assets/js/chart-area-demo.js"></script>
-<script src="/assets/js/chart-bar-demo.js"></script>
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-<script src="/assets/js/datatables-demo.js"></script>
 </body>
