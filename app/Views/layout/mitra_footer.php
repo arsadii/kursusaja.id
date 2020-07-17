@@ -344,7 +344,6 @@
                     $("#inp-judul-kursus").val(kursus.judul);
                     $("#inp-keterangan-kursus").val(kursus.deskripsi);
                     $("#inp-harga-kursus").val(kursus.harga);
-                    $("#inp-gambar-kursus").val(kursus.gambar);
                     $("#inp-daerah-kursus").val(kursus.daerah);
                     $("#inp-tanggal-kursus").val(kursus.tgl_mulai);
 
