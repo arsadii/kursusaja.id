@@ -18,8 +18,6 @@
         </div>
     </div>
 </div>
-
-
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="/assets/js/back.js"></script>
@@ -53,7 +51,7 @@
             var id = $(this).data("id");
             $.ajax({
                 type: "get",
-                url: BASEURL + "/user/ambil_portofolio/" + id,
+                url: BASEURL + "/user/ambil_portfolio/" + id,
                 dataType: "json",
                 success: function(response) {
                     console.log(response);
@@ -61,7 +59,6 @@
                     $("#id-portofolio").val(portofolio.id);
                     $("#judul-portofolio").val(portofolio.judul);
                     $("#keterangan-portofolio").val(portofolio.deskripsi);
-
                     $("#editportofolio").modal("show");
                 }
             });
