@@ -114,6 +114,92 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="tambahkurma" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tambah Kursus</h5>
+            </div>
+            <div class="modal-body">
+                <form role="form" id="tambah-kurma" class="card card-body">
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="judulkursus">
+                                Judul
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="judulkursus" name="judulkursus" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="deskripsikursus">
+                                Keterangan
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <textarea class="form-control form-control-solid" id="deskripsikursus" name="deskripsikursus" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="hargakursus">
+                                Harga
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="hargakursus" name="hargakursus" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="daerahkursus">
+                                Daerah
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="daerahkursus" name="daerahkursus" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="tanggalmulaikursus">
+                                Tanggal Mulai
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="tanggalmulaikursus" name="tanggalmulaikursus" type="date" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="lamakursus">
+                                Lama Kursus
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="lamakursus" name="lamakursus" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="gambarkursus">
+                                Upload Gambar
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input type="hidden"><input type="file" name="gambarkursus">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button>
+                        <button class="btn btn-danger" type="submit">Tambah</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="modal fade" id="editlayanan" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -252,7 +338,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Edit Layanan</h5>
+                <h5 class="modal-title">Edit Promosi</h5>
             </div>
             <div class="modal-body">
                 <form class="card card-body">
@@ -365,7 +451,7 @@
                 success: function(response) {
                     alert(response);
                     if (response == "Data berhasil diubah!") {
-                        $("#ubah").modal("hide");
+                        $("#editlayanan").modal("hide");
                         window.location.reload();
                     }
                 }
@@ -404,7 +490,7 @@
                 success: function(response) {
                     alert(response);
                     if (response == "Data berhasil diubah!") {
-                        $("#ubah").modal("hide");
+                        $("#tambah-kursus").modal("hide");
                         window.location.reload();
                     }
                 }

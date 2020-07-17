@@ -24,7 +24,11 @@ class Mitra extends BaseController
         $this->materiModel = new MateriModel();
         $this->kurmaModel = new KurmaModel();
     }
-    // Mitra
+
+    //
+    // Akses Halaman
+    //
+
     public function dashboard()
     {
         $data = [
@@ -116,6 +120,11 @@ class Mitra extends BaseController
         echo view('mitra/detail_promosi');
         echo view('layout/mitra_footer');
     }
+
+    //
+    // CRUD
+    //
+
     public function ubahprofil()
     {
         $user = $this->mitraModel->getMitra(session()->get('id'));
@@ -209,6 +218,7 @@ class Mitra extends BaseController
             return redirect()->to('/mitra/pengaturan');
         }
     }
+
     public function ubahfotoprofil($id)
     {
         if (!$this->validate([
@@ -289,7 +299,6 @@ class Mitra extends BaseController
 
     public function update_data_kursus()
     {
-        // Terima datanya sama seperti biasa, $this->request->getVar() atau ->getPost()
         if (!$this->validate([
             'inp-judul-kursus' => 'required',
             'inp-keterangan-kursus' => 'required',
