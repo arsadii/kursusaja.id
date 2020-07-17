@@ -261,35 +261,59 @@ class User extends BaseController
         ]);
     }
 
+    public function tambahportofolio()
+    {
+        $id = session()->get('id');
+
+        if (!$this->validate([
+            'judulportofolio' => 'required',
+            'keteranganportofolio' => 'required'
+        ])) {
+            return $this->respond("Semua kolom harus diisi!");
+        } else {
+            $fileGambar = $this->request->getFile('gambarportofolio');
+            $namaGambar = $fileGambar->getName();
+            $fileGambar->move('assets/img/portofolio');
+            $this->portofolioModel->save([
+                'id_peserta' => $id,
+                'judul' => $this->request->getVar('judulportofolio'),
+                'deskripsi' => $this->request->getVar('keteranganportofolio'),
+                'gambar' => $namaGambar
+            ]);
+            return $this->respond("Data berhasil diubah!");
+        }
+    }
+
     public function ubah_portofolio()
     {
-        // Terima datanya sama seperti biasa, $this->request->getVar() atau ->getPost()
         if (!$this->validate([
-            'judul-portofolio' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Judul portofolio tidak boleh kosong!'
-                ]
-            ],
-            'keterangan-portofolio' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Keterangan tidak boleh kosong!',
-                ]
-            ]
+            'judul-portofolio' => 'required',
+            'keterangan-portofolio' => 'required'
+            // 'judul-portofolio' => [
+            //     'rules' => 'required',
+            //     'errors' => [
+            //         'required' => 'Judul portofolio tidak boleh kosong!'
+            //     ]
+            // ],
+            // 'keterangan-portofolio' => [
+            //     'rules' => 'required',
+            //     'errors' => [
+            //         'required' => 'Keterangan tidak boleh kosong!',
+            //     ]
+            // ]
         ])) {
-            session()->setFlashdata('flashdata', 'Data Gagal Di Ubah!');
-            return $this->respond("Terjadi masalah saat update data kursus");
-            return redirect()->to('/user/portofolio')->withInput();
+            return $this->respond("Semua kolom harus diisi!");
         } else {
+            $fileGambar = $this->request->getFile('gambar-portofolio');
+            $namaGambar = $fileGambar->getName();
+            $fileGambar->move('assets/img/portofolio');
             $this->portofolioModel->save([
                 'id' => $this->request->getVar('id-portofolio'),
                 'judul' => $this->request->getVar('judul-portofolio'),
-                'gambar' => $this->request->getFile('gambar-portofolio'),
-                'deskripsi' => $this->request->getVar('keterangan-portofolio')
+                'deskripsi' => $this->request->getVar('keterangan-portofolio'),
+                'gambar' => $namaGambar,
             ]);
-            return $this->respond("Berhasil update data kursus");
-            return redirect()->to('/user/portofolio');
+            return $this->respond("Data berhasil diubah!");
         }
     }
 }

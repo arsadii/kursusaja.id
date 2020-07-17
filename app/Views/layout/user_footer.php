@@ -18,6 +18,8 @@
         </div>
     </div>
 </div>
+
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="/assets/js/back.js"></script>
@@ -47,31 +49,24 @@
     var BASEURL = "<?= base_url() ?>";
 
     $(document).ready(function() {
-        // Menghandle ketika tombol edit layanan diklik
         $(".btn-edit-portofolio").click(function() {
-            var id = $(this).data("id"); // Mengambil data id dari elemen menggunakan property id
-            // Minta data ke server dengan id yg bersangkutan
+            var id = $(this).data("id");
             $.ajax({
                 type: "get",
                 url: BASEURL + "/user/ambil_portofolio/" + id,
                 dataType: "json",
                 success: function(response) {
                     console.log(response);
-                    // Datanya di server nanti direturn, sehingga bisa diterima via reponse ini
-                    var kursus = response.kursus;
-                    // Populate data kursus ke form
+                    var portofolio = response.portofolio;
                     $("#id-portofolio").val(portofolio.id);
                     $("#judul-portofolio").val(portofolio.judul);
                     $("#keterangan-portofolio").val(portofolio.deskripsi);
-                    $("#gambar-portofolio").val(portofolio.gambar);
-                    // !!! Lanjutkan sesuai dengan field-field yang lainnya
-                    // Buka modal
+
                     $("#editportofolio").modal("show");
                 }
             });
         });
 
-        // Menghandle ketika form ubah layanan disubmit
         $("#form-ubah-portofolio").submit(function(e) {
             var id = $(this).data("id");
             e.preventDefault();
@@ -83,15 +78,31 @@
                 processData: false,
                 contentType: false,
                 success: function(response) {
-                    console.log(response); // Cek responsenya di browser console
-
-                    // Tampilkan pesan ke user ketika ubah data berhasil
-                    // Pesannya bisa dikembalikan via reaponse, sama seperti pas get data
-                    // namun kali ini cuma string biasa yg berisi pesan sukses
+                    console.log(response);
                     alert(response);
+                    if (response == "Data berhasil diubah!") {
+                        $("#ubah").modal("hide");
+                        window.location.reload();
+                    }
+                }
+            });
+        })
 
-                    // Tutup kembali modalnya ketika selesai
-                    $("#editportofolio").modal("hide");
+        $("#tambah-portofolio").submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "post",
+                url: BASEURL + "/user/tambahportofolio",
+                method: 'post',
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    alert(response);
+                    if (response == "Data berhasil diubah!") {
+                        $("#ubah").modal("hide");
+                        window.location.reload();
+                    }
                 }
             });
         })

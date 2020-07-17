@@ -11,7 +11,7 @@
                 </div>
                 <div class="container col-md-10">
                     <div class="col mb-4 text-right">
-                        <button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="button" data-toggle="modal" data-target="#tambah">Tambah</button>
+                        <button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="button" data-toggle="modal" data-target="#tambahportofolio">Tambah</button>
                     </div>
                     <div class="row">
                         <?php foreach ($portofolio as $p) : ?>
@@ -32,47 +32,50 @@
                     </div>
                 </div>
             </main>
-            <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal fade" id="tambahportofolio" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Tambah Portfolio</h5>
                         </div>
                         <div class="modal-body">
-                            <form class="card card-body">
+                            <form role="form" id="tambah-portofolio" class="card card-body">
                                 <div class="form-group">
                                     <div class="col-md text-center">
-                                        <label for="exampleFormControlInput1">
+                                        <label for="judulportofolio">
                                             Judul
                                         </label>
                                     </div>
                                     <div class="col-md">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="">
+                                        <input class="form-control form-control-solid" id="judulportofolio" name="judulportofolio" type="text" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md text-center">
-                                        <label for="exampleFormControlInput1">
+                                        <label for="keteranganportofolio">
                                             Keterangan
                                         </label>
                                     </div>
                                     <div class="col-md">
-                                        <textarea class="form-control form-control-solid" id="exampleFormControlInput1" name="exampleFormControlInput1" rows="3"></textarea>
+                                        <textarea class="form-control form-control-solid" id="keteranganportofolio" name="keteranganportofolio" rows="3"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md text-center">
-                                        <label for="exampleFormControlInput1">
+                                        <label for="gambarportofolio">
                                             Upload Gambar
                                         </label>
                                     </div>
                                     <div class="col-md">
-                                        <input type="hidden"><input type="file" name="...">
+                                        <input type="hidden"><input type="file" id="gambarportofolio" name="gambarportofolio">
                                     </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button>
+                                    <button class="btn btn-danger" type="submit">Tambah</button>
                                 </div>
                             </form>
                         </div>
-                        <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button><button class="btn btn-danger" type="button">Tambah</button></div>
                     </div>
                 </div>
             </div>
@@ -114,14 +117,14 @@
                                         </label>
                                     </div>
                                     <div class="col-md">
-                                        <input type="hidden" id="gambar-portofolio" name="gambar-portofolio"><input type="file" name="...">
+                                        <input type="hidden"><input type="file" id="gambar-portofolio" name="gambar-portofolio">
                                     </div>
                                 </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button>
+                                    <button class="btn btn-danger" type="submit">Simpan</button>
+                                </div>
                             </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button>
-                            <button class="btn btn-danger" type="submit">Simpan</button>
                         </div>
                     </div>
                 </div>

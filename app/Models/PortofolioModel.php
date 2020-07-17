@@ -8,7 +8,7 @@ class PortofolioModel extends Model
 {
     protected $table = 'portofolio';
     protected $useTimestamps = true;
-    protected $allowedFields = ['username', 'password', 'role', 'nama_lngkp', 'ttl', 'alamat', 'hp', 'email', 'gambar', 'created_at', 'updated_at'];
+    protected $allowedFields = ['id_peserta', 'judul', 'deskripsi', 'gambar'];
 
     public function getPortofolio($id = false)
     {
