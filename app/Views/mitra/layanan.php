@@ -27,7 +27,13 @@
                                             </div>
                                             <div class="card-footer">
                                                 <h3 class="badge badge-primary"><?= $k['judul']; ?></h3>
-                                                <p class="keterangan d-flex flex-column justify-content-center py-5 py-xl-4"><?= $k['deskripsi']; ?></p>
+                                                <p class="keterangan d-flex flex-column justify-content-center py-5 py-xl-4">
+                                                    <?php
+                                                    $num_char = 150;
+                                                    $text = $k['deskripsi'];
+                                                    echo substr($text, 0, $num_char) . '...';
+                                                    ?>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -54,7 +60,13 @@
                                             </div>
                                             <div class="card-footer">
                                                 <h3 class="badge badge-primary"><?= $ku['judul']; ?></h3>
-                                                <p class="keterangan d-flex flex-column justify-content-center py-5 py-xl-4"><?= $ku['deskripsi']; ?></p>
+                                                <p class="keterangan d-flex flex-column justify-content-center py-5 py-xl-4">
+                                                    <?php
+                                                    $num_char = 150;
+                                                    $text = $ku['deskripsi'];
+                                                    echo substr($text, 0, $num_char) . '...';
+                                                    ?>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -81,7 +93,13 @@
                                             </div>
                                             <div class="card-footer">
                                                 <h3 class="badge badge-primary"><?= $e['judul'] ?></h3>
-                                                <p class="keterangan d-flex flex-column justify-content-center py-5 py-xl-4"><?= $e['deskripsi'] ?></p>
+                                                <p class="keterangan d-flex flex-column justify-content-center py-5 py-xl-4">
+                                                    <?php
+                                                    $num_char = 150;
+                                                    $text = $e['deskripsi'];
+                                                    echo substr($text, 0, $num_char) . '...';
+                                                    ?>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>

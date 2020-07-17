@@ -43,8 +43,6 @@
                 $status3 = 'active';
             } else if ($menu == 'Portfolio') {
                 $status4 = 'active';
-            } else if ($menu == 'Masuk') {
-                $status5 = 'active';
             }
             ?>
             <div class="collapse navbar-collapse">
@@ -58,10 +56,10 @@
                     <li class="<?= $status3 ?>">
                         <a href="<?= base_url('/pages/event'); ?>">Event</a>
                     </li>
-                    <li class="<?= $status4 ?>">
+                    <li class="<?= $status4 ?>" style="padding-right: 5px;">
                         <a href="<?= base_url('/pages/portfolio'); ?>">Portfolio</a>
                     </li>
-                    <li class="<?= $status5 ?>">
+                    <li class="btn-primary">
                         <a href="<?= base_url('/pages/masuk'); ?>">Masuk</a>
                     </li>
                 </ul>
