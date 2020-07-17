@@ -41,7 +41,7 @@
                 <div class="sidenav-menu">
                     <div class="nav accordion" id="accordionSidenav">
                         <div class="container col-md-10 text-center" style="margin-top:30px">
-                            <img class="img-fluid" style="width: 300px;height: 200px;border-radius:100%" src="/assets/img/profil/admin/<?= $user['gambar'] ?>">
+                            <img class="img-fluid" style="width: 200px;height: 200px;border-radius:100%" src="/assets/img/profil/admin/<?= $user['gambar'] ?>">
                         </div>
                         <div class="sidenav-menu-heading text-center">Kursusaja.id<br>Bergabung Sejak 2020</div>
                     </div>
