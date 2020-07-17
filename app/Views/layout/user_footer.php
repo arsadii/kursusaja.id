@@ -51,7 +51,7 @@
             var id = $(this).data("id");
             $.ajax({
                 type: "get",
-                url: BASEURL + "/user/ambil_portfolio/" + id,
+                url: BASEURL + "/user/ambil_portofolio/" + id,
                 dataType: "json",
                 success: function(response) {
                     console.log(response);

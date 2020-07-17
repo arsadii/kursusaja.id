@@ -94,7 +94,8 @@ class Mitra extends BaseController
     {
         $data = [
             'title' => 'Detail Layanan - Kursusaja.id',
-            'menu' => 'Layanan'
+            'menu' => 'Layanan',
+            'akun' => $this->mitraModel->getMitra(session()->get('id'))
         ];
         echo view('layout/mitra_header', $data);
         echo view('mitra/detail_layanan');
@@ -104,7 +105,8 @@ class Mitra extends BaseController
     {
         $data = [
             'title' => 'Detail Peserta - Kursusaja.id',
-            'menu' => 'Layanan'
+            'menu' => 'Layanan',
+            'akun' => $this->mitraModel->getMitra(session()->get('id'))
         ];
         echo view('layout/mitra_header', $data);
         echo view('mitra/data_peserta');

@@ -118,78 +118,78 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Kursus</h5>
+                <h5 class="modal-title">Tambah Kurma</h5>
             </div>
             <div class="modal-body">
                 <form role="form" id="tambah-kurma" class="card card-body">
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="judulkursus">
+                            <label for="judulkurma">
                                 Judul
                             </label>
                         </div>
                         <div class="col-md">
-                            <input class="form-control form-control-solid" id="judulkursus" name="judulkursus" type="text" placeholder="">
+                            <input class="form-control form-control-solid" id="judulkurma" name="judulkurma" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="deskripsikursus">
+                            <label for="deskripsikurma">
                                 Keterangan
                             </label>
                         </div>
                         <div class="col-md">
-                            <textarea class="form-control form-control-solid" id="deskripsikursus" name="deskripsikursus" rows="3"></textarea>
+                            <textarea class="form-control form-control-solid" id="deskripsikurma" name="deskripsikurma" rows="3"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="hargakursus">
+                            <label for="hargakurma">
                                 Harga
                             </label>
                         </div>
                         <div class="col-md">
-                            <input class="form-control form-control-solid" id="hargakursus" name="hargakursus" type="text" placeholder="">
+                            <input class="form-control form-control-solid" id="hargakurma" name="hargakurma" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="daerahkursus">
+                            <label for="daerahkurma">
                                 Daerah
                             </label>
                         </div>
                         <div class="col-md">
-                            <input class="form-control form-control-solid" id="daerahkursus" name="daerahkursus" type="text" placeholder="">
+                            <input class="form-control form-control-solid" id="daerahkurma" name="daerahkurma" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="tanggalmulaikursus">
+                            <label for="tanggalmulaikurma">
                                 Tanggal Mulai
                             </label>
                         </div>
                         <div class="col-md">
-                            <input class="form-control form-control-solid" id="tanggalmulaikursus" name="tanggalmulaikursus" type="date" placeholder="">
+                            <input class="form-control form-control-solid" id="tanggalmulaikurma" name="tanggalmulaikurma" type="date" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="lamakursus">
+                            <label for="lamakurma">
                                 Lama Kursus
                             </label>
                         </div>
                         <div class="col-md">
-                            <input class="form-control form-control-solid" id="lamakursus" name="lamakursus" type="text" placeholder="">
+                            <input class="form-control form-control-solid" id="lamakurma" name="lamakurma" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="gambarkursus">
+                            <label for="gambarkurma">
                                 Upload Gambar
                             </label>
                         </div>
                         <div class="col-md">
-                            <input type="hidden"><input type="file" name="gambarkursus">
+                            <input type="hidden"><input type="file" name="gambarkurma">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -479,6 +479,25 @@
         })
 
         $("#tambah-kursus").submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "post",
+                url: BASEURL + "/mitra/tambahkursus",
+                method: 'post',
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    alert(response);
+                    if (response == "Data berhasil diubah!") {
+                        $("#tambah-kursus").modal("hide");
+                        window.location.reload();
+                    }
+                }
+            });
+        })
+
+        $("#tambah-kurma").submit(function(e) {
             e.preventDefault();
             $.ajax({
                 type: "post",

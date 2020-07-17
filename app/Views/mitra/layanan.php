@@ -39,7 +39,7 @@
                 <div class="container col-md-10">
                     <div class="card card-header-actions mb-4">
                         <h2 class="card-header">Kurma
-                            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambahlayanan">Tambah Kurma</button>
+                            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambahkurma">Tambah Kurma</button>
                         </h2>
                         <div class="card-body text-center">
                             <div class="row">

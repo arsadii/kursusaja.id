@@ -273,7 +273,7 @@ class User extends BaseController
         } else {
             $fileGambar = $this->request->getFile('gambarportofolio');
             $namaGambar = $fileGambar->getName();
-            $fileGambar->move('assets/img/portofolio');
+            $fileGambar->move('assets/img/portfolio');
             $this->portofolioModel->save([
                 'id_peserta' => $id,
                 'judul' => $this->request->getVar('judulportofolio'),
@@ -306,7 +306,7 @@ class User extends BaseController
         } else {
             $fileGambar = $this->request->getFile('gambar-portofolio');
             $namaGambar = $fileGambar->getName();
-            $fileGambar->move('assets/img/portofolio');
+            $fileGambar->move('assets/img/portfolio');
             $this->portofolioModel->save([
                 'id' => $this->request->getVar('id-portofolio'),
                 'judul' => $this->request->getVar('judul-portofolio'),
