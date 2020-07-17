@@ -501,7 +501,7 @@
             e.preventDefault();
             $.ajax({
                 type: "post",
-                url: BASEURL + "/mitra/tambahkursus",
+                url: BASEURL + "/mitra/tambahkurma",
                 method: 'post',
                 data: new FormData(this),
                 processData: false,
@@ -509,7 +509,7 @@
                 success: function(response) {
                     alert(response);
                     if (response == "Data berhasil diubah!") {
-                        $("#tambah-kursus").modal("hide");
+                        $("#tambah-kurma").modal("hide");
                         window.location.reload();
                     }
                 }
