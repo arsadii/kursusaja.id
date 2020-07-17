@@ -12,14 +12,14 @@
                 <div class="container col-md-10">
                     <div class="card card-header-actions mb-4">
                         <h2 class="card-header">Kursus
-                            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambahlayanan">Tambah Kursus</button>
+                            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambahkursus">Tambah Kursus</button>
                         </h2>
                         <div class="card-body text-center">
                             <div class="row">
                                 <?php foreach ($kursus as $k) : ?>
                                     <div class="col-xxl-4 col-xl-4">
                                         <div class="card h-100 card-img-top mb-4">
-                                            <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
+                                            <img class="img" style="height: 200px" src="/assets/img/layanan/<?= $k['gambar']; ?>" alt="...">
                                             <div class="card-img-overlay">
                                                 <button class="close" type="button" data-toggle="modal" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
                                                 <button class="close btn-edit-kursus" type="button" data-id="<?= $k['id']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i></button>

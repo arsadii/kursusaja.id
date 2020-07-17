@@ -73,76 +73,76 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-3 text-center" style="margin:10px 0;">
-                                        <label for="exampleFormControlInput1">
+                                        <label for="namalembaga">
                                             Nama Lembaga
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="" disabled value="<?= $akun['nama_lmbg']; ?>">
+                                        <input class="form-control form-control-solid" id="namalembaga" type="text" placeholder="" disabled value="<?= $akun['nama_lmbg']; ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-3 text-center" style="margin:10px 0;">
-                                        <label for="exampleFormControlInput1">
+                                        <label for="namapengguna">
                                             Nama Pengguna
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="" disabled value="<?= $akun['username']; ?>">
+                                        <input class="form-control form-control-solid" id="namapengguna" type="text" placeholder="" disabled value="<?= $akun['username']; ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-3 text-center" style="margin:10px 0;">
-                                        <label for="exampleFormControlInput1">
+                                        <label for="ttl">
                                             Tempat Tanggal Lahir
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="date" placeholder="" disabled value="<?= $akun['tnggl_brdr']; ?>">
+                                        <input class="form-control form-control-solid" id="ttl" type="date" placeholder="" disabled value="<?= $akun['tnggl_brdr']; ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-3 text-center" style="margin:10px 0;">
-                                        <label for="exampleFormControlInput1">
+                                        <label for="alamat">
                                             Alamat
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="" disabled value="<?= $akun['alamat']; ?>">
+                                        <input class="form-control form-control-solid" id="alamat" type="text" placeholder="" disabled value="<?= $akun['alamat']; ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-3 text-center" style="margin:10px 0;">
-                                        <label for="exampleFormControlInput1">
+                                        <label for="email">
                                             Email
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="email" placeholder="" disabled value="<?= $akun['email']; ?>">
+                                        <input class="form-control form-control-solid" id="email" type="email" placeholder="" disabled value="<?= $akun['email']; ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-3 text-center" style="margin:10px 0;">
-                                        <label for="exampleFormControlInput1">
+                                        <label for="nohp">
                                             No. Handphone
                                         </label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="" disabled value="<?= $akun['hp']; ?>">
+                                        <input class="form-control form-control-solid" id="nohp" type="text" placeholder="" disabled value="<?= $akun['hp']; ?>">
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal-footer"><button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="button" data-toggle="modal" data-target="#ubah">Ubah</button></div>
+                            <div class="modal-footer"><button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="button" data-id="<?= $akun['id']; ?>" data-toggle="modal" data-target="#ubah">Ubah</button></div>
                         </form>
                     </div>
                 </div>
@@ -156,7 +156,8 @@
                     <h5 class="modal-title">Ubah Data</h5>
                 </div>
                 <div class="modal-body">
-                    <form class="card card-body" method="POST" action="/mitra/ubahprofil/<?= $id; ?>">
+                    <form class="card card-body" method="POST" id="ubah-profil-mitra">
+                        <!-- <form class="card card-body" method="POST" action="/mitra/ubahprofil/<?= $id; ?>"> -->
                         <div class="form-group">
                             <div class="col-md text-center">
                                 <label for="nama_lmbg">
@@ -164,6 +165,7 @@
                                 </label>
                             </div>
                             <div class="col-md">
+                                <input class="form-control form-control-solid" name="id" type="text" placeholder="" value="<?= $akun['id']; ?>" hidden>
                                 <input class="form-control form-control-solid" name="nama_lmbg" type="text" placeholder="" value="<?= $akun['nama_lmbg']; ?>">
                                 <div class="text-danger pl-1">
                                     <?= $validation->getError('nama_lmbg'); ?>

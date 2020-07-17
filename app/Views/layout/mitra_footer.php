@@ -28,57 +28,89 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="tambahlayanan" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="tambahkursus" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Layanan</h5>
+                <h5 class="modal-title">Tambah Kursus</h5>
             </div>
             <div class="modal-body">
-                <form class="card card-body">
+                <form role="form" id="tambah-kursus" class="card card-body">
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="exampleFormControlInput1">
+                            <label for="judulkursus">
                                 Judul
                             </label>
                         </div>
                         <div class="col-md">
-                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="">
+                            <input class="form-control form-control-solid" id="judulkursus" name="judulkursus" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="exampleFormControlInput1">
+                            <label for="deskripsikursus">
                                 Keterangan
                             </label>
                         </div>
                         <div class="col-md">
-                            <textarea class="form-control form-control-solid" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control form-control-solid" id="deskripsikursus" name="deskripsikursus" rows="3"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="exampleFormControlInput1">
+                            <label for="hargakursus">
                                 Harga
                             </label>
                         </div>
                         <div class="col-md">
-                            <input class="form-control form-control-solid" id="exampleFormControlInput1" type="text" placeholder="">
+                            <input class="form-control form-control-solid" id="hargakursus" name="hargakursus" type="text" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md text-center">
-                            <label for="exampleFormControlInput1">
+                            <label for="daerahkursus">
+                                Daerah
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="daerahkursus" name="daerahkursus" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="tanggalmulaikursus">
+                                Tanggal Mulai
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="tanggalmulaikursus" name="tanggalmulaikursus" type="date" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="lamakursus">
+                                Lama Kursus
+                            </label>
+                        </div>
+                        <div class="col-md">
+                            <input class="form-control form-control-solid" id="lamakursus" name="lamakursus" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md text-center">
+                            <label for="gambarkursus">
                                 Upload Gambar
                             </label>
                         </div>
                         <div class="col-md">
-                            <input type="hidden"><input type="file" name="...">
+                            <input type="hidden"><input type="file" name="gambarkursus">
                         </div>
                     </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button>
+                        <button class="btn btn-danger" type="submit">Tambah</button></div>
                 </form>
             </div>
-            <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button><button class="btn btn-danger" type="button">Tambah</button></div>
         </div>
     </div>
 </div>
@@ -150,7 +182,7 @@
                             </label>
                         </div>
                         <div class="col-md">
-                            <input type="hidden" id="inp-gambar-kursus" name="inp-gambar-kursus"><input type="file" name="...">
+                            <input type="hidden"><input type="file" id="inp-gambar-kursus" name="inp-gambar-kursus">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -299,19 +331,15 @@
     var BASEURL = "<?= base_url() ?>";
 
     $(document).ready(function() {
-        // Menghandle ketika tombol edit layanan diklik
         $(".btn-edit-kursus").click(function() {
-            var id = $(this).data("id"); // Mengambil data id dari elemen menggunakan property id
-            // Minta data ke server dengan id yg bersangkutan
+            var id = $(this).data("id");
             $.ajax({
                 type: "get",
                 url: BASEURL + "/mitra/ambil_data_kursus/" + id,
                 dataType: "json",
                 success: function(response) {
                     console.log(response);
-                    // Datanya di server nanti direturn, sehingga bisa diterima via reponse ini
                     var kursus = response.kursus;
-                    // Populate data kursus ke form
                     $("#inp-id-kursus").val(kursus.id);
                     $("#inp-judul-kursus").val(kursus.judul);
                     $("#inp-keterangan-kursus").val(kursus.deskripsi);
@@ -319,14 +347,12 @@
                     $("#inp-gambar-kursus").val(kursus.gambar);
                     $("#inp-daerah-kursus").val(kursus.daerah);
                     $("#inp-tanggal-kursus").val(kursus.tgl_mulai);
-                    // !!! Lanjutkan sesuai dengan field-field yang lainnya
-                    // Buka modal
+
                     $("#editlayanan").modal("show");
                 }
             });
         });
 
-        // Menghandle ketika form ubah layanan disubmit
         $("#form-ubah-layanan").submit(function(e) {
             var id = $(this).data("id");
             e.preventDefault();
@@ -338,15 +364,50 @@
                 processData: false,
                 contentType: false,
                 success: function(response) {
-                    console.log(response); // Cek responsenya di browser console
-
-                    // Tampilkan pesan ke user ketika ubah data berhasil
-                    // Pesannya bisa dikembalikan via reaponse, sama seperti pas get data
-                    // namun kali ini cuma string biasa yg berisi pesan sukses
                     alert(response);
+                    if (response == "Data berhasil diubah!") {
+                        $("#ubah").modal("hide");
+                        window.location.reload();
+                    }
+                }
+            });
 
-                    // Tutup kembali modalnya ketika selesai
-                    $("#editlayanan").modal("hide");
+        })
+
+        $("#ubah-profil-mitra").submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "post",
+                url: BASEURL + "/mitra/ubahprofil",
+                method: 'post',
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    alert(response);
+                    if (response == "Data berhasil diubah!") {
+                        $("#ubah").modal("hide");
+                        window.location.reload();
+                    }
+                }
+            });
+        })
+
+        $("#tambah-kursus").submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "post",
+                url: BASEURL + "/mitra/tambahkursus",
+                method: 'post',
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    alert(response);
+                    if (response == "Data berhasil diubah!") {
+                        $("#ubah").modal("hide");
+                        window.location.reload();
+                    }
                 }
             });
         })

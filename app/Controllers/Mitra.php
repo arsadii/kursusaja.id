@@ -116,81 +116,56 @@ class Mitra extends BaseController
         echo view('mitra/detail_promosi');
         echo view('layout/mitra_footer');
     }
-    public function ubahprofil($id)
+    public function ubahprofil()
     {
         $user = $this->mitraModel->getMitra(session()->get('id'));
+
         if (!$this->validate([
-            'nama_lmbg' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Nama Lembaga tidak boleh kosong!'
-                ]
-            ],
-            'username' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Nama Pengguna tidak boleh kosong!',
-                ]
-            ],
-            'tnggl_brdr' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Tanggal berdiri tidak boleh kosong!'
-                ]
-            ],
-            'alamat' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Tanggal Lahir tidak boleh kosong!'
-                ]
-            ],
-            'email' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Email tidak boleh kosong!',
-                ]
-            ],
-            'hp' => [
-                'rules' => 'required|numeric',
-                'errors' => [
-                    'required' => 'Nomor Handphone tidak boleh kosong!',
-                    'numeric' => 'Nomor Handphone  harus berupa angka'
-                ]
-            ],
-            'pass' => [
-                'rules' => 'required|min_length[8]',
-                'errors' => [
-                    'required' => 'Kata Sandi tidak boleh kosong!',
-                    'min_length' => 'Panjang Kata Sandi minimal 8 karakter'
-                ]
-            ]
-
-
+            'nama_lmbg' => 'required',
+            'username' => 'required',
+            'tnggl_brdr' => 'required',
+            'alamat' => 'required',
+            'email' => 'required',
+            'hp' => 'required',
+            'pass' => 'required'
         ])) {
-            session()->setFlashdata('flashdata', 'Data Gagal Di Ubah!');
-            $validation = \Config\Services::validation();
-            return redirect()->to('/mitra/pengaturan')->withInput()->with('validation', $validation);
-        }
-        $id = session()->get('id');
-        date_default_timezone_set('Asia/Makassar');
-        if (($this->request->getVar('pass')) == $user['password']) {
-            $this->mitraModel->save([
-                'id' => $id,
-                'nama_lmbg' => $this->request->getVar('nama_lmbg'),
-                'username' => $this->request->getVar('username'),
-                'nama_lngkp' => $this->request->getVar('nama'),
-                'tnggl_brdr' => $this->request->getVar('tnggl_brdr'),
-                'alamat' => $this->request->getVar('alamat'),
-                'hp' => $this->request->getVar('hp'),
-                'email' => $this->request->getVar('email')
-            ]);
-            session()->setFlashdata('flashdata', 'Data Berhasil Di Ubah!');
-            return redirect()->to('/mitra/pengaturan');
+            return $this->respond("Semua kolom harus di isi!");
+        } else if (!$this->validate([
+            'email' => 'valid_email'
+        ])) {
+            return $this->respond("Email tidak valid!");
+        } else if (!$this->validate([
+            'hp' => 'integer'
+        ])) {
+            return $this->respond("Email tidak valid!");
+        } else if (!$this->validate([
+            'pass' => 'min_length[8]'
+        ])) {
+            return $this->respond("Password minimal 8 digit!");
         } else {
-            session()->setFlashdata('flashdata', 'Kata Sandi salah!');
-            return redirect()->to('/mitra/pengaturan');
+            date_default_timezone_set('Asia/Makassar');
+            if (($this->request->getVar('pass')) == $user['password']) {
+                $this->mitraModel->save([
+                    'id' => $this->request->getVar('id'),
+                    'nama_lmbg' => $this->request->getVar('nama_lmbg'),
+                    'username' => $this->request->getVar('username'),
+                    'nama_lngkp' => $this->request->getVar('nama'),
+                    'tnggl_brdr' => $this->request->getVar('tnggl_brdr'),
+                    'alamat' => $this->request->getVar('alamat'),
+                    'hp' => $this->request->getVar('hp'),
+                    'email' => $this->request->getVar('email')
+                ]);
+                session()->setFlashdata('flashdata', 'Data Berhasil Di Ubah!');
+                // return redirect()->to('/mitra/pengaturan');
+                return $this->respond("Data berhasil diubah!");
+            } else {
+                session()->setFlashdata('flashdata', 'Kata Sandi salah!');
+                // return redirect()->to('/mitra/pengaturan');
+                return $this->respond("Kata Sandi Salah!");
+            }
         }
     }
+
     public function ubahsandi($id)
     {
         $user = $this->mitraModel->getMitra(session()->get('id'));
@@ -264,9 +239,40 @@ class Mitra extends BaseController
         return redirect()->to('/mitra/pengaturan');
     }
 
-    //
-    // BATAS SERVICE
-    //
+    public function tambahkursus()
+    {
+        $id = session()->get('id');
+
+        if (!$this->validate([
+            'judulkursus' => 'required',
+            'deskripsikursus' => 'required',
+            'hargakursus' => 'required',
+            'daerahkursus' => 'required',
+            'tanggalmulaikursus' => 'required',
+            'lamakursus' => 'required'
+        ])) {
+            return $this->respond("Semua data harus diisi!");
+        } else if (!$this->validate([
+            'hargakursus' => 'integer'
+        ])) {
+            return $this->respond("Harga kursus harus berupa angka!");
+        } else {
+            $fileGambar = $this->request->getFile('gambarkursus');
+            $namaGambar = $fileGambar->getName();
+            $fileGambar->move('assets/img/layanan');
+            $this->kursusModel->save([
+                'id_lmbg' => $id,
+                'judul' => $this->request->getVar('judulkursus'),
+                'gambar' => $namaGambar,
+                'deskripsi' => $this->request->getVar('deskripsikursus'),
+                'harga' => $this->request->getVar('hargakursus'),
+                'daerah' => $this->request->getVar('daerahkursus'),
+                'tgl_mulai' => $this->request->getVar('tanggalmulaikursus')
+            ]);
+
+            return $this->respond("Data berhasil diubah!");
+        }
+    }
 
     public function ambil_data_kursus($id)
     {
@@ -285,53 +291,31 @@ class Mitra extends BaseController
     {
         // Terima datanya sama seperti biasa, $this->request->getVar() atau ->getPost()
         if (!$this->validate([
-            'inp-judul-kursus' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Nama Kursus tidak boleh kosong!'
-                ]
-            ],
-            'inp-keterangan-kursus' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Keterangan tidak boleh kosong!',
-                ]
-            ],
-            'inp-harga-kursus' => [
-                'rules' => 'required|integer',
-                'errors' => [
-                    'required' => 'Harga tidak boleh kosong!',
-                    'integer' => 'Harga harus berupa Angka!'
-                ]
-            ],
-            'inp-daerah-kursus' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Daerah tidak boleh kosong!',
-                ]
-            ],
-            'inp-tanggal-kursus' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Tanggal Mulai tidak boleh kosong!',
-                ]
-            ],
+            'inp-judul-kursus' => 'required',
+            'inp-keterangan-kursus' => 'required',
+            'inp-harga-kursus' => 'required',
+            'inp-daerah-kursus' => 'required',
+            'inp-tanggal-kursus' => 'required'
         ])) {
-            session()->setFlashdata('flashdata', 'Data Gagal Di Ubah!');
-            return $this->respond("Terjadi masalah saat update data kursus");
-            return redirect()->to('/mitra/layanan')->withInput();
+            return $this->respond("Semua kolom harus diisi!");
+        } else if (!$this->validate([
+            'inp-harga-kursus' => 'integer'
+        ])) {
+            return $this->respond("Harga harus berupa angka!");
         } else {
+            $fileGambar = $this->request->getFile('inp-gambar-kursus');
+            $namaGambar = $fileGambar->getName();
+            $fileGambar->move('assets/img/layanan');
             $this->kursusModel->save([
                 'id' => $this->request->getVar('inp-id-kursus'),
                 'judul' => $this->request->getVar('inp-judul-kursus'),
-                'gambar' => $this->request->getFile('inp-gambar-kursus'),
+                'gambar' => $namaGambar,
                 'deskripsi' => $this->request->getVar('inp-keterangan-kursus'),
                 'harga' => $this->request->getVar('inp-harga-kursus'),
                 'daerah' => $this->request->getVar('inp-daerah-kursus'),
                 'tgl_mulai' => $this->request->getVar('inp-tanggal-kursus'),
             ]);
-            return $this->respond("Berhasil update data kursus");
-            return redirect()->to('/mitra/layanan');
+            return $this->respond("Data berhasil diubah!");
         }
     }
 }
