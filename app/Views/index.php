@@ -1,211 +1,211 @@
-<div class="page-header header-filter" data-parallax="true" style="background-image: url('/assets/img/1.jpg');">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-center">
-                <h2 class="title">Cari Kursus ? Ya Kursusaja</h2>
-                <form role="search">
-                    <div class="form-group form-primary">
-                        <input type="text" class="form-control" placeholder="Cari Kursus Kamu Disini">
-                    </div>
-                    <h4 class="title">Temukan Kursus Yang Terbaik Buat Kamu</h4>
-                </form>
-                <button type="submit" class="btn btn-primary btn-raised btn-fab btn-fab-mini"><i class="material-icons">search</i></button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="main main-raised">
-    <div class="section">
-        <div class="container text-center" style="width: 85%;">
-            <div class="col-md text-center">
-                <h2 class="title" style="color: rgb(255, 103, 2)!important;">Kursus</h2>
-            </div>
-            <div class="cards">
-                <div class="row">
-                    <?php foreach ($kursus as $k) :; ?>
-                        <div class="col-md-3">
-                            <div class="card card-profile">
-                                <div class="card-image">
-                                    <a href="/">
-                                        <img class="img" src="/assets/img/examples/<?= $k['gambar']; ?>" />
-                                    </a>
-                                </div>
-                                <div class="card-content">
-                                    <h4 class="judul">
-                                        <?php
-                                        $num_char = 50;
-                                        $text = $k['judul'];
-                                        echo substr($text, 0, $num_char) . '...';
-                                        ?>
-                                    </h4>
-                                    <h5>Rp. <?= $k['harga']; ?></h5>
-                                    <div class="footer">
-                                        <a href="/pages/detailkursus/<?= $k['id']; ?>" class="btn btn-danger">Detail</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-                <a href="/Pages/Katalog">Tampil Lebih Banyak</a>
-            </div>
-        </div>
-    </div>
-    <div class="section">
-        <div class="container text-center" style="width: 85%;">
-            <div class="col-md text-center">
-                <h2 class="title" style="color: rgb(255, 103, 2)!important;">Event</h2>
-            </div>
-            <div class="cards">
-                <div class="row">
-                    <?php foreach ($event as $e) :; ?>
-                        <div class="col-md-3">
-                            <div class="card card-profile">
-                                <div class="card-image">
-                                    <a href="/">
-                                        <img class="img" src="/assets/img/examples/<?= $e['gambar']; ?>" />
-                                    </a>
-                                </div>
-                                <div class="card-content">
-                                    <h4 class="judul">
-                                        <?php
-                                        $num_char = 50;
-                                        $text = $e['judul'];
-                                        echo substr($text, 0, $num_char) . '...';
-                                        ?>
-                                    </h4>
-                                    <h5>Rp. <?= $e['harga']; ?></h5>
-                                    <div class="footer">
-                                        <a href="/pages/detailevent/<?= $e['id']; ?>" class="btn btn-danger">Detail</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-                <a href="/Pages/Event">Tampil Lebih Banyak</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md text-center">
-        <h2 class="title" style="color: rgb(255, 103, 2)!important;">Portfolio</h2>
-    </div>
-    <div class="section" id="carousel">
+<header class="page-header page-header-dark bg-img-cover overlay overlay-80 d-flex flex-column justify-content-center" style="background-image: url('../assets/img/1.jpg')">
+    <div class="page-header-content">
         <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="card card-raised card-carousel">
-                        <div id="carousel-slide" class="carousel slide" data-ride="carousel">
-                            <div class="carousel slide" data-ride="carousel">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel-slide" data-slide-to="0" class=""></li>
-                                    <li data-target="#carousel-slide" data-slide-to="1" class=""></li>
-                                    <li data-target="#carousel-slide" data-slide-to="2" class="active"></li>
-                                    <li data-target="#carousel-slide" data-slide-to="3" class=""></li>
-                                    <li data-target="#carousel-slide" data-slide-to="4" class=""></li>
-                                </ol>
-                                <div class="carousel-inner">
-                                    <div class="item">
-                                        <img src="assets/img/Burung.png" alt="Awesome Image">
-                                    </div>
-                                    <div class="item">
-                                        <img src="assets/img/ceo.jpg" alt="Awesome Image">
-                                    </div>
-                                    <div class="item active">
-                                        <img src="assets/img/Levi.jpg" alt="Awesome Image">
-                                    </div>
-                                    <div class="item">
-                                        <img src="assets/img/Flew.png" alt="Awesome Image">
-                                    </div>
-                                    <div class="item">
-                                        <img src="assets/img/Nome.png" alt="Awesome Image">
-                                    </div>
-                                </div>
-                                <a class="left carousel-control" href="#carousel-slide" data-slide="prev">
-                                    <i class="material-icons">keyboard_arrow_left</i>
-                                </a>
-                                <a class="right carousel-control" href="#carousel-slide" data-slide="next">
-                                    <i class="material-icons">keyboard_arrow_right</i>
-                                </a>
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-10 text-center" data-aos="fade-up">
+                    <h1 class="page-header-title">Cari Kursus ? Ya Kursusaja.id</h1>
+                    <p class="page-header-text">Temukan kursus yang terbaik buat kamu.</p>
+                    <form class="page-header-signup">
+                        <div class="form-row justify-content-center">
+                            <div class="col-lg-6 col-md-8">
+                                <div class="form-group mr-0 mr-lg-2"><label class="sr-only" for="inputSearch">Cari Kursus...</label><input class="form-control form-control-solid rounded-pill" id="inputSearch" type="text" placeholder="Cari Kursus..."></div>
+                            </div>
+                            <div class="col-lg-3 col-md-4"><button class="btn btn-orange btn-block btn-marketing rounded-pill" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Cari</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="bg-white py-10">
+    <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-out">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h1>Kursus</h1>
+                    <p class="lead">Temukan kursus yang cocok buat kamu dibawah ini.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <?php foreach ($kursus as $k) :; ?>
+                <div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+                    <a class="card lift" href="/pages/detailkursus/<?= $k['id']; ?>"><img class="card-img-top" src="/assets/img/layanan/<?= $k['gambar']; ?>" title="<?= $k['judul']; ?>" alt="...">
+                        <div class="card-body text-center py-3">
+                            <h6 class="card-title mb-0">
+                                <?php
+                                $num_char = 50;
+                                $text = $k['judul'];
+                                echo substr($text, 0, $num_char) . '...';
+                                ?>
+                            </h6>
+                            <div class="small mb-2">Rp. <?= $k['harga']; ?></div>
+                            <div class="small">
+                                Nama Lembaga
                             </div>
                         </div>
-                    </div>
+                        <div class="card-footer text-center text-xs">
+                            Bergabung <i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <div class="text-center" data-aos="fade-up" data-aos-delay="200"><a class="btn btn-orange rounded-pill lift" href="/pages/katalog">Lihat Lainnya</a></div>
+    <div class="svg-border-rounded text-light">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor">
+            <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0" /></svg>
+    </div>
+</section>
+<section class="bg-light py-10">
+    <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-out">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h1>Event</h1>
+                    <p class="lead">Ada event menarik nih dibawah ini.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <?php foreach ($event as $e) :; ?>
+                <div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+                    <a class="card lift" href="/pages/detailevent/<?= $e['id']; ?>"><img class="card-img-top" src="/assets/img/layanan/<?= $e['gambar']; ?>" title="<?= $e['judul']; ?>" alt="...">
+                        <div class="card-body text-center py-3">
+                            <h6 class="card-title mb-0">
+                                <?php
+                                $num_char = 50;
+                                $text = $e['judul'];
+                                echo substr($text, 0, $num_char) . '...';
+                                ?>
+                            </h6>
+                            <div class="small mb-2">Rp. <?= $e['harga']; ?></div>
+                            <div class="small">
+                                Lama Lembaga
+                            </div>
+                        </div>
+                        <div class="card-footer text-center text-xs">
+                            Bergabung <i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <div class="text-center" data-aos="fade-up" data-aos-delay="200"><a class="btn btn-orange rounded-pill lift" href="/pages/event">Lihat Lainnya</a></div>
+    <div class="svg-border-rounded text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor">
+            <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0" /></svg>
+    </div>
+</section>
+<section class="bg-white py-10">
+    <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-out">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h2>Portfolio</h2>
+                    <p class="lead">Berikut adalah hasil desain dari beberapa pengguna dari Kursusaja.id</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-columns card-columns-portfolio">
+            <a class="card card-portfolio" data-aos="fade-right" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/1.jpg" title="Study" alt="">
+            </a><a class="card card-portfolio" data-aos="fade-up" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/2.jpg" title="Skynight" alt="">
+            </a><a class="card card-portfolio" data-aos="fade-left" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/3.png" title="Flew" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="text-center" data-aos="fade-up" data-aos-delay="200"><a class="btn btn-orange rounded-pill lift" href="/pages/portfolio">Lihat Lainnya</a></div>
+    <div class="svg-border-rounded text-light">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor">
+            <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0" /></svg>
+    </div>
+</section>
+<section class="bg-light py-10">
+    <div class="container col-md-10">
+        <div class="row justify-content-center" data-aos="zoom-out">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h2>Bagaimana Cara Menggunakan Kursusaja.id ?</h2>
+                    <p class="lead">Ikuti Langkah-Langkah Dibawah Ini</p>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-right" data-aos-delay="700">
+                <div class="card-body mb-4">
+                    <img class="card-img-top" src="../assets/img/search1.png" alt="">
+                </div>
+                <div class="card-footer bg-light">
+                    <h3>Step 1</h3>
+                    <p class="mb-0">Cari Kursus Yang Kamu Inginkan</p>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="1200">
+                <div class="card-body mb-4">
+                    <img class="card-img-top" src="../assets/img/search2.png" alt="">
+                </div>
+                <div class="card-footer bg-light">
+                    <h3>Step 2</h3>
+                    <p class="mb-0">Lihat Detail Kursus Agar Kamu Lebih Yakin</p>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-down" data-aos-delay="1700">
+                <div class="card-body mb-4">
+                    <img class="card-img-top" src="../assets/img/sign.png" alt="">
+                </div>
+                <div class="card-footer bg-light">
+                    <h3>Step 3</h3>
+                    <p class="mb-0">Daftarkan Dirimu Dikursusaja.id</p>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-left" data-aos-delay="2200">
+                <div class="card-body mb-4">
+                    <img class="card-img-top" src="../assets/img/complete.png" alt="">
+                </div>
+                <div class="card-footer bg-light">
+                    <h3>Step 4</h3>
+                    <p class="mb-0">Pantau Progress Belajarmu Hingga Selesai</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="section features-5" style="background-color: rgb(250, 250, 250)!important;" id="how">
-    <div class="col-md-8 col-md-offset-2 text-center">
-        <h2 class="title">Bagaimana Menggunakan Kursusaja.id ?</h2>
+    <div class="svg-border-waves text-dark">
+        <svg class="wave" style="pointer-events: none" fill="currentColor" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 75">
+            <defs>
+                <style>
+                    .a {
+                        fill: none;
+                    }
+
+                    .b {
+                        clip-path: url(#a);
+                    }
+
+                    .d {
+                        opacity: 0.5;
+                        isolation: isolate;
+                    }
+                </style>
+                <clipPath id="a">
+                    <rect class="a" width="1920" height="75" />
+                </clipPath>
+            </defs>
+            <title>wave</title>
+            <g class="b">
+                <path class="c" d="M1963,327H-105V65A2647.49,2647.49,0,0,1,431,19c217.7,3.5,239.6,30.8,470,36,297.3,6.7,367.5-36.2,642-28a2511.41,2511.41,0,0,1,420,48" />
+            </g>
+            <g class="b">
+                <path class="d" d="M-127,404H1963V44c-140.1-28-343.3-46.7-566,22-75.5,23.3-118.5,45.9-162,64-48.6,20.2-404.7,128-784,0C355.2,97.7,341.6,78.3,235,50,86.6,10.6-41.8,6.9-127,10" />
+            </g>
+            <g class="b">
+                <path class="d" d="M1979,462-155,446V106C251.8,20.2,576.6,15.9,805,30c167.4,10.3,322.3,32.9,680,56,207,13.4,378,20.3,494,24" />
+            </g>
+            <g class="b">
+                <path class="d" d="M1998,484H-243V100c445.8,26.8,794.2-4.1,1035-39,141-20.4,231.1-40.1,378-45,349.6-11.6,636.7,73.8,828,150" />
+            </g>
+        </svg>
     </div>
-    <div class="container" style="width: 80%;">
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="info">
-                    <img src="assets/img/search1.png" width="200px" alt="">
-                </div>
-                <h4 class="info-title text-center">1. Cari Kursus Yang Kamu Inginkan</h4>
-            </div>
-            <div class="col-sm-3">
-                <div class="info">
-                    <img src="assets/img/search2.png" width="200px" alt="">
-                </div>
-                <h4 class="info-title text-center">2. Lihat Detail Kursus Agar Kamu Lebih Yakin</h4>
-            </div>
-            <div class="col-sm-3">
-                <div class="info">
-                    <img src="assets/img/sign.png" width="200px" alt="">
-                </div>
-                <h4 class="info-title text-center">3. Daftarkan Dirimu Dikursusaja.id</h4>
-            </div>
-            <div class="col-sm-3">
-                <div class="info">
-                    <img src="assets/img/complete.png" width="200px" alt="">
-                </div>
-                <h4 class="info-title text-center">4. Pantau Progress Belajarmu Hingga Selesai</h4>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="section section-image">
-    <div class="container" style="width: 80%;">
-        <div class="row">
-            <div class="col-md-8">
-                <h2 class="title" style="color:#fff!important">Tentang Kami</h2>
-            </div>
-            <div class="col-md-6">
-                <img src="assets/img/Logo Panjang.png" width="300px" alt="">
-                <h4>Berdiri sejak Januari 2020</h4>
-                <p>Kursusaja.id adalah platform penyedia kursus, yang mempertemukan para calon peserta kursus dan jasa penyedia layanan kursus. Fokus kursus adalah kursus keterampilan, yang akan menambah value pesertanya sehingga dapat dengan mudah mendapatkan pekerjaan.</p>
-                <h4>Visi :</h4>
-                <p>Membantu mengurangi angka pengangguran dan mendorong kualitas perekonomian masyarakat melalui edukasi keterampilan kerja.</p>
-            </div>
-            <div class="col-md-3">
-                <div class="card card-pricing card-margin" style="background-color: transparent!important; color:#000!important;box-shadow:none!important">
-                    <div class="card-content">
-                        <h3 class="category" style="margin: 0!important"><b>Layanan</b></h3>
-                        <ul>
-                            <li><a href="/"><b>Kelas Kursus</b></a></li>
-                            <li><a href="/"><b>Daftar Jadi Mitra</b></a></li>
-                            <li><a href="/"><b>Event</b></a></li>
-                            <li><a href="/"><b>KURMA</b></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card card-pricing card-margin" style="background-color: transparent!important; color:#000!important;box-shadow:none!important">
-                    <div class=" card-content">
-                        <h3 class="category" style="margin: 0!important"><b>Kontak</b></h3>
-                        <ul>
-                            <li><a href="/"><b>Instagram</b></a></li>
-                            <li><a href="/"><b>Facebook</b></a></li>
-                            <li><a href="/"><b>WhatsApp</b></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+</section>
+</main>
 </div>

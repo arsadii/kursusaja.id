@@ -1,49 +1,93 @@
-<div class="container text-center" style="width: 85%;">
-    <div class="col-md-12" style="margin-top: 90px!important;">
-        <h2 class="title" style="color: rgb(255, 103, 2)!important;">Katalog Kursus</h2>
-    </div>
-    <div class="cards">
-        <div class="row">
-            <?php foreach ($kursus as $k) :; ?>
-                <div class="col-md-3">
-                    <div class="card card-profile">
-                        <div class="card-image">
-                            <a href="/">
-                                <img class="img" src="/assets/img/examples/<?= $k['gambar']; ?>" />
-                            </a>
+<header class="page-header page-header-dark bg-img-cover overlay overlay-80 d-flex flex-column justify-content-center" style="background-image: url('../assets/img/1.jpg')">
+    <div class="page-header-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-10 text-center" data-aos="fade-up">
+                    <h1 class="page-header-title">Cari Kursus ? Ya Kursusaja.id</h1>
+                    <p class="page-header-text">Temukan kursus yang terbaik buat kamu.</p>
+                    <form class="page-header-signup">
+                        <div class="form-row justify-content-center">
+                            <div class="col-lg-6 col-md-8">
+                                <div class="form-group mr-0 mr-lg-2"><label class="sr-only" for="inputSearch">Cari Kursus...</label><input class="form-control form-control-solid rounded-pill" id="inputSearch" type="text" placeholder="Cari Kursus..."></div>
+                            </div>
+                            <div class="col-lg-3 col-md-4"><button class="btn btn-orange btn-block btn-marketing rounded-pill" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Cari</button></div>
                         </div>
-                        <div class="card-content">
-                            <h4 class="judul">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="bg-white py-10">
+    <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-out">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h1>Kursus</h1>
+                    <p class="lead">Temukan kursus yang cocok buat kamu dibawah ini.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <?php foreach ($kursus as $k) :; ?>
+                <div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+                    <a class="card lift" href="/pages/detail_kursus/<?= $k['id']; ?>"><img class="card-img-top" src="/assets/img/layanan/<?= $k['gambar']; ?>" title="<?= $k['judul']; ?>" alt="...">
+                        <div class="card-body text-center py-3">
+                            <h6 class="card-title mb-0">
                                 <?php
                                 $num_char = 50;
                                 $text = $k['judul'];
                                 echo substr($text, 0, $num_char) . '...';
                                 ?>
-                            </h4>
-                            <h5>Rp. <?= $k['harga']; ?></h5>
-                            <div class="footer">
-                                <a href="/pages/detailkursus/<?= $k['id']; ?>" class="btn btn-danger">Detail</a>
+                            </h6>
+                            <div class="small mb-2">Rp. <?= $k['harga']; ?></div>
+                            <div class="small">
+                                Nama Lembaga
                             </div>
                         </div>
-                    </div>
+                        <div class="card-footer text-center text-xs">
+                            Bergabung <i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+                    </a>
                 </div>
             <?php endforeach; ?>
         </div>
     </div>
-</div>
-<div class="section features-5" style="background-color:#2f3337!important;">
-    <div class="col-md text-center">
-        <h2 class="title" style="color: #fff;">Mau Dapat Info Seputar Kursus Terbaru ?</h2>
+    <div class="svg-border-rounded text-light">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor">
+            <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0" /></svg>
     </div>
+</section>
+<section class="bg-light py-10">
     <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-out">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h1>Mau Dapat Info Seputar Kursus Terbaru ?</h1>
+                    <p class="lead">Jangan Lupa Follow Social Media Kami Dibawah Ini.</p>
+                </div>
+            </div>
+        </div>
         <div class="row text-center">
-            <h4 class="info-title text-center" style="color: #fff;">Ikuti Kami Di Sosial Media</h4>
-            <button class="btn btn-just-icon btn-round btn-facebook">
-                <i class="fa fa-facebook"></i>
-            </button>
-            <button class="btn btn-just-icon btn-round btn-instagram">
-                <i class="fa fa-instagram"></i>
-            </button>
+            <div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-right">
+                <a class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4 lift" href="/" title="Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+                <h2>Facebook</h2>
+            </div>
+            <div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-up">
+                <a class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4 lift" href="/" title="Instagram">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+                <h2>Instagram</h2>
+            </div>
+            <div class="col-lg-4" data-aos="fade-left">
+                <a class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4 lift" href="/" title="WhatsApp">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                </a>
+                <h2>WhatsApp</h2>
+            </div>
         </div>
     </div>
+</section>
+</main>
 </div>

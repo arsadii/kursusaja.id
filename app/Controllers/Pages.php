@@ -69,6 +69,15 @@ class Pages extends BaseController
         ];
         echo view('pages/masuk', $data);
     }
+    public function Daftar()
+    {
+        $data = [
+            'title' => 'Daftar - Kursusaja.id',
+            'menu' => '',
+            'validation' => \Config\Services::validation()
+        ];
+        echo view('pages/daftar', $data);
+    }
     public function daftarakun()
     {
         if (!$this->validate([
@@ -214,15 +223,6 @@ class Pages extends BaseController
     {
         session()->destroy();
         return redirect()->to('/pages/masuk');
-    }
-    public function daftar()
-    {
-        $data = [
-            'title' => 'Daftar - Kursusaja.id'
-        ];
-        echo view('layout/header', $data);
-        echo view('pages/daftar');
-        echo view('layout/footer');
     }
     public function detailkursus($id)
     {
