@@ -55,9 +55,9 @@
             </nav>
             <header class="page-header page-header-light overlay overlay-80 d-flex flex-column justify-content-center">
                <div class="page-header-content">
-                  <div class="container">
+                  <div class="container col-md-10">
                      <div class="row justify-content-center">
-                        <div class="col-xl-8 col-lg-10 text-center" data-aos="fade-up">
+                        <div class="col-md-6 text-center" data-aos="fade-up">
                            <h1 class="page-header-title text-orange">Login</h1>
                            <p class="page-header-text text-white">Silahkan Login Terlebih Dahulu.</p>
                            <form class="page-header-signup" method="post" action="/pages/cekmasuk">

@@ -4216,11 +4216,11 @@ body{overflow-x:hidden}
 .navbar-home .btn{font-size:.7rem;padding:.75rem 2rem}
 .navbar-home.fixed-top,.page-header.navbar-fixed .navbar-home.navbar{max-height:100vh;overflow-y:auto}
 @media (min-width: 992px) {
-.navbar-home{padding-top:0;padding-bottom:0}
+.navbar-home{max-height:70px;padding-top:0;padding-bottom:0}
 .navbar-home .navbar-nav{padding-top:1.75rem;padding-bottom:1.75rem}
 .navbar-home .navbar-nav .nav-item{margin-right:1rem;}
 .navbar-home .navbar-nav .nav-item:last-child{margin-right:0}
-.navbar-home.fixed-top,.page-header.navbar-fixed .navbar-home.navbar{max-height:none;overflow-y:visible}
+.navbar-home.fixed-top,.page-header.navbar-fixed .navbar-home.navbar{max-height:70px;overflow-y:visible}
 }
 .navbar-home.navbar-dark.navbar-scrolled{background-color:#1b1a1a!important}
 .navbar-home.navbar-light.navbar-scrolled{background-color:#eff3f9!important}

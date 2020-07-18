@@ -30,8 +30,8 @@
         </div>
         <div class="row mb-5">
             <?php foreach ($kursus as $k) :; ?>
-                <div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
-                    <a class="card lift" href="/pages/detailkursus/<?= $k['id']; ?>"><img class="card-img-top" src="/assets/img/layanan/<?= $k['gambar']; ?>" title="<?= $k['judul']; ?>" alt="...">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <a class="card mb-4 lift" href="/pages/detailkursus/<?= $k['id']; ?>"><img class="card-img-top" src="/assets/img/layanan/<?= $k['gambar']; ?>" title="<?= $k['judul']; ?>" alt="...">
                         <div class="card-body text-center py-3">
                             <h6 class="card-title mb-0">
                                 <?php
@@ -70,8 +70,8 @@
         </div>
         <div class="row mb-5">
             <?php foreach ($event as $e) :; ?>
-                <div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
-                    <a class="card lift" href="/pages/detailevent/<?= $e['id']; ?>"><img class="card-img-top" src="/assets/img/layanan/<?= $e['gambar']; ?>" title="<?= $e['judul']; ?>" alt="...">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <a class="card mb-4 lift" href="/pages/detailevent/<?= $e['id']; ?>"><img class="card-img-top" src="/assets/img/layanan/<?= $e['gambar']; ?>" title="<?= $e['judul']; ?>" alt="...">
                         <div class="card-body text-center py-3">
                             <h6 class="card-title mb-0">
                                 <?php

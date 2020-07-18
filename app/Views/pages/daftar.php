@@ -19,7 +19,7 @@
    <div id="layoutDefault">
       <div id="layoutDefault_content">
          <main>
-            <nav class="navbar navbar-home navbar-expand-lg bg-primary navbar-dark fixed-top">
+            <nav class="navbar navbar-home navbar-expand-lg bg-primary navbar-dark">
                <div class="container">
                   <a class="navbar-brand" href="/"><img src="/assets/img/Logo Panjang.png" alt=""></a>
                   <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#menuresponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +55,7 @@
             </nav>
             <header class="page-header page-header-light overlay overlay-80 d-flex flex-column justify-content-center">
                <div class="page-header-content">
-                  <div class="container">
+                  <div class="container col-md-10">
                      <?php if (session()->getFlashdata('flashdata')) : ?>
                         <div class="flash-data-daftarakun" data-flashdata="<?php echo session()->getFlashdata('flashdata'); ?> "></div>
                         <?php if (session()->getFlashdata('flashdata') == 'Data Berhasil Di Simpan!') : ?>
@@ -69,7 +69,7 @@
                         <?php endif; ?>
                      <?php endif; ?>
                      <div class="row justify-content-center">
-                        <div class="col-xl-8 col-lg-10 text-center" data-aos="fade-up">
+                        <div class="col-md-6 text-center" data-aos="fade-up">
                            <h1 class="page-header-title text-orange">Daftar</h1>
                            <p class="page-header-text text-white">Silahkan Isi Data Dibawah Ini Dengan Benar</p>
                            <form class="page-header-signup" method="post" action="/pages/daftarakun" enctype="multipart/form-data">
