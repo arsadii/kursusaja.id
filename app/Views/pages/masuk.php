@@ -71,7 +71,7 @@
                                        </div>
                                     </div>
                                     <div class="form-group mr-0 mr-lg-2">
-                                       <input class="form-control form-control-solid <?= ($validation->hasError('username')) ? 'is-invalid' : ''; ?>" autofocus value="<?= old('username'); ?>" id="username" name="username" type="text" placeholder="Password">
+                                       <input class="form-control form-control-solid <?= ($validation->hasError('password')) ? 'is-invalid' : ''; ?>" autofocus value="<?= old('password'); ?>" id="password" name="password" type="text" placeholder="Password">
                                        <div class="invalid-feedback">
                                           <?= $validation->getError('password'); ?>
                                        </div>

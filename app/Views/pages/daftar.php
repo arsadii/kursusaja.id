@@ -101,7 +101,7 @@
                                        </div>
                                     </div>
                                     <div class="form-group mr-0 mr-lg-2">
-                                       <input type="text" class="form-control form-control-solid <?= ($validation->hasError('tanggallahir')) ? 'is-invalid' : ''; ?>" value="<?= old('tanggallahir'); ?>" name="tanggallahir" placeholder="Tanggal Lahir">
+                                       <input type="date" class="form-control form-control-solid <?= ($validation->hasError('tanggallahir')) ? 'is-invalid' : ''; ?>" value="<?= old('tanggallahir'); ?>" name="tanggallahir" placeholder="Tanggal Lahir">
                                        <div class="invalid-feedback">
                                           <?= $validation->getError('tanggallahir'); ?>
                                        </div>
