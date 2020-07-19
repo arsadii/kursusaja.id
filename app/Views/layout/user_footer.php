@@ -100,7 +100,7 @@
                 contentType: false,
                 success: function(response) {
                     alert(response);
-                    if (response == "Data berhasil diubah!") {
+                    if (response == "Data berhasil di tambah!") {
                         $("#ubah").modal("hide");
                         window.location.reload();
                     }

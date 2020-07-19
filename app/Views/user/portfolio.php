@@ -15,8 +15,8 @@
                     </div>
                     <div class="row">
                         <?php foreach ($portofolio as $p) : ?>
-                            <div class="col-xxl-4 col-xl-4">
-                                <div class="card h-100 card-img-top">
+                            <div class="col-xxl-4 col-xl-4 mb-4">
+                                <div class="card h-100 card-img-top ">
                                     <img class="img" style="height: 200px" src="/assets/img/portfolio/<?= $p['gambar']; ?>" alt="...">
                                     <div class="card-img-overlay">
                                         <!-- <a href="user/hapusportofolio/<?= $p['id']; ?>" class="close btn-hapus tombol-hapus-portofolio"><i class="fa fa-trash-o" aria-hidden="true"></i></a><br><br> -->
