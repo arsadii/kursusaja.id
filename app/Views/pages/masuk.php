@@ -60,6 +60,17 @@
                         <div class="col-md-6 text-center" data-aos="fade-up">
                            <h1 class="page-header-title text-orange">Login</h1>
                            <p class="page-header-text text-white">Silahkan Login Terlebih Dahulu.</p>
+                           <?php if (session()->getFlashdata('flashdata')) : ?>
+                              <?php if (session()->getFlashdata('flashdata') == 'Akun Berhasil Di Dafar!') : ?>
+                                 <div class="alert alert-success mx-4" role="alert">
+                                    <?= (session()->getFlashdata('flashdata')); ?>
+                                 </div>
+                              <?php else : ?>
+                                 <div class="alert alert-danger mx-4" role="alert">
+                                    <?= (session()->getFlashdata('flashdata')); ?>
+                                 </div>
+                              <?php endif ?>
+                           <?php endif ?>
                            <form class="page-header-signup" method="post" action="/pages/cekmasuk">
                               <?= csrf_field(); ?>
                               <div class="justify-content-center">

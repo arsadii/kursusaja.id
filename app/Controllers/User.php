@@ -251,12 +251,12 @@ class User extends BaseController
             session()->setFlashdata('flashdata', 'Data Gagal Di Ubah!');
             return redirect()->to('/user/pengaturan')->withInput();
         }
-        // $gambar = $this->penggunaModel->getPengguna(session()->get('id'));
-        // $hapus = "assets/img/profil/peserta/" . $gambar['gambar'];
-        // unlink($hapus);
+        $gambar = $this->penggunaModel->getPengguna(session()->get('id'));
+        $hapus = "assets/img/profil/peserta/" . $gambar['gambar'];
+        unlink($hapus);
         $fileGambar = $this->request->getFile('gambar');
-        $namaGambar = $fileGambar->getName();
-        $fileGambar->move('assets/img/profil/peserta');
+        $namaGambar = $fileGambar->getRandomName();
+        $fileGambar->move('assets/img/profil/peserta', $namaGambar);
         $id = session()->get('id');
 
         $this->penggunaModel->save([
@@ -318,7 +318,7 @@ class User extends BaseController
 
 
             $fileGambar = $this->request->getFile('gambar-portofolio');
-            $namaGambar = $fileGambar->getName();
+            $namaGambar = $fileGambar->getRandomName();
             if ($namaGambar == null) {
                 $this->portofolioModel->save([
                     'id' => $this->request->getVar('id-portofolio'),
@@ -329,7 +329,7 @@ class User extends BaseController
                 $gambar = $this->portofolioModel->getPortofolio($this->request->getVar('id-portofolio'));
                 $hapus = "assets/img/portfolio/" . $gambar['gambar'];
                 unlink($hapus);
-                $fileGambar->move('assets/img/portfolio');
+                $fileGambar->move('assets/img/portfolio', $namaGambar);
                 $this->portofolioModel->save([
                     'id' => $this->request->getVar('id-portofolio'),
                     'judul' => $this->request->getVar('judul-portofolio'),

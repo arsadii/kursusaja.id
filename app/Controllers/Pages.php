@@ -129,9 +129,9 @@ class Pages extends BaseController
             ]
 
         ])) {
-            session()->setFlashdata('flashdata', 'Data Gagal Di Simpan!');
+            // session()->setFlashdata('flashdata', 'Data Gagal Di Simpan!');
             $validation = \Config\Services::validation();
-            return redirect()->to('/pages/masuk')->withInput()->with('validation', $validation);
+            return redirect()->to('/pages/daftar')->withInput()->with('validation', $validation);
         }
         date_default_timezone_set('Asia/Makassar');
         $role = 'admin';
@@ -148,7 +148,7 @@ class Pages extends BaseController
             'email' => $this->request->getVar('email')
             // 'created_at'=>$date;
         ]);
-        session()->setFlashdata('flashdata', 'Data Berhasil Di Simpan!');
+        session()->setFlashdata('flashdata', 'Akun Berhasil Di Dafar!');
         return redirect()->to('/pages/masuk');
     }
     public function cekmasuk()
