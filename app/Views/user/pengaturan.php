@@ -165,7 +165,7 @@
                             </div>
                             <div class="col-md">
                                 <input class="form-control form-control-solid" name="nama" value="<?= $user['nama_lngkp'] ?>" type="text" placeholder="">
-                                <div class="text-danger pl-5">
+                                <div class="text-danger pl-1">
                                     <?= $validation->getError('nama'); ?>
                                 </div>
                             </div>
@@ -178,7 +178,7 @@
                             </div>
                             <div class="col-md">
                                 <input class="form-control form-control-solid" name="username" value="<?= $user['username'] ?>" type="text" placeholder="">
-                                <div class="text-danger pl-5">
+                                <div class="text-danger pl-1">
                                     <?= $validation->getError('username'); ?>
                                 </div>
                             </div>
@@ -191,7 +191,7 @@
                             </div>
                             <div class="col-md">
                                 <input class="form-control form-control-solid" name="ttl" value="<?= $user['ttl'] ?>" type="date" placeholder="">
-                                <div class="text-danger pl-5">
+                                <div class="text-danger pl-1">
                                     <?= $validation->getError('ttl'); ?>
                                 </div>
                             </div>
@@ -204,7 +204,7 @@
                             </div>
                             <div class="col-md">
                                 <input class="form-control form-control-solid" name="alamat" value="<?= $user['alamat'] ?>" type="text" placeholder="">
-                                <div class="text-danger pl-5">
+                                <div class="text-danger pl-1">
                                     <?= $validation->getError('alamat'); ?>
                                 </div>
                             </div>
@@ -217,7 +217,7 @@
                             </div>
                             <div class="col-md">
                                 <input class="form-control form-control-solid" name="email" value="<?= $user['email'] ?>" type="email" placeholder="">
-                                <div class="text-danger pl-5">
+                                <div class="text-danger pl-1">
                                     <?= $validation->getError('email'); ?>
                                 </div>
                             </div>
@@ -230,7 +230,7 @@
                             </div>
                             <div class="col-md">
                                 <input class="form-control form-control-solid" name="hp" value="<?= $user['hp'] ?>" type="text" placeholder="">
-                                <div class="text-danger pl-5">
+                                <div class="text-danger pl-1">
                                     <?= $validation->getError('hp'); ?>
                                 </div>
                             </div>
@@ -243,7 +243,7 @@
                             </div>
                             <div class="col-md">
                                 <input class="form-control form-control-solid" name="pass" type="password" placeholder="">
-                                <div class="text-danger pl-5">
+                                <div class="text-danger pl-1">
                                     <?= $validation->getError('pass'); ?>
                                 </div>
                             </div>

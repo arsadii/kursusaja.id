@@ -19,6 +19,7 @@
                                 <div class="card h-100 card-img-top">
                                     <img class="img" style="height: 200px" src="/assets/img/portfolio/<?= $p['gambar']; ?>" alt="...">
                                     <div class="card-img-overlay">
+                                        <!-- <a href="user/hapusportofolio/<?= $p['id']; ?>" class="close btn-hapus tombol-hapus-portofolio"><i class="fa fa-trash-o" aria-hidden="true"></i></a><br><br> -->
                                         <button class="close btn-hapus" type="button" data-toggle="modal" data-id="<?= $p['id']; ?>" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
                                         <button class="close btn-edit-portofolio" type="button" data-id="<?= $p['id']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i></button><br><br>
                                         <button class="close btn-detail" type="button" data-id="<?= $p['id']; ?>"><i class="fa fa-file-text" aria-hidden="true"></i></button>
@@ -47,6 +48,7 @@
                         </div>
                         <div class="modal-body">
                             <form role="form" id="tambah-portofolio" class="card card-body">
+                                <?= csrf_field(); ?>
                                 <div class="form-group">
                                     <div class="col-md text-center">
                                         <label for="judulportofolio">
@@ -94,6 +96,7 @@
                         </div>
                         <div class="modal-body">
                             <form role="form" id="form-ubah-portofolio" class="card card-body">
+                                <?= csrf_field(); ?>
                                 <div class="form-group">
                                     <div class="col-md text-center">
                                         <label for="judul-portofolio">
@@ -140,10 +143,16 @@
             <div class="modal fade" id="hapus" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Yakin Ingin Menghapus Portfolio ?</h5>
-                        </div>
-                        <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button><a href="/" class="btn btn-danger" type="button">Hapus</a></div>
+                        <form action="/user/hapusportofolio/<?= $p['id']; ?>" method="POST">
+                            <?= csrf_field(); ?>
+                            <div class="modal-header">
+                                <h5 class="modal-title">Yakin Ingin Menghapus Portfolio ?</h5>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" type="button" data-dismiss="modal">Tutup</button>
+                                <button class="btn btn-danger" type="submit">Hapus</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

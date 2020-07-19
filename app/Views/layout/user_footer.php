@@ -27,6 +27,8 @@
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
 <script src="/assets/js/datatables-demo.js"></script>
+<script src="/assets/js/sweetalert2.all.js"></script>
+<script src="/assets/js/script.js"></script>
 <script>
     function previewImg() {
         const gambar = document.querySelector('#gambar');

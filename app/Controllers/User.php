@@ -106,6 +106,20 @@ class User extends BaseController
     public function ubahprofil($id)
     {
         $user = $this->penggunaModel->getPengguna(session()->get('id'));
+        //Cek username
+        $unamelama = $user['username'];
+        if ($unamelama == $this->request->getVar('username')) {
+            $rule_uname = 'required';
+        } else {
+            $rule_uname = 'required|is_unique[pengguna.username]';
+        }
+
+        $unameemail = $user['email'];
+        if ($unameemail == $this->request->getVar('email')) {
+            $rule_email = 'required';
+        } else {
+            $rule_email = 'required|is_unique[pengguna.email]';
+        }
         if (!$this->validate([
             'nama' => [
                 'rules' => 'required',
@@ -114,9 +128,10 @@ class User extends BaseController
                 ]
             ],
             'username' => [
-                'rules' => 'required',
+                'rules' => $rule_uname,
                 'errors' => [
                     'required' => 'Nama Pengguna tidak boleh kosong!',
+                    'is_unique' => 'Nama Pengguna Sudah dugunakan!'
                 ]
             ],
             'hp' => [
@@ -139,9 +154,11 @@ class User extends BaseController
                 ]
             ],
             'email' => [
-                'rules' => 'required',
+                'rules' => $rule_email,
                 'errors' => [
                     'required' => 'Email tidak boleh kosong!',
+                    'is_unique' => 'Email Sudah dugunakan!'
+
                 ]
             ],
             'pass' => [
@@ -234,6 +251,9 @@ class User extends BaseController
             session()->setFlashdata('flashdata', 'Data Gagal Di Ubah!');
             return redirect()->to('/user/pengaturan')->withInput();
         }
+        // $gambar = $this->penggunaModel->getPengguna(session()->get('id'));
+        // $hapus = "assets/img/profil/peserta/" . $gambar['gambar'];
+        // unlink($hapus);
         $fileGambar = $this->request->getFile('gambar');
         $namaGambar = $fileGambar->getName();
         $fileGambar->move('assets/img/profil/peserta');
@@ -280,7 +300,8 @@ class User extends BaseController
                 'deskripsi' => $this->request->getVar('keteranganportofolio'),
                 'gambar' => $namaGambar
             ]);
-            return $this->respond("Data berhasil diubah!");
+            return $this->respond("Data berhasil di tambah!");
+            return redirect()->to('/user/portfolio');
         }
     }
 
@@ -291,31 +312,42 @@ class User extends BaseController
         if (!$this->validate([
             'judul-portofolio' => 'required',
             'keterangan-portofolio' => 'required'
-            // 'judul-portofolio' => [
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => 'Judul portofolio tidak boleh kosong!'
-            //     ]
-            // ],
-            // 'keterangan-portofolio' => [
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => 'Keterangan tidak boleh kosong!',
-            //     ]
-            // ]
         ])) {
             return $this->respond("Semua kolom harus diisi!");
         } else {
+
+
             $fileGambar = $this->request->getFile('gambar-portofolio');
             $namaGambar = $fileGambar->getName();
-            $fileGambar->move('assets/img/portfolio');
-            $this->portofolioModel->save([
-                'id' => $this->request->getVar('id-portofolio'),
-                'judul' => $this->request->getVar('judul-portofolio'),
-                'deskripsi' => $this->request->getVar('keterangan-portofolio'),
-                'gambar' => $namaGambar,
-            ]);
+            if ($namaGambar == null) {
+                $this->portofolioModel->save([
+                    'id' => $this->request->getVar('id-portofolio'),
+                    'judul' => $this->request->getVar('judul-portofolio'),
+                    'deskripsi' => $this->request->getVar('keterangan-portofolio'),
+                ]);
+            } else {
+                $gambar = $this->portofolioModel->getPortofolio($this->request->getVar('id-portofolio'));
+                $hapus = "assets/img/portfolio/" . $gambar['gambar'];
+                unlink($hapus);
+                $fileGambar->move('assets/img/portfolio');
+                $this->portofolioModel->save([
+                    'id' => $this->request->getVar('id-portofolio'),
+                    'judul' => $this->request->getVar('judul-portofolio'),
+                    'deskripsi' => $this->request->getVar('keterangan-portofolio'),
+                    'gambar' => $namaGambar,
+                ]);
+            }
             return $this->respond("Data berhasil diubah!");
         }
+    }
+    public function hapusportofolio($id)
+    {
+        $gambar = $this->portofolioModel->getPortofolio($id);
+        $hapus = "assets/img/portfolio/" . $gambar['gambar'];
+        unlink($hapus);
+        $this->portofolioModel->delete($id);
+
+        // return $this->respond("Portofolio berhasil dihapus!");
+        return redirect()->to('/user/portfolio');
     }
 }
