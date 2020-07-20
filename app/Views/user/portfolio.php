@@ -3,6 +3,7 @@
                 <div class="page-header">
                     <div class="container col-md-12">
                         <div class="page-header-content">
+                            <div class="portofolio" data-portofolio="<?= session()->get('flashdata'); ?>"></div>
                             <h2 class="page-header-title text-center" style="display:block!important;color:rgb(255, 103, 2)">
                                 Portfolio
                             </h2>
@@ -19,7 +20,9 @@
                                 <div class="card mb-4">
                                     <img class="card-img-top" src="/assets/img/portfolio/<?= $p['gambar']; ?>" title="<?= $p['judul']; ?>" alt="...">
                                     <div class="card-img-overlay">
-                                        <button class="close btn-hapus" type="button" data-toggle="modal" data-id="<?= $p['id']; ?>" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
+                                        <!-- <button onclick="Swal.fire()">Swal</button> -->
+                                        <button href="/user/hapusportofolio/<?= $p['id']; ?>" class="close btn btn-hapus-portofolio" type="button"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
+                                        <!-- <button class="close btn-hapus" type="button" data-toggle="modal" data-id="<?= $p['id']; ?>" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br> -->
                                         <button class="close btn-edit-portofolio" type="button" data-id="<?= $p['id']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i></button><br><br>
                                         <button class="close btn-detail" type="button" data-id="<?= $p['id']; ?>"><i class="fa fa-file-text" aria-hidden="true"></i></button>
                                     </div>
@@ -140,7 +143,7 @@
             <div class="modal fade" id="hapus" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
-                        <form action="/user/hapusportofolio/<?= $p['id']; ?>" method="POST">
+                        <form method="POST">
                             <?= csrf_field(); ?>
                             <div class="modal-header">
                                 <h5 class="modal-title">Yakin Ingin Menghapus Portfolio ?</h5>

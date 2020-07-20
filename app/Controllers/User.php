@@ -23,8 +23,16 @@ class User extends BaseController
         $this->mitraModel = new MitraModel();
         $this->materiModel = new MateriModel();
         $this->portofolioModel = new PortofolioModel();
+        if (session()->get('role') != 'Peserta') {
+            return redirect()->to('/user/block');
+        } else {
+        }
     }
     // User 
+    public function block()
+    {
+        echo 'Anda mengakses halman yang bukan milik anda!';
+    }
     public function dashboard()
     {
         $data = [
@@ -113,7 +121,7 @@ class User extends BaseController
         } else {
             $rule_uname = 'required|is_unique[pengguna.username]';
         }
-
+        //Cek email
         $unameemail = $user['email'];
         if ($unameemail == $this->request->getVar('email')) {
             $rule_email = 'required';
@@ -170,7 +178,7 @@ class User extends BaseController
             ]
 
         ])) {
-            session()->setFlashdata('flashdata', 'Data Gagal Di Ubah!');
+            session()->setFlashdata('flashdata', 'Gagal Di Ubah, Data yang dimasukkan belum Valid!');
             $validation = \Config\Services::validation();
             return redirect()->to('/user/pengaturan')->withInput()->with('validation', $validation);
         }
@@ -186,7 +194,7 @@ class User extends BaseController
                 'hp' => $this->request->getVar('hp'),
                 'email' => $this->request->getVar('email')
             ]);
-            session()->setFlashdata('flashdata', 'Data Berhasil Di Ubah!');
+            session()->setFlashdata('flashdata', 'Berhasil Di Ubah!');
             return redirect()->to('/user/pengaturan');
         } else {
             session()->setFlashdata('flashdata', 'Kata Sandi salah!');
@@ -204,9 +212,10 @@ class User extends BaseController
                 ]
             ],
             'passbaru' => [
-                'rules' => 'required',
+                'rules' => 'required|min_length[8]',
                 'errors' => [
                     'required' => 'Kata Sandi Baru tidak boleh kosong!',
+                    'min_length' => 'Panjang Kata Sandi Baru minimal 8 karakter'
                 ]
             ],
             'confirmpass' => [
@@ -218,7 +227,7 @@ class User extends BaseController
             ],
 
         ])) {
-            session()->setFlashdata('flashdata', 'Data Gagal Di Ubah!');
+            // session()->setFlashdata('flashdata', 'Gagal Dis Ubah!');
             $validation = \Config\Services::validation();
             return redirect()->to('/user/pengaturan')->withInput()->with('validation', $validation);
         }
@@ -228,10 +237,10 @@ class User extends BaseController
                 'id' => $id,
                 'password' => $this->request->getVar('passbaru'),
             ]);
-            session()->setFlashdata('flashdata', 'Data Berhasil Di Ubah!');
+            session()->setFlashdata('flashdata', 'Berhasil Di Ubah!');
             return redirect()->to('/user/pengaturan');
         } else {
-            session()->setFlashdata('flashdata', 'Kata Sandi Salah!');
+            session()->setFlashdata('flashdata', 'Gagal di ubah, Kata Sandi Anda Salah!');
             return redirect()->to('/user/pengaturan');
         }
     }
@@ -248,7 +257,7 @@ class User extends BaseController
                 ]
             ],
         ])) {
-            session()->setFlashdata('flashdata', 'Data Gagal Di Ubah!');
+            // session()->setFlashdata('flashdata', 'Gagal Di Ubah!');
             return redirect()->to('/user/pengaturan')->withInput();
         }
         $gambar = $this->penggunaModel->getPengguna(session()->get('id'));
@@ -264,7 +273,7 @@ class User extends BaseController
             'gambar' => $namaGambar
         ]);
 
-        session()->setFlashdata('flashdata', 'Data Berhasil Di Ubah!');
+        session()->setFlashdata('flashdata', 'Berhasil Di Ubah!');
         return redirect()->to('/user/pengaturan');
     }
 
@@ -293,15 +302,16 @@ class User extends BaseController
         } else {
             $fileGambar = $this->request->getFile('gambarportofolio');
             $namaGambar = $fileGambar->getName();
-            $fileGambar->move('assets/img/portfolio');
+            $fileGambar->move('assets/img/portfolio', $namaGambar);
             $this->portofolioModel->save([
                 'id_peserta' => $id,
                 'judul' => $this->request->getVar('judulportofolio'),
                 'deskripsi' => $this->request->getVar('keteranganportofolio'),
                 'gambar' => $namaGambar
             ]);
-            return $this->respond("Data berhasil di tambah!");
-            return redirect()->to('/user/portfolio');
+            // return $this->respond("berhasil di tambah!");
+            session()->setFlashdata('flashdata', 'Berhasil Di Simpan!');
+            // return redirect()->to('/user/portfolio');
         }
     }
 
@@ -318,8 +328,8 @@ class User extends BaseController
 
 
             $fileGambar = $this->request->getFile('gambar-portofolio');
-            $namaGambar = $fileGambar->getRandomName();
-            if ($namaGambar == null) {
+            $namaGambar = $fileGambar->getName();
+            if ($fileGambar == null) {
                 $this->portofolioModel->save([
                     'id' => $this->request->getVar('id-portofolio'),
                     'judul' => $this->request->getVar('judul-portofolio'),
@@ -337,7 +347,9 @@ class User extends BaseController
                     'gambar' => $namaGambar,
                 ]);
             }
-            return $this->respond("Data berhasil diubah!");
+            session()->setFlashdata('flashdata', 'Berhasil Di Ubah!');
+            // return redirect()->to('/user/portfolio');
+            // return $this->respond("Data berhasil diubah!");
         }
     }
     public function hapusportofolio($id)
@@ -348,6 +360,7 @@ class User extends BaseController
         $this->portofolioModel->delete($id);
 
         // return $this->respond("Portofolio berhasil dihapus!");
+        session()->setFlashdata('flashdata', 'Berhasil Di Hapus!');
         return redirect()->to('/user/portfolio');
     }
 }

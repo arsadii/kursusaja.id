@@ -1,16 +1,23 @@
-//Absen
-const flashDaftar = $('.flash-data-daftarakun').data('flashdata');
-console.log(flashDaftar);
-// if (flashDaftar) {
-// 	Swal.fire({
-// 		icon: "info",
-// 		title: "Data Akun",
-// 		text: flashDaftar,
-// 	});
-// }
+const profil = $('.profil').data('profil');
+if (profil) {
+    Swal.fire({
+        title: "Data Profil",
+        text: profil,
+        icon: "info"
+    });
+}
 
-// tombol - hapus - absen
-$(".tombol-hapus-portofolio").on("click", function (e) {
+const portofolio = $('.portofolio').data('portofolio');
+if (portofolio) {
+    Swal.fire({
+        title: "Data Portofolio",
+        text: portofolio,
+        icon: "info"
+    });
+}
+
+// tombol - hapus - portofolio
+$(".btn-hapus-portofolio").on("click", function (e) {
     e.preventDefault();
     const href = $(this).attr("href");
 

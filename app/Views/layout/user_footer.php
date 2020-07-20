@@ -27,8 +27,10 @@
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
 <script src="/assets/js/datatables-demo.js"></script>
-<script src="/assets/js/sweetalert2.all.js"></script>
-<script src="/assets/js/script.js"></script>
+<!-- Sweet Alerts -->
+<script src="/assets/sweetalert/sweetalert2.all.js"></script>
+<script src="/assets/sweetalert/script.js"></script>
+<!-- <script src="/assets/js/sweetalert2.all.js"></script> -->
 <script>
     function previewImg() {
         const gambar = document.querySelector('#gambar');
@@ -80,12 +82,16 @@
                 contentType: false,
                 success: function(response) {
                     console.log(response);
-                    alert(response);
-                    if (response == "Data berhasil diubah!") {
-                        $("#ubah").modal("hide");
-                        window.location.reload();
-                    }
+                    window.location.reload();
                 }
+                // success: function(response) {
+                //     console.log(response);
+                //     alert(response);
+                //     if (response == "Data berhasil diubah!") {
+                //         $("#ubah").modal("hide");
+                //         window.location.reload();
+                //     }
+                // }
             });
         })
 
@@ -99,12 +105,16 @@
                 processData: false,
                 contentType: false,
                 success: function(response) {
-                    alert(response);
-                    if (response == "Data berhasil di tambah!") {
-                        $("#ubah").modal("hide");
-                        window.location.reload();
-                    }
+                    console.log(response);
+                    window.location.reload();
                 }
+                // success: function(response) {
+                // //     alert(response);
+                // //     if (response == "Data berhasil di tambah!") {
+                // //         $("#ubah").modal("hide");
+                // //         window.location.reload();
+                // //     }
+                // // }
             });
         })
     });

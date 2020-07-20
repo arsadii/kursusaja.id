@@ -11,6 +11,7 @@
         </div>
         <div class="container col-md-10">
             <nav class="nav nav-borders">
+                <div class="profil" data-profil="<?= session()->get('flashdata'); ?>"></div>
                 <a class="nav-link ml-0" href="/user/dashboard">Dashboard</a>
                 <a class="nav-link active" href="/user/pengaturan">Pengaturan</a>
             </nav>
