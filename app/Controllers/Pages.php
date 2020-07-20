@@ -69,6 +69,48 @@ class Pages extends BaseController
         ];
         echo view('pages/masuk', $data);
     }
+    public function error401()
+    {
+        $data = [
+            'title' => 'Oops! Error 401'
+        ];
+        echo view('pages/401', $data);
+    }
+    public function error403()
+    {
+        $data = [
+            'title' => 'Oops! Error 403'
+        ];
+        echo view('pages/403', $data);
+    }
+    public function error404()
+    {
+        $data = [
+            'title' => 'Oops! Error 404'
+        ];
+        echo view('pages/404', $data);
+    }
+    public function error500()
+    {
+        $data = [
+            'title' => 'Oops! Error 500'
+        ];
+        echo view('pages/500', $data);
+    }
+    public function error503()
+    {
+        $data = [
+            'title' => 'Oops! Error 503'
+        ];
+        echo view('pages/503', $data);
+    }
+    public function error504()
+    {
+        $data = [
+            'title' => 'Oops! Error 504'
+        ];
+        echo view('pages/504', $data);
+    }
     public function Daftar()
     {
         $data = [

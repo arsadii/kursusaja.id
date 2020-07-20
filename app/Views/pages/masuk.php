@@ -15,11 +15,11 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-   <div id="layoutDefault">
-      <div id="layoutDefault_content">
+<body class="bg-dark">
+   <div id="layoutAuthentication">
+      <div id="layoutAuthentication_content">
          <main>
-            <nav class="navbar navbar-home navbar-expand-lg bg-primary navbar-dark fixed-top">
+            <nav class="navbar navbar-home navbar-expand-lg bg-primary navbar-dark">
                <div class="container">
                   <a class="navbar-brand" href="/"><img src="/assets/img/Logo Panjang.png" alt=""></a>
                   <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#menuresponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,56 +48,52 @@
                         <li class="nav-item <?= $status3 ?>"><a class="nav-link" href="/pages/event">Event</a></li>
                         <li class="nav-item <?= $status4 ?>"><a class="nav-link" href="/pages/portfolio">Portfolio</a></li>
                      </ul>
-                     <a class="px-4 ml-lg-4" href="/pages/masuk" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i> Masuk</a>
-                     <a class="btn-orange btn px-4 ml-lg-4" href="/pages/daftar">Daftar <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                  </div>
-               </div>
-            </nav>
-            <header class="page-header page-header-light overlay overlay-80 d-flex flex-column justify-content-center">
-               <div class="page-header-content">
-                  <div class="container col-md-10">
-                     <div class="row justify-content-center">
-                        <div class="col-md-6 text-center" data-aos="fade-up">
-                           <h1 class="page-header-title text-orange">Login</h1>
-                           <p class="page-header-text text-white">Silahkan Login Terlebih Dahulu.</p>
-                           <?php if (session()->getFlashdata('flashdata')) : ?>
-                              <?php if (session()->getFlashdata('flashdata') == 'Akun Berhasil Di Dafar!') : ?>
-                                 <div class="alert alert-success" role="alert">
-                                    <?= (session()->getFlashdata('flashdata')); ?>
-                                 </div>
-                              <?php else : ?>
-                                 <div class="alert alert-danger" role="alert">
-                                    <?= (session()->getFlashdata('flashdata')); ?>
-                                 </div>
-                              <?php endif ?>
-                           <?php endif ?>
-                           <form class="page-header-signup" method="post" action="/pages/cekmasuk">
-                              <?= csrf_field(); ?>
-                              <div class="justify-content-center">
-                                 <div class="col-md">
-                                    <div class="form-group mr-0 mr-lg-2">
-                                       <input class="form-control form-control-solid <?= ($validation->hasError('username')) ? 'is-invalid' : ''; ?>" autofocus value="<?= old('username'); ?>" id="username" name="username" type="text" placeholder="Username">
-                                       <div class="invalid-feedback">
-                                          <?= $validation->getError('username'); ?>
-                                       </div>
-                                    </div>
-                                    <div class="form-group mr-0 mr-lg-2">
-                                       <input class="form-control form-control-solid <?= ($validation->hasError('password')) ? 'is-invalid' : ''; ?>" autofocus value="<?= old('password'); ?>" id="password" name="password" type="text" placeholder="Password">
-                                       <div class="invalid-feedback">
-                                          <?= $validation->getError('password'); ?>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <button class="btn btn-orange btn-block btn-marketing rounded-pill mb-4" name="masuk" type="submit"><i class="fa fa-lock" aria-hidden="true"></i> Login</button>
-                                 <a class="mb-5" href="/pages/daftar" target="_blank">Belum Punya Akun ? Silahkan Daftar</a><br>
-                                 <a href="/" target="_blank">Lupa Password ?</a>
-                              </div>
-                           </form>
-                        </div>
+                     <div class="text-center">
+                        <a class="px-4 ml-lg-4" href="/pages/masuk" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i> Masuk</a>
+                        <a class="btn btn-orange px-4 ml-lg-4" href="/pages/daftar" target="_blank">Daftar <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                      </div>
                   </div>
                </div>
-            </header>
+            </nav>
+            <div class="container-xl">
+               <div class="row justify-content-center text-center">
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 my-10">
+                     <h1 class="page-header-title text-orange">Login</h1>
+                     <p class="page-header-text text-white">Silahkan Login Terlebih Dahulu.</p>
+                     <?php if (session()->getFlashdata('flashdata')) : ?>
+                        <?php if (session()->getFlashdata('flashdata') == 'Akun Berhasil Di Dafar!') : ?>
+                           <div class="alert alert-success" role="alert">
+                              <?= (session()->getFlashdata('flashdata')); ?>
+                           </div>
+                        <?php else : ?>
+                           <div class="alert alert-danger" role="alert">
+                              <?= (session()->getFlashdata('flashdata')); ?>
+                           </div>
+                        <?php endif ?>
+                     <?php endif ?>
+                     <form class="page-header-signup" method="post" action="/pages/cekmasuk">
+                        <?= csrf_field(); ?>
+                        <div class="container col-md-6 justify-content-center">
+                           <div class="form-group mr-0 mr-lg-2">
+                              <input class="form-control form-control-solid <?= ($validation->hasError('username')) ? 'is-invalid' : ''; ?>" autofocus value="<?= old('username'); ?>" id="username" name="username" type="text" placeholder="Username">
+                              <div class="invalid-feedback">
+                                 <?= $validation->getError('username'); ?>
+                              </div>
+                           </div>
+                           <div class="form-group mr-0 mr-lg-2">
+                              <input class="form-control form-control-solid <?= ($validation->hasError('password')) ? 'is-invalid' : ''; ?>" autofocus value="<?= old('password'); ?>" id="password" name="password" type="text" placeholder="Password">
+                              <div class="invalid-feedback">
+                                 <?= $validation->getError('password'); ?>
+                              </div>
+                           </div>
+                           <button class="btn btn-orange btn-block btn-marketing rounded-pill mb-4" name="masuk" type="submit"><i class="fa fa-lock" aria-hidden="true"></i> Login</button>
+                        </div>
+                        <a class="mb-5" href="/pages/daftar" target="_blank">Belum Punya Akun ? Silahkan Daftar</a><br>
+                        <a href="/" target="_blank">Lupa Password ?</a>
+                     </form>
+                  </div>
+               </div>
+            </div>
          </main>
       </div>
    </div>
