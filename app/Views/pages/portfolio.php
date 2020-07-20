@@ -30,11 +30,11 @@
         </div>
         <div class="card-columns card-columns-portfolio">
             <a class="card card-portfolio" data-aos="fade-right" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/1.jpg" title="Study" alt="">
-            </a><a class="card card-portfolio" data-aos="fade-up" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/2.jpg" title="Skynight" alt="">
-            </a><a class="card card-portfolio" data-aos="fade-left" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/3.png" title="Flew" alt="">
+            </a><a class="card card-portfolio" data-aos="fade-up" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/1.jpg" title="Skynight" alt="">
+            </a><a class="card card-portfolio" data-aos="fade-left" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/1.jpg" title="Flew" alt="">
             </a><a class="card card-portfolio" data-aos="fade-right" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/1.jpg" title="Study" alt="">
-            </a><a class="card card-portfolio" data-aos="fade-up" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/2.jpg" title="Skynight" alt="">
-            </a><a class="card card-portfolio" data-aos="fade-left" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/3.png" title="Flew" alt="">
+            </a><a class="card card-portfolio" data-aos="fade-up" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/1.jpg" title="Skynight" alt="">
+            </a><a class="card card-portfolio" data-aos="fade-left" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/1.jpg" title="Flew" alt="">
             </a>
         </div>
     </div>

@@ -11,29 +11,25 @@
                 </div>
                 <div class="col-lg-6 d-flex flex-column justify-content-center py-5 py-xl-4">
                     <div class="row text-center">
-                        <div class="col-md-6 mb-5 mb-lg-0" data-aos="fade-up">
-                            <div class="card" style="background-color: transparent!important; color:#000!important;box-shadow:none!important">
-                                <div class="card-content">
-                                    <h3 class="text-uppercase-expanded text-light mb-4"><b>Layanan</b></h3>
-                                    <ul class="text-light list-unstyled mb-0">
-                                        <li class="mb-2"><a href="/"><b>Kelas Kursus</b></a></li>
-                                        <li class="mb-2"><a href="/"><b>Daftar Mitra</b></a></li>
-                                        <li class="mb-2"><a href="/"><b>Event</b></a></li>
-                                        <li class="mb-2"><a href="/"><b>Kurma</b></a></li>
-                                    </ul>
-                                </div>
+                        <div class="col-md-6 mb-5 mb-lg-0" data-aos="fade-down">
+                            <div class="card-content">
+                                <h3 class="text-uppercase-expanded text-light mb-4"><b>Layanan</b></h3>
+                                <ul class="text-light list-unstyled mb-0">
+                                    <li class="mb-2"><a href="/"><b>Kelas Kursus</b></a></li>
+                                    <li class="mb-2"><a href="/"><b>Daftar Mitra</b></a></li>
+                                    <li class="mb-2"><a href="/"><b>Event</b></a></li>
+                                    <li class="mb-2"><a href="/"><b>Kurma</b></a></li>
+                                </ul>
                             </div>
                         </div>
                         <div class="col-md-6 mb-5 mb-lg-0" data-aos="fade-down">
-                            <div class="card" style="background-color: transparent!important; color:#000!important;box-shadow:none!important">
-                                <div class="card-content">
-                                    <h3 class="text-uppercase-expanded text-light mb-4"><b>Kontak</b></h3>
-                                    <ul class="text-light list-unstyled mb-0">
-                                        <li class="mb-2"><a href="/"><b>Instagram</b></a></li>
-                                        <li class="mb-2"><a href="/"><b>Facebook</b></a></li>
-                                        <li class="mb-2"><a href="/"><b>WhatsApp</b></a></li>
-                                    </ul>
-                                </div>
+                            <div class="card-content">
+                                <h3 class="text-uppercase-expanded text-light mb-4"><b>Kontak</b></h3>
+                                <ul class="text-light list-unstyled mb-0">
+                                    <li class="mb-2"><a href="/"><b>Instagram</b></a></li>
+                                    <li class="mb-2"><a href="/"><b>Facebook</b></a></li>
+                                    <li class="mb-2"><a href="/"><b>WhatsApp</b></a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>

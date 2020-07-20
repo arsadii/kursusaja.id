@@ -10,29 +10,26 @@
                     </div>
                 </div>
                 <div class="container col-md-10">
-                    <div class="col mb-4 text-right">
+                    <div class="mb-4 text-right">
                         <button class="btn btn-primary btn-raised btn-fab btn-fab-mini" type="button" data-toggle="modal" data-target="#tambahportofolio">Tambah</button>
                     </div>
                     <div class="row">
-                        <?php foreach ($portofolio as $p) : ?>
-                            <div class="col-xxl-4 col-xl-4 mb-4">
-                                <div class="card h-100 card-img-top ">
-                                    <img class="img" style="height: 200px" src="/assets/img/portfolio/<?= $p['gambar']; ?>" alt="...">
+                        <?php foreach ($portofolio as $p) :; ?>
+                            <div class="col-lg-4">
+                                <div class="card mb-4">
+                                    <img class="card-img-top" src="/assets/img/portfolio/<?= $p['gambar']; ?>" title="<?= $p['judul']; ?>" alt="...">
                                     <div class="card-img-overlay">
-                                        <!-- <a href="user/hapusportofolio/<?= $p['id']; ?>" class="close btn-hapus tombol-hapus-portofolio"><i class="fa fa-trash-o" aria-hidden="true"></i></a><br><br> -->
                                         <button class="close btn-hapus" type="button" data-toggle="modal" data-id="<?= $p['id']; ?>" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
                                         <button class="close btn-edit-portofolio" type="button" data-id="<?= $p['id']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i></button><br><br>
                                         <button class="close btn-detail" type="button" data-id="<?= $p['id']; ?>"><i class="fa fa-file-text" aria-hidden="true"></i></button>
                                     </div>
-                                    <div class="card-footer text-center">
-                                        <h3 class="badge badge-primary"><?= $p['judul']; ?></h3>
-                                        <p class="keterangan d-flex flex-column justify-content-center py-5 py-xl-4">
-                                            <?php
-                                            $num_char = 150;
-                                            $text = $p['deskripsi'];
-                                            echo substr($text, 0, $num_char) . '...';
-                                            ?>
-                                        </p>
+                                    <div class="card-body text-center py-3">
+                                        <h6 class="card-title">
+                                            <?= $p['judul']; ?>
+                                        </h6>
+                                        <div class="card-subtitle">
+                                            <?= $p['deskripsi']; ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

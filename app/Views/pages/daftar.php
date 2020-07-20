@@ -119,7 +119,7 @@
                                        </div>
                                     </div>
                                  </div>
-                                 <button class="btn btn-orange btn-block btn-marketing rounded-pill mb-4" name="masuk" type="submit"><i class="fa fa-lock" aria-hidden="true"></i> Daftar</button>
+                                 <button class="btn btn-orange btn-block btn-marketing rounded-pill mb-4" name="masuk" type="submit"><i class="fa fa-user-plus" aria-hidden="true"></i> Daftar</button>
                                  <a class="mb-5" href="/pages/masuk" target="_blank">Punya Akun ? Silahkan Login</a><br>
                                  <a href="/" target="_blank">Lupa Password ?</a>
                               </div>

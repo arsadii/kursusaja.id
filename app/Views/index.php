@@ -28,17 +28,13 @@
                 </div>
             </div>
         </div>
-        <div class="row mb-5">
+        <div class="row">
             <?php foreach ($kursus as $k) :; ?>
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <a class="card mb-4 lift" href="/pages/detailkursus/<?= $k['id']; ?>"><img class="card-img-top" src="/assets/img/layanan/<?= $k['gambar']; ?>" title="<?= $k['judul']; ?>" alt="...">
+                    <a class="card mb-5 lift" href="/pages/detailkursus/<?= $k['id']; ?>"><img class="card-img-top" src="/assets/img/layanan/<?= $k['gambar']; ?>" title="<?= $k['judul']; ?>" alt="...">
                         <div class="card-body text-center py-3">
                             <h6 class="card-title mb-0">
-                                <?php
-                                $num_char = 50;
-                                $text = $k['judul'];
-                                echo substr($text, 0, $num_char) . '...';
-                                ?>
+                                <?= $k['judul']; ?>
                             </h6>
                             <div class="small mb-2">Rp. <?= $k['harga']; ?></div>
                             <div class="small">
@@ -68,17 +64,13 @@
                 </div>
             </div>
         </div>
-        <div class="row mb-5">
+        <div class="row">
             <?php foreach ($event as $e) :; ?>
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <a class="card mb-4 lift" href="/pages/detailevent/<?= $e['id']; ?>"><img class="card-img-top" src="/assets/img/layanan/<?= $e['gambar']; ?>" title="<?= $e['judul']; ?>" alt="...">
+                    <a class="card mb-5 lift" href="/pages/detailevent/<?= $e['id']; ?>"><img class="card-img-top" src="/assets/img/layanan/<?= $e['gambar']; ?>" title="<?= $e['judul']; ?>" alt="...">
                         <div class="card-body text-center py-3">
                             <h6 class="card-title mb-0">
-                                <?php
-                                $num_char = 50;
-                                $text = $e['judul'];
-                                echo substr($text, 0, $num_char) . '...';
-                                ?>
+                                <?= $e['judul']; ?>
                             </h6>
                             <div class="small mb-2">Rp. <?= $e['harga']; ?></div>
                             <div class="small">
@@ -99,7 +91,7 @@
     </div>
 </section>
 <section class="bg-white py-10">
-    <div class="container">
+    <div class="container mb-4">
         <div class="row justify-content-center" data-aos="zoom-out">
             <div class="col-lg-8">
                 <div class="text-center mb-5">
@@ -133,35 +125,43 @@
         </div>
         <div class="row text-center">
             <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-right" data-aos-delay="700">
-                <div class="card-body mb-4">
-                    <img class="card-img-top" src="../assets/img/search1.png" alt="">
+                <div class="features mb-4">
+                    <div class="card-body">
+                        <img class="img-fluid" src="../assets/img/search1.png" alt="">
+                    </div>
                 </div>
                 <div class="card-footer bg-light">
                     <h3>Step 1</h3>
                     <p class="mb-0">Cari Kursus Yang Kamu Inginkan</p>
                 </div>
             </div>
-            <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="1200">
-                <div class="card-body mb-4">
-                    <img class="card-img-top" src="../assets/img/search2.png" alt="">
+            <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="1400">
+                <div class="features mb-4">
+                    <div class="card-body">
+                        <img class="img-fluid" src="../assets/img/search2.png" alt="">
+                    </div>
                 </div>
                 <div class="card-footer bg-light">
                     <h3>Step 2</h3>
                     <p class="mb-0">Lihat Detail Kursus Agar Kamu Lebih Yakin</p>
                 </div>
             </div>
-            <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-down" data-aos-delay="1700">
-                <div class="card-body mb-4">
-                    <img class="card-img-top" src="../assets/img/sign.png" alt="">
+            <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-down" data-aos-delay="2100">
+                <div class="features mb-4">
+                    <div class="card-body">
+                        <img class="img-fluid" src="../assets/img/sign.png" alt="">
+                    </div>
                 </div>
                 <div class="card-footer bg-light">
                     <h3>Step 3</h3>
-                    <p class="mb-0">Daftarkan Dirimu Dikursusaja.id</p>
+                    <p class="mb-0">Daftarkan Dirimu Di Kursusaja.id</p>
                 </div>
             </div>
-            <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-left" data-aos-delay="2200">
-                <div class="card-body mb-4">
-                    <img class="card-img-top" src="../assets/img/complete.png" alt="">
+            <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-left" data-aos-delay="2800">
+                <div class="features mb-4">
+                    <div class="card-body">
+                        <img class="img-fluid" src="../assets/img/complete.png" alt="">
+                    </div>
                 </div>
                 <div class="card-footer bg-light">
                     <h3>Step 4</h3>

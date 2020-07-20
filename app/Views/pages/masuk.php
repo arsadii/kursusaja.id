@@ -62,11 +62,11 @@
                            <p class="page-header-text text-white">Silahkan Login Terlebih Dahulu.</p>
                            <?php if (session()->getFlashdata('flashdata')) : ?>
                               <?php if (session()->getFlashdata('flashdata') == 'Akun Berhasil Di Dafar!') : ?>
-                                 <div class="alert alert-success mx-4" role="alert">
+                                 <div class="alert alert-success" role="alert">
                                     <?= (session()->getFlashdata('flashdata')); ?>
                                  </div>
                               <?php else : ?>
-                                 <div class="alert alert-danger mx-4" role="alert">
+                                 <div class="alert alert-danger" role="alert">
                                     <?= (session()->getFlashdata('flashdata')); ?>
                                  </div>
                               <?php endif ?>

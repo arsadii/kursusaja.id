@@ -48,8 +48,10 @@
                                 <li class="nav-item <?= $status3 ?>"><a class="nav-link" href="/pages/event">Event</a></li>
                                 <li class="nav-item <?= $status4 ?>"><a class="nav-link" href="/pages/portfolio">Portfolio</a></li>
                             </ul>
-                            <a class="px-4 ml-lg-4" href="/pages/masuk" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i> Masuk</a>
-                            <a class="btn-orange btn px-4 ml-lg-4" href="/pages/daftar">Daftar <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                            <div class="text-center">
+                                <a class="px-4 ml-lg-4" href="/pages/masuk" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i> Masuk</a>
+                                <a class="btn btn-orange px-4 ml-lg-4" href="/pages/daftar" target="_blank">Daftar <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                            </div>
                         </div>
                     </div>
                 </nav>

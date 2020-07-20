@@ -1,5 +1,5 @@
 @charset "UTF-8";
-:root{--blue:#0061f2;--indigo:#5800e8;--purple:#6900c7;--pink:#e30059;--red:#e81500;--orange:#f76400;--yellow:#f4a100;--green:#00ac69;--teal:#00ba94;--cyan:#00cfd5;--white:#fff;--gray:#687281;--gray-dark:#323f52;--primary:#0061f2;--secondary:#6900c7;--success:#00ac69;--info:#00cfd5;--warning:#f4a100;--danger:#e81500;--light:#eff3f9;--dark:#1f2d41;--black:#000;--white:#fff;--red:#e81500;--orange:#f76400;--yellow:#f4a100;--green:#00ac69;--teal:#00ba94;--cyan:#00cfd5;--blue:#0061f2;--indigo:#5800e8;--purple:#6900c7;--pink:#e30059;--red-soft:#eec7c7;--orange-soft:#f1d6c7;--yellow-soft:#f0e3c7;--green-soft:#bfe5dc;--teal-soft:#bfe8e5;--cyan-soft:#bfecf2;--blue-soft:#bfd6f8;--indigo-soft:#d1c2f6;--purple-soft:#d4c2ef;--pink-soft:#edc2d9;--primary-soft:#bfd6f8;--secondary-soft:#d4c2ef;--success-soft:#bfe5dc;--info-soft:#bfecf2;--warning-soft:#f0e3c7;--danger-soft:#eec7c7;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif: "Metropolis", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+:root{--blue:#0061f2;--indigo:#5800e8;--purple:#6900c7;--pink:#e30059;--red:#e81500;--orange:#f76400;--yellow:#f4a100;--green:#00ac69;--teal:#00ba94;--cyan:#00cfd5;--white:#fff;--gray:#687281;--gray-dark:#323f52;--primary:#007bff;--secondary:#6c757d;--success:#00ac69;--info:#00cfd5;--warning:#f4a100;--danger:#e81500;--light:#eff3f9;--dark:#1f2d41;--black:#000;--white:#fff;--red:#e81500;--orange:#f76400;--yellow:#f4a100;--green:#00ac69;--teal:#00ba94;--cyan:#00cfd5;--blue:#0061f2;--indigo:#5800e8;--purple:#6900c7;--pink:#e30059;--red-soft:#eec7c7;--orange-soft:#f1d6c7;--yellow-soft:#f0e3c7;--green-soft:#bfe5dc;--teal-soft:#bfe8e5;--cyan-soft:#bfecf2;--blue-soft:#bfd6f8;--indigo-soft:#d1c2f6;--purple-soft:#d4c2ef;--pink-soft:#edc2d9;--primary-soft:#bfd6f8;--secondary-soft:#d4c2ef;--success-soft:#bfe5dc;--info-soft:#bfecf2;--warning-soft:#f0e3c7;--danger-soft:#eec7c7;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif: "Metropolis", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
 *,::before,::after{box-sizing:border-box}
 html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(0,0,0,0)}
 article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -92,6 +92,7 @@ pre{display:block;font-size:87.5%;color:#687281}
 pre code{font-size:inherit;color:inherit;word-break:normal}
 .pre-scrollable{max-height:340px;overflow-y:scroll}
 .container{width:100%;padding-right:1.5rem;padding-left:1.5rem;margin-right:auto;margin-left:auto}
+.features{background-size: cover;background-position: center center;background-repeat: no-repeat;position: relative;text-align: center;height:250px;object-fit: cover}
 @media (min-width: 576px) {
 .container{max-width:540px}
 }
@@ -1369,7 +1370,7 @@ input[type=submit].btn-block,input[type=reset].btn-block,input[type=button].btn-
 .card > .list-group:first-child .list-group-item:first-child{border-top-left-radius:.35rem;border-top-right-radius:.35rem}
 .card > .list-group:last-child .list-group-item:last-child{border-bottom-right-radius:.35rem;border-bottom-left-radius:.35rem}
 .card-body{-webkit-box-flex:1;flex:1 1 auto;min-height:1px;padding:1.35rem}
-.card-title{margin-bottom:1rem}
+.card-title{margin-bottom:1rem;max-width: 100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis}
 .card-subtitle{margin-top:-.5rem;margin-bottom:0}
 .card-text:last-child{margin-bottom:0}
 .card-link:hover{text-decoration:none}
@@ -4225,8 +4226,7 @@ body{overflow-x:hidden}
 .navbar-home.navbar-dark.navbar-scrolled{background-color:#1b1a1a!important}
 .navbar-home.navbar-light.navbar-scrolled{background-color:#eff3f9!important}
 @media (max-width: 991.98px) {
-a.nav-link{text-transform:uppercase;margin-right:1rem;padding: 10px;border: 2px solid #fff;}
-.navbar-collapse{text-align: center;}
+a.nav-link{text-transform:uppercase;padding: 15px}
 .navbar-home.bg-transparent.navbar-dark{background-color:#1b1a1a!important}
 .navbar-home.bg-transparent.navbar-light{background-color:#eff3f9!important}
 .animated--fade-in,.animated--fade-in-up{-webkit-animation:none;animation:none}
@@ -4263,9 +4263,9 @@ a.nav-link{text-transform:uppercase;margin-right:1rem;padding: 10px;border: 2px 
 }
 .dropdown-user .dropdown-user-img{height:100%;width:100%;border-radius:100%}
 .dropdown-user .dropdown-menu{min-width:13rem}
-.dropdown-user .dropdown-menu .dropdown-header .dropdown-user-img{height:2.5rem;width:2.5rem;margin-right:1rem}
+.dropdown-user .dropdown-menu .dropdown-header .dropdown-user-img{height:3rem;width:3rem;margin-right:1rem;object-fit: cover}
 .dropdown-user .dropdown-menu .dropdown-header .dropdown-user-details{font-weight:400}
-.dropdown-user .dropdown-menu .dropdown-header .dropdown-user-details .dropdown-user-details-name{color:#1f2d41;font-weight:500;font-size:.9rem;max-width:10rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dropdown-user .dropdown-menu .dropdown-header .dropdown-user-details .dropdown-user-details-name{color:#000;font-weight:500;font-size:.9rem;max-width:10rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .dropdown-user .dropdown-menu .dropdown-header .dropdown-user-details .dropdown-user-details-email{color:#687281;font-size:.75rem;max-width:10rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .dropdown-notifications{position:static}
 .dropdown-notifications .dropdown-menu{padding-top:0;padding-bottom:0;width:calc(100% - 3rem);right:1.5rem;max-height:19rem;overflow-y:auto;overflow-x:hidden}

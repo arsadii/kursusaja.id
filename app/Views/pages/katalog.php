@@ -34,11 +34,7 @@
                     <a class="card mb-4 lift" href="/pages/detail_kursus/<?= $k['id']; ?>"><img class="card-img-top" src="/assets/img/layanan/<?= $k['gambar']; ?>" title="<?= $k['judul']; ?>" alt="...">
                         <div class="card-body text-center py-3">
                             <h6 class="card-title mb-0">
-                                <?php
-                                $num_char = 50;
-                                $text = $k['judul'];
-                                echo substr($text, 0, $num_char) . '...';
-                                ?>
+                                <?= $k['judul']; ?>
                             </h6>
                             <div class="small mb-2">Rp. <?= $k['harga']; ?></div>
                             <div class="small">

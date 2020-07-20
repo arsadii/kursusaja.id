@@ -16,24 +16,22 @@
                         </h2>
                         <div class="card-body text-center">
                             <div class="row">
-                                <?php foreach ($kursus as $k) : ?>
-                                    <div class="col-xxl-4 col-xl-4">
-                                        <div class="card h-100 card-img-top mb-4">
-                                            <img class="img" style="height: 200px" src="/assets/img/layanan/<?= $k['gambar']; ?>" alt="...">
+                                <?php foreach ($kursus as $k) :; ?>
+                                    <div class="col-lg-4">
+                                        <div class="card mb-4">
+                                            <img class="card-img-top" src="/assets/img/layanan/<?= $k['gambar']; ?>" title="<?= $k['judul']; ?>" alt="...">
                                             <div class="card-img-overlay">
                                                 <button class="close btn-hapus" type="button" data-toggle="modal" data-id="<?= $k['id']; ?>" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
                                                 <button class="close btn-edit-kursus" type="button" data-id="<?= $k['id']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i></button><br><br>
                                                 <button class="close btn-detail" type="button" data-id="<?= $k['id']; ?>"><i class="fa fa-file-text" aria-hidden="true"></i></button>
                                             </div>
-                                            <div class="card-footer">
-                                                <h3 class="badge badge-primary"><?= $k['judul']; ?></h3>
-                                                <p class="keterangan d-flex flex-column justify-content-center py-5 py-xl-4">
-                                                    <?php
-                                                    $num_char = 150;
-                                                    $text = $k['deskripsi'];
-                                                    echo substr($text, 0, $num_char) . '...';
-                                                    ?>
-                                                </p>
+                                            <div class="card-footer text-center py-3">
+                                                <h6 class="card-title">
+                                                    <?= $k['judul']; ?>
+                                                </h6>
+                                                <div class="card-subtitle">
+                                                    <?= $k['deskripsi']; ?>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -49,24 +47,22 @@
                         </h2>
                         <div class="card-body text-center">
                             <div class="row">
-                                <?php foreach ($kurma as $ku) : ?>
-                                    <div class="col-xxl-4 col-xl-4">
-                                        <div class="card h-100 card-img-top mb-4">
-                                            <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
+                                <?php foreach ($kurma as $ku) :; ?>
+                                    <div class="col-lg-4">
+                                        <div class="card mb-4">
+                                            <img class="card-img-top" src="/assets/img/layanan/<?= $ku['gambar']; ?>" title="<?= $ku['judul']; ?>" alt="...">
                                             <div class="card-img-overlay">
                                                 <button class="close btn-hapus" type="button" data-toggle="modal" data-id="<?= $ku['id']; ?>" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
-                                                <button class="close btn-edit-kursus" type="button" data-id="<?= $ku['id']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i></button><br><br>
+                                                <button class="close btn-edit-kurma" type="button" data-id="<?= $ku['id']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i></button><br><br>
                                                 <button class="close btn-detail" type="button" data-id="<?= $ku['id']; ?>"><i class="fa fa-file-text" aria-hidden="true"></i></button>
                                             </div>
-                                            <div class="card-footer">
-                                                <h3 class="badge badge-primary"><?= $ku['judul']; ?></h3>
-                                                <p class="keterangan d-flex flex-column justify-content-center py-5 py-xl-4">
-                                                    <?php
-                                                    $num_char = 150;
-                                                    $text = $ku['deskripsi'];
-                                                    echo substr($text, 0, $num_char) . '...';
-                                                    ?>
-                                                </p>
+                                            <div class="card-footer text-center py-3">
+                                                <h6 class="card-title">
+                                                    <?= $ku['judul']; ?>
+                                                </h6>
+                                                <div class="card-subtitle">
+                                                    <?= $ku['deskripsi']; ?>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -82,24 +78,22 @@
                         </h2>
                         <div class="card-body text-center">
                             <div class="row">
-                                <?php foreach ($event as $e) : ?>
-                                    <div class="col-xxl-4 col-xl-4">
-                                        <div class="card h-100 card-img-top mb-4">
-                                            <img class="img" style="height: 200px" src="/assets/img/skynight.jpg" alt="...">
+                                <?php foreach ($event as $e) :; ?>
+                                    <div class="col-lg-4">
+                                        <div class="card mb-4">
+                                            <img class="card-img-top" src="/assets/img/layanan/<?= $e['gambar']; ?>" title="<?= $e['judul']; ?>" alt="...">
                                             <div class="card-img-overlay">
                                                 <button class="close btn-hapus" type="button" data-toggle="modal" data-id="<?= $e['id']; ?>" data-target="#hapus"><i class="fa fa-trash-o" aria-hidden="true"></i></button><br><br>
                                                 <button class="close btn-edit-kursus" type="button" data-id="<?= $e['id']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i></button><br><br>
                                                 <button class="close btn-detail" type="button" data-id="<?= $e['id']; ?>"><i class="fa fa-file-text" aria-hidden="true"></i></button>
                                             </div>
-                                            <div class="card-footer">
-                                                <h3 class="badge badge-primary"><?= $e['judul'] ?></h3>
-                                                <p class="keterangan d-flex flex-column justify-content-center py-5 py-xl-4">
-                                                    <?php
-                                                    $num_char = 150;
-                                                    $text = $e['deskripsi'];
-                                                    echo substr($text, 0, $num_char) . '...';
-                                                    ?>
-                                                </p>
+                                            <div class="card-footer text-center py-3">
+                                                <h6 class="card-title">
+                                                    <?= $e['judul']; ?>
+                                                </h6>
+                                                <div class="card-subtitle">
+                                                    <?= $e['deskripsi']; ?>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -34,11 +34,7 @@
                     <a class="card mb-4 lift" href="/pages/detail_event/<?= $e['id']; ?>"><img class="card-img-top" src="/assets/img/layanan/<?= $e['gambar']; ?>" title="<?= $e['judul']; ?>" alt="...">
                         <div class="card-body text-center py-3">
                             <h6 class="card-title mb-0">
-                                <?php
-                                $num_char = 50;
-                                $text = $e['judul'];
-                                echo substr($text, 0, $num_char) . '...';
-                                ?>
+                                <?= $e['judul']; ?>
                             </h6>
                             <div class="small mb-2">Rp. <?= $e['harga']; ?></div>
                             <div class="small">
