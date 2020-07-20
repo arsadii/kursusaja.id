@@ -4220,7 +4220,7 @@ body{overflow-x:hidden}
 .form-control-solid:focus{background-color:#ecf0f6}
 .navbar .dropdown-menu{top:calc(100% + 0.5rem + 0.5rem)!important;font-size:.9rem}
 .navbar .dropdown-menu .dropdown-header{font-size:.7rem;color:#a2acba}
-.navbar-home{-webkit-transition:background-color .15s ease-in-out;transition:background-color .15s ease-in-out;padding-top:1.75rem;padding-bottom:1.75rem}
+.navbar-home{-webkit-transition:background-color .15s ease-in-out;transition:background-color .15s ease-in-out;padding:15px}
 .navbar-home .navbar-toggler{padding:.5rem;border:0}
 .navbar-home .navbar-toggler svg{vertical-align:middle;height:1.5rem;width:1.5rem}
 .navbar-home .navbar-brand{font-size:1.2rem;font-weight:700}
@@ -4355,12 +4355,7 @@ section{position:relative}
 .svg-border-rounded svg{position:absolute;bottom:0;left:0;height:3rem;width:100%}
 .svg-border-waves{padding-top:2rem}
 .svg-border-waves svg{position:absolute;bottom:0;left:0;height:3rem;width:100%}
-.page-header{position:relative;height: 100vh;
-    background-position: center center;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-    border: 0}
+.page-header{position:relative;height: 100vh;background-position: center center;background-size: cover;margin: 0;padding: 0;border: 0}
 .page-header .page-header-content .page-header-title{font-size:2.5rem}
 .page-header .page-header-content .page-header-text{font-size:1.15rem}
 .page-header .page-header-content .page-header-text.small{font-size:.9rem}
@@ -4491,7 +4486,7 @@ section{position:relative}
 95%{clip:rect(85px,9999px,51px,0)}
 100%{clip:rect(75px,9999px,55px,0)}
 }
-.error:after{content:attr(data-text);position:absolute;left:2px;text-shadow:-1px 0 #e81500;top:0;color:#323f52;background:#fff;overflow:hidden;clip:rect(0,900px,0,0);animation:noise-anim 2s infinite linear alternate-reverse}
+.error:after{content:attr(data-text);position:absolute;left:2px;text-shadow:-1px 0 #e81500;top:0;color:#323f52;background:transparent;overflow:hidden;clip:rect(0,900px,0,0);animation:noise-anim 2s infinite linear alternate-reverse}
 @-webkit-keyframes noise-anim-2 {
 0%{clip:rect(72px,9999px,24px,0)}
 5%{clip:rect(33px,9999px,52px,0)}
@@ -4538,4 +4533,4 @@ section{position:relative}
 95%{clip:rect(11px,9999px,90px,0)}
 100%{clip:rect(77px,9999px,54px,0)}
 }
-.error:before{content:attr(data-text);position:absolute;left:-2px;text-shadow:1px 0 #0061f2;top:0;color:#323f52;background:#fff;overflow:hidden;clip:rect(0,900px,0,0);animation:noise-anim-2 3s infinite linear alternate-reverse}
+.error:before{content:attr(data-text);position:absolute;left:-2px;text-shadow:1px 0 #0061f2;top:0;color:#323f52;background:transparent;overflow:hidden;clip:rect(0,900px,0,0);animation:noise-anim-2 3s infinite linear alternate-reverse}

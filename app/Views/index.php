@@ -1,5 +1,5 @@
 <header class="page-header page-header-dark bg-img-cover overlay overlay-80 d-flex flex-column justify-content-center" style="background-image: url('../assets/img/1.jpg')">
-    <div class="page-header-content">
+    <div class="page-header-content mt-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8 col-lg-10 text-center" data-aos="fade-up">
