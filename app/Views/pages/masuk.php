@@ -57,7 +57,7 @@
             </nav>
             <div class="container-xl">
                <div class="row justify-content-center text-center">
-                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 my-10">
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 my-5">
                      <h1 class="page-header-title text-orange">Login</h1>
                      <p class="page-header-text text-white">Silahkan Login Terlebih Dahulu.</p>
                      <?php if (session()->getFlashdata('flashdata')) : ?>

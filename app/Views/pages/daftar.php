@@ -74,7 +74,7 @@
                      <p class="text-subtitle text-white">Silahkan Isi Data Dibawah Ini Dengan Benar</p>
                      <form class="page-header-signup" method="post" action="/pages/daftarakun" enctype="multipart/form-data">
                         <?= csrf_field(); ?>
-                        <div class="container col-md-8 justify-content-center">
+                        <div class="container col-md-10 justify-content-center">
                            <div class="form-group">
                               <input type="text" class="form-control form-control-solid <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" value="<?= old('nama'); ?>" name="nama" placeholder="Nama Lengkap">
                               <div class="invalid-feedback">
