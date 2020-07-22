@@ -4166,14 +4166,12 @@ body{overflow-x:hidden}
 .card-link{text-decoration:none!important;color:inherit!important}
 .card-link:hover{color:inherit!important}
 .card-portfolio{position:relative}
-.card-portfolio .card-body{display:-webkit-box;display:flex;-webkit-box-align:center;align-items:center;-webkit-box-pack:center;justify-content:center;position:absolute;bottom:0;height:3.5rem;width:100%;background-color:#fff;text-align:center}
-.card-portfolio .card-body .card-title{font-size:.75rem;margin:0;text-transform:uppercase;font-weight:800;letter-spacing:.1em;color:#323f52}
-@media (min-width: 992px) {
-.card-portfolio .card-body{height:100%;bottom:-100%;-webkit-transition:bottom .15s ease-in-out;transition:bottom .15s ease-in-out}
-.card-portfolio .card-img-top{-webkit-transition:-webkit-transform .45s ease-in-out;transition:-webkit-transform .45s ease-in-out;transition:transform .45s ease-in-out;transition:transform .45s ease-in-out,-webkit-transform .45s ease-in-out}
-.card-portfolio:hover .card-body{bottom:0;background-color:rgba(255,255,255,0.9)}
-.card-portfolio:hover .card-img-top{-webkit-transform:scale(1.2);transform:scale(1.2)}
-}
+.card-portfolio .card-body{transition: 1s;display:-webkit-box;display:flex;-webkit-box-align:center;align-items:center;-webkit-box-pack:center;justify-content:center;position:absolute;bottom:0;height:3.5rem;width:100%;background:linear-gradient(180deg, transparent 10%, rgba(0,0,0,1) 100%);text-align:center}
+.card-portfolio .card-body .card-title{font-size:.75rem;margin:0;text-transform:uppercase;font-weight:800;letter-spacing:.1em;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-portfolio .card-body{height:30%;bottom:-30%;-webkit-transition:bottom 1s ease-in-out;transition:bottom 1s ease-in-out}
+.card-portfolio .card-img-top{-webkit-transition:-webkit-transform 1s ease-in-out;transition:-webkit-transform 1s ease-in-out;transition:transform 1s ease-in-out;transition:transform 1s ease-in-out,-webkit-transform 1s ease-in-out}
+.card-portfolio:hover .card-body{transition: 1s;bottom:0;background:linear-gradient(180deg, transparent 10%, rgba(0,0,0,1) 100%)}
+.card-portfolio:hover .card-img-top{transition: 1s}
 .card-columns-portfolio .card{box-shadow:none}
 @media (min-width: 576px) and (max-width: 767.98px) {
 .card-columns-portfolio{-webkit-column-count:1;-moz-column-count:1;column-count:1}

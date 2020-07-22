@@ -101,9 +101,26 @@
             </div>
         </div>
         <div class="card-columns card-columns-portfolio">
-            <a class="card card-portfolio" data-aos="fade-right" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/1.jpg" title="Study" alt="">
-            </a><a class="card card-portfolio" data-aos="fade-up" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/2.jpg" title="Skynight" alt="">
-            </a><a class="card card-portfolio" data-aos="fade-left" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/3.png" title="Flew" alt="">
+            <div class="card card-portfolio" data-aos="fade-right" data-aos-delay="200">
+                <a href="/"><img class="card-img-top" src="/assets/img/portfolio/1.jpg" title="Study" alt=""></a>
+                <div class="card-body">
+                    <div class="row m-0 w-100 justify-content-center">
+                        <div class="card-title w-50 my-auto mr-auto">
+                            Judul Portfolio
+                        </div>
+                        <div class="card-title">
+                            <a class="btn btn-orange" href="/" target="_blank">
+                                <i class="far fa-thumbs-up" aria-hidden="true"></i>
+                            </a>
+                            <a class="btn btn-orange" href="/" target="_blank">
+                                <i class="far fa-heart" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="card card-portfolio" data-aos="fade-up" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/1.jpg" title="Skynight" alt="">
+            </a><a class="card card-portfolio" data-aos="fade-left" data-aos-delay="200" href="/"><img class="card-img-top" src="/assets/img/portfolio/1.jpg" title="Flew" alt="">
             </a>
         </div>
     </div>
