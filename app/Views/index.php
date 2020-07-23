@@ -140,11 +140,49 @@
                 </div>
             </div>
         </div>
-        <div class="row text-center">
+        <div class="card-columns card-columns-guide">
+            <div class="card card-portfolio bg-transparent shadow-none" data-aos="fade-right" data-aos-delay="700">
+                <a href="/"><img class="card-img-top" src="/assets/img/search1.png" title="Step 1" alt=""></a>
+                <div class="card-footer bg-transparent">
+                    <div class="card-title text-center mb-0">
+                        <h3>Step 1</h3>
+                        Cari Kursus Yang Kamu Inginkan
+                    </div>
+                </div>
+            </div>
+            <div class="card card-portfolio bg-transparent shadow-none" data-aos="fade-right" data-aos-delay="1400">
+                <a href="/"><img class="card-img-top" src="/assets/img/search2.png" title="Step 2" alt=""></a>
+                <div class="card-footer bg-transparent">
+                    <div class="card-title text-center mb-0">
+                        <h3>Step 2</h3>
+                        Lihat Detail Kursus Agar Kamu Lebih Yakin
+                    </div>
+                </div>
+            </div>
+            <div class="card card-portfolio bg-transparent shadow-none" data-aos="fade-right" data-aos-delay="2100">
+                <a href="/"><img class="card-img-top" src="/assets/img/sign.png" title="Step 3" alt=""></a>
+                <div class="card-footer bg-transparent">
+                    <div class="card-title text-center mb-0">
+                        <h3>Step 3</h3>
+                        Daftarkan Dirimu Di Kursusaja.id
+                    </div>
+                </div>
+            </div>
+            <div class="card card-portfolio bg-transparent shadow-none" data-aos="fade-right" data-aos-delay="2800">
+                <a href="/"><img class="card-img-top" src="/assets/img/complete.png" title="Step 4" alt=""></a>
+                <div class="card-footer bg-transparent">
+                    <div class="card-title text-center mb-0">
+                        <h3>Step 4</h3>
+                        Pantau Progress Belajarmu Hingga Selesai
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row text-center">
             <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-right" data-aos-delay="700">
                 <div class="features mb-4">
                     <div class="card-body">
-                        <img class="img-fluid" src="../assets/img/search1.png" alt="">
+                        <img class="img-fluid" src="/assets/img/search1.png" alt="">
                     </div>
                 </div>
                 <div class="card-footer bg-light">
@@ -155,7 +193,7 @@
             <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="1400">
                 <div class="features mb-4">
                     <div class="card-body">
-                        <img class="img-fluid" src="../assets/img/search2.png" alt="">
+                        <img class="img-fluid" src="/assets/img/search2.png" alt="">
                     </div>
                 </div>
                 <div class="card-footer bg-light">
@@ -166,7 +204,7 @@
             <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-down" data-aos-delay="2100">
                 <div class="features mb-4">
                     <div class="card-body">
-                        <img class="img-fluid" src="../assets/img/sign.png" alt="">
+                        <img class="img-fluid" src="/assets/img/sign.png" alt="">
                     </div>
                 </div>
                 <div class="card-footer bg-light">
@@ -177,7 +215,7 @@
             <div class="col-lg-3 mb-5 mb-lg-0" data-aos="fade-left" data-aos-delay="2800">
                 <div class="features mb-4">
                     <div class="card-body">
-                        <img class="img-fluid" src="../assets/img/complete.png" alt="">
+                        <img class="img-fluid" src="/assets/img/complete.png" alt="">
                     </div>
                 </div>
                 <div class="card-footer bg-light">
@@ -185,7 +223,7 @@
                     <p class="mb-0">Pantau Progress Belajarmu Hingga Selesai</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="svg-border-waves text-dark">
         <svg class="wave" style="pointer-events: none" fill="currentColor" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 75">
