@@ -111,14 +111,13 @@
                                  <?= $validation->getError('email'); ?>
                               </div>
                            </div>
-                           <div class="form-group">
-                              <input type="password" class="form-control form-control-solid password <?= ($validation->hasError('passwordd')) ? 'is-invalid' : ''; ?>" value="<?= old('passwordd'); ?>" name="passwordd" placeholder="Password">
+                           <div class="input-group mb-3">
+                              <input type="password" id="password" class="form-control form-control-solid <?= ($validation->hasError('passwordd')) ? 'is-invalid' : ''; ?>" value="<?= old('passwordd'); ?>" name="passwordd" placeholder="Password">
+                              <div class="input-group-append">
+                                 <a class="btn btn-light" onclick="showpassword()"><i class="far fa-eye" aria-hidden="true"></i></a>
+                              </div>
                               <div class="invalid-feedback">
                                  <?= $validation->getError('passwordd'); ?>
-                              </div>
-                              <div class="custom-control custom-checkbox text-left mt-2">
-                                 <input class="custom-control-input" id="showpassword" type="checkbox">
-                                 <label class="custom-control-label text-white" for="showpassword">Lihat Password</label>
                               </div>
                            </div>
                            <button class="btn btn-orange btn-block btn-marketing rounded-pill mb-4" name="masuk" type="submit"><i class="fa fa-user-plus" aria-hidden="true"></i> Daftar</button>
@@ -137,15 +136,14 @@
    <script src="/assets/js/front.js"></script>
    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
    <script type="text/javascript">
-      $(document).ready(function() {
-         $('#showpassword').click(function() {
-            if ($(this).is(':checked')) {
-               $('.password').attr('type', 'text');
-            } else {
-               $('.password').attr('type', 'password');
-            }
-         });
-      });
+      function showpassword() {
+         var x = document.getElementById("password");
+         if (x.type === "password") {
+            x.type = "text";
+         } else {
+            x.type = "password";
+         }
+      }
    </script>
    <script>
       AOS.init({
